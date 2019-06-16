@@ -5,7 +5,7 @@ import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/utils/widgets.dart';
 
 void doNothing() {
-  print("Nothing is happening here");
+  print('Nothing is happening here');
 }
 
 bool isThemeCurrentlyDark(BuildContext context) {

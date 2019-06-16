@@ -15,7 +15,7 @@ Widget buildTile(BuildContext context, Widget child, {Function() onTap}) {
           onTap: onTap != null
               ? () => onTap()
               : () {
-                  print("Nothing set yet!");
+                  print('Nothing set yet!');
                 },
           child: child,
         )),

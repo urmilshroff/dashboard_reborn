@@ -37,8 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       ? Icon(Icons.brightness_5) //use sun icon
                       : Icon(Icons.brightness_2), //use moon icon
                   tooltip: isThemeCurrentlyDark(context)
-                      ? "Switch to dark mode"
-                      : "Switch to light mode",
+                      ? 'Switch to light mode'
+                      : 'Switch to dark mode',
                   onPressed: () {
                     DynamicTheme.of(context).setBrightness(
                         Theme.of(context).brightness == Brightness.dark
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          "Card ${index + 1}",
+                          'Card ${index + 1}',
                           style: MyTextStyles.headingTheme,
                           softWrap: false,
                           overflow: TextOverflow.fade,
