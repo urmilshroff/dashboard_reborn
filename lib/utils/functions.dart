@@ -24,6 +24,14 @@ Color invertColors(BuildContext context) {
   }
 } //returns appropriate colors for text visibility
 
+Color shadowColor(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.shadowDark;
+  } else {
+    return MyColors.shadowLight;
+  }
+} //returns appropriate shadow color
+
 void showSnackBar(BuildContext context, String message) {
   final snackBar = SnackBar(content: Text(message));
   Scaffold.of(context).showSnackBar(snackBar);

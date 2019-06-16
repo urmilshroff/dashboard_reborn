@@ -10,7 +10,7 @@ Widget buildTile(BuildContext context, Widget child, {Function() onTap}) {
     child: Material(
         elevation: 10.0,
         borderRadius: BorderRadius.circular(15.0),
-        shadowColor: MyColors.shadow,
+        shadowColor: shadowColor(context),
         child: InkWell(
           onTap: onTap != null
               ? () => onTap()

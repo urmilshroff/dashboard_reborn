@@ -18,6 +18,9 @@ class MyColors {
   static const pink = Color(0xffe91e63);
   static const orange = Color(0xffff9800);
   static const light = Color(0xffeceff1);
+  static const white = Color(0xfffafafa);
   static const dark = Color(0xff455a64);
-  static const shadow = Color(0x802196F3);
+  static const black = Color(0xff212121);
+  static const shadowLight = Color(0x80718792);
+  static const shadowDark = Color(0x801c313a);
 }

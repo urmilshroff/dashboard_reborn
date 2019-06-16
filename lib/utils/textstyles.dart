@@ -5,22 +5,22 @@ import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/widgets.dart';
 
 class MyTextStyles {
-  TextStyle titleTheme = TextStyle(
+  static const titleStyle = TextStyle(
 //    fontFamily: "",
-      fontWeight: FontWeight.w800,
-      fontSize: 24.0,
-      color: MyColors.dark);
+    fontWeight: FontWeight.w800,
+    fontSize: 24.0,
+  );
 
-  TextStyle headingTheme = TextStyle(
+  static const headingTheme = TextStyle(
 //    fontFamily: "",
       fontWeight: FontWeight.w600,
       fontSize: 20.0);
 
-  TextStyle bodyTheme = TextStyle(
+  static const bodyTheme = TextStyle(
 //        fontFamily: "",
       fontWeight: FontWeight.w600);
 
-  TextStyle buttonTheme = TextStyle(
+  static const buttonTheme = TextStyle(
 //        fontFamily: "",
       fontWeight: FontWeight.w700);
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:dashboard_reborn/pages/home_page.dart';
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
@@ -11,12 +12,19 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dashboard Reborn',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
+    return DynamicTheme(
+        defaultBrightness: Brightness.light,
+        data: (brightness) => ThemeData(
+              primaryColor: MyColors.primaryColor,
+              accentColor: MyColors.accentColor,
+              brightness: brightness,
+            ),
+        themedWidgetBuilder: (context, theme) {
+          return MaterialApp(
+            title: 'Dashboard Reborn',
+            theme: theme,
+            home: MyHomePage(),
+          );
+        });
   }
 }
