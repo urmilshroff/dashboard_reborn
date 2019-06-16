@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:dashboard_reborn/pages/home_page.dart';
+import 'package:dashboard_reborn/main.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/utils/widgets.dart';
 
-void main() => runApp(MyApp());
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
 
-class MyApp extends StatelessWidget {
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dashboard Reborn',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Dashboard Reborn'),
       ),
-      home: MyHomePage(),
+      body: Container(
+        child: Center(child: Text('Hello World')),
+      ),
     );
   }
 }
