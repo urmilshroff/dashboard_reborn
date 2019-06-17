@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/widgets.dart';
+import 'package:dashboard_reborn/widgets/tile.dart';
 
 class MyTextStyles {
   static const titleStyle = TextStyle(

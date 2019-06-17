@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
-import 'package:dashboard_reborn/utils/widgets.dart';
+import 'package:dashboard_reborn/widgets/tile.dart';
 
 void doNothing() {
   print('Nothing is happening here');
@@ -23,6 +23,14 @@ Color invertColors(BuildContext context) {
     return MyColors.black;
   }
 } //returns appropriate colors for text visibility
+
+Color invertInvertColors(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.black;
+  } else {
+    return MyColors.white;
+  }
+} //returns inappropriate colors for text invisibility (needed sometimes)
 
 Color shadowColor(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {

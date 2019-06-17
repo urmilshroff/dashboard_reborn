@@ -4,7 +4,7 @@ import 'package:dashboard_reborn/main.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
-import 'package:dashboard_reborn/utils/widgets.dart';
+import 'package:dashboard_reborn/widgets/tile.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     List<String> itemNames = [
-      'Material Design',
+      'Material++',
       'Gradient Cards',
       'About',
     ]; //name of each individual tile
@@ -57,21 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontWeight: FontWeight.w700,
                         fontSize: 24.0,
                         color: invertColors(context)),
-                  ),
-                  IconButton(
-                    icon: isThemeCurrentlyDark(context)
-                        ? Icon(Icons.brightness_5) //show sun icon
-                        : Icon(Icons.brightness_2), //show moon icon
-                    tooltip: isThemeCurrentlyDark(context)
-                        ? 'Switch to light mode'
-                        : 'Switch to dark mode',
-                    color: invertColors(context),
-                    onPressed: () {
-                      DynamicTheme.of(context).setBrightness(
-                          Theme.of(context).brightness == Brightness.dark
-                              ? Brightness.light
-                              : Brightness.dark);
-                    },
                   ),
                 ],
               ),
@@ -124,6 +109,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: isThemeCurrentlyDark(context)
+            ? Icon(Icons.brightness_5) //show sun icon
+            : Icon(Icons.brightness_2), //show moon icon,
+        tooltip: isThemeCurrentlyDark(context)
+            ? 'Switch to light mode'
+            : 'Switch to dark mode',
+        foregroundColor: invertInvertColors(context),
+        backgroundColor: invertColors(context),
+        elevation: 5.0,
+        onPressed: () {
+          DynamicTheme.of(context).setBrightness(
+              Theme.of(context).brightness == Brightness.dark
+                  ? Brightness.light
+                  : Brightness.dark);
+        },
       ),
     );
   }

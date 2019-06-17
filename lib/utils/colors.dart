@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
-import 'package:dashboard_reborn/utils/widgets.dart';
+import 'package:dashboard_reborn/widgets/tile.dart';
 
 class MyColors {
   //primary/accent color for the app theme
