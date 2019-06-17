@@ -20,11 +20,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    List<String> templateNames = [
+    List<String> itemNames = [
       'Material Design',
       'Gradient Cards',
       'About',
-    ];
+    ]; //name of each individual tile
 
     List<Color> tileColors = [
       null,
@@ -80,33 +80,44 @@ class _MyHomePageState extends State<MyHomePage> {
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: 2.5,
-                children: List.generate(templateNames.length, (index) {
-                  return buildTile(
-                    context,
-                    tileColors[index],
-                    splashColors[index],
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            '${templateNames[index]}',
-                            style: TextStyle(
-                                fontFamily: 'Rubik',
-                                fontWeight: FontWeight.w600,
-                                fontSize: 20.0,
-                                color: invertColors(context)),
-                            softWrap: true,
-                            overflow: TextOverflow.fade,
-                            maxLines: 1,
-                          )
-                        ]),
-                    onTap: () {
-                      Navigator.push(context,
-                          CupertinoPageRoute(builder: (context) {
-                        return MyAboutPage();
-                      }));
-                    },
+                children: List.generate(itemNames.length, (index) {
+                  return Hero(
+                    tag: 'item$index',
+                    child: buildTile(
+                      context,
+                      tileColors[index],
+                      splashColors[index],
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              '${itemNames[index]}',
+                              style: TextStyle(
+                                  fontFamily: 'Rubik',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20.0,
+                                  color: invertColors(context)),
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                            )
+                          ]),
+                      onTap: () {
+                        Navigator.push(context,
+                            CupertinoPageRoute(builder: (context) {
+                          if (index == 0) {
+                            return MyMaterialPage();
+                          } else if (index == 1) {
+                            return MyGradientsPage();
+                          } else if (index == 2) {
+                            return MyAboutPage();
+                          } else {
+                            return null;
+                          }
+                        }));
+                      },
+                    ),
                   );
                 }),
               ),

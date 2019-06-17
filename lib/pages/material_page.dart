@@ -15,6 +15,22 @@ class MyMaterialPage extends StatefulWidget {
 }
 
 class _MyMaterialPageState extends State<MyMaterialPage> {
+  List<String> itemNames = [
+    'Dope.',
+  ]; //name of each individual tile
+
+  List<Color> tileColors = [
+    null,
+    null,
+    null,
+  ]; //color of the individual tile, mapped to index values
+
+  List<Color> splashColors = [
+    MyColors.red,
+    null,
+    null,
+  ]; //splash color of the individual tile, mapped to index values
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +65,41 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                 ],
               ),
             ),
-//            Expanded(),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 1,
+                childAspectRatio: 1,
+                children: List.generate(itemNames.length, (index) {
+                  return Hero(
+                    tag: 'item0',
+                    child: buildTile(
+                      context,
+                      tileColors[index],
+                      splashColors[index],
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              '${itemNames[index]}',
+                              style: TextStyle(
+                                  fontFamily: 'Rubik',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20.0,
+                                  color: invertColors(context)),
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                            )
+                          ]),
+                      onTap: () {
+                        doNothing();
+                      },
+                    ),
+                  );
+                }),
+              ),
+            ),
           ],
         ),
       ),
