@@ -6,6 +6,7 @@ import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:dashboard_reborn/pages/note_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Dashboard Reborn',
             theme: theme,
-            home: MyHomePage(),
+            home: MyNotePage(),
           );
         });
   }

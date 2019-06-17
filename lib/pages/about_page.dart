@@ -25,7 +25,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                  left: 10.0, top: 50.0, bottom: 20.0, right: 10.0),
+                  left: 10.0, top: 50.0, bottom: 20.0,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[

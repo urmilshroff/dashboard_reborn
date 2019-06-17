@@ -219,7 +219,7 @@ class ExpandedBookItem extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Material++',
-                  style: MyTextStyles.headingTheme,
+                  style: MyTextStyles.headingStyle,
                 ),
               ]),
           onTap: () => null,

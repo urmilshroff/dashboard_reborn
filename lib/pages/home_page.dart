@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                  left: 20.0, top: 50.0, bottom: 20.0, right: 10.0),
+                  left: 20.0, top: 50.0, bottom: 20.0,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -111,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'fab',
         child: isThemeCurrentlyDark(context)
             ? Icon(Icons.brightness_5) //show sun icon
             : Icon(Icons.brightness_2), //show moon icon,
