@@ -18,9 +18,9 @@ bool isThemeCurrentlyDark(BuildContext context) {
 
 Color invertColors(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.light;
+    return MyColors.white;
   } else {
-    return MyColors.dark;
+    return MyColors.black;
   }
 } //returns appropriate colors for text visibility
 

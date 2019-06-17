@@ -8,6 +8,9 @@ import 'package:dashboard_reborn/utils/widgets.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:dashboard_reborn/pages/gradients_page.dart';
+import 'package:dashboard_reborn/pages/material_page.dart';
+import 'package:dashboard_reborn/pages/about_page.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -15,29 +18,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> templateNames = [
-    'Material Design',
-    'Gradients',
-    'UI/UX',
-    'Android',
-    'iOS',
-    'GitHub'
-  ];
   @override
   Widget build(BuildContext context) {
+    List<String> templateNames = [
+      'Material Design',
+      'Gradient Cards',
+      'About',
+    ];
+
+    List<Color> tileColors = [
+      null,
+      null,
+      null,
+    ]; //color of the individual tile, mapped to index values
+
+    List<Color> splashColors = [
+      null,
+      null,
+      null,
+    ]; //splash color of the individual tile, mapped to index values
+
     return Scaffold(
       backgroundColor:
           isThemeCurrentlyDark(context) ? MyColors.black : MyColors.white,
       body: Container(
-//        decoration: BoxDecoration(
-//            gradient: LinearGradient(
-//                colors: [
-//              MyColors.purple,
-//              MyColors.blue,
-//            ],
-//                begin: Alignment.topCenter,
-//                end: Alignment.bottomCenter,
-//                tileMode: TileMode.clamp)),
         child: Column(
           children: <Widget>[
             Padding(
@@ -48,15 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
                   Text(
                     'Dashboard Reborn',
-                    style: MyTextStyles.titleStyle,
+                    style: TextStyle(
+                        fontFamily: 'Rubik',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24.0,
+                        color: invertColors(context)),
                   ),
                   IconButton(
                     icon: isThemeCurrentlyDark(context)
-                        ? Icon(Icons.brightness_5) //use sun icon
-                        : Icon(Icons.brightness_2), //use moon icon
+                        ? Icon(Icons.brightness_5) //show sun icon
+                        : Icon(Icons.brightness_2), //show moon icon
                     tooltip: isThemeCurrentlyDark(context)
                         ? 'Switch to light mode'
                         : 'Switch to dark mode',
+                    color: invertColors(context),
                     onPressed: () {
                       DynamicTheme.of(context).setBrightness(
                           Theme.of(context).brightness == Brightness.dark
@@ -68,30 +77,40 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Expanded(
-                child: StaggeredGridView.countBuilder(
-              crossAxisCount: 4,
-              itemCount: templateNames.length,
-              itemBuilder: (BuildContext context, int index) => buildTile(
+              child: GridView.count(
+                crossAxisCount: 1,
+                childAspectRatio: 2.5,
+                children: List.generate(templateNames.length, (index) {
+                  return buildTile(
                     context,
+                    tileColors[index],
+                    splashColors[index],
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
                             '${templateNames[index]}',
-                            style: MyTextStyles.headingTheme,
-                            softWrap: false,
+                            style: TextStyle(
+                                fontFamily: 'Rubik',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20.0,
+                                color: invertColors(context)),
+                            softWrap: true,
                             overflow: TextOverflow.fade,
                             maxLines: 1,
                           )
                         ]),
-                    onTap: null,
-                  ),
-              staggeredTileBuilder: (int index) =>
-                  StaggeredTile.count(2, index.isEven ? 2 : 1),
-              mainAxisSpacing: 5.0,
-              crossAxisSpacing: 5.0,
-            )),
+                    onTap: () {
+                      Navigator.push(context,
+                          CupertinoPageRoute(builder: (context) {
+                        return MyAboutPage();
+                      }));
+                    },
+                  );
+                }),
+              ),
+            ),
           ],
         ),
       ),
