@@ -18,14 +18,10 @@ class MyNotePage extends StatefulWidget {
 
 class _MyNotePageState extends State<MyNotePage> {
   List<String> itemNames = [
-    'Please Note',
-    'This app does nothing.',
-    'Yes, you read that right. It\'s main purpose is to serve as a template '
+    'Note: this app does nothing.',
+    'Yep, you read that right.\n\nIts main purpose is to serve as a template '
         'or starting point for Flutter developers and designers to use in '
-        'their app. The entire source code is up and available for free on '
-        'GitHub, and you have the liberty to do anything you want with it.',
-    'That said, if you are using the code or like this app, please star it '
-        'on GitHub and give me a mention. Thanks!',
+        'their own apps.\n\nThe entire source code is up and available for free on GitHub, and you have the liberty to do anything you want with it.\n\nThat said, if you are using the code or like this app, please star it on GitHub and give me a shoutout.\n\nThanks!',
   ];
 
   List<Color> tileColors = [
@@ -33,11 +29,10 @@ class _MyNotePageState extends State<MyNotePage> {
     null,
     null,
     null,
-    null,
   ]; //color of the individual tile, mapped to index values
 
   List<Color> splashColors = [
-    MyColors.cyan,
+    MyColors.accentColor,
     null,
     null,
     null,
@@ -52,8 +47,7 @@ class _MyNotePageState extends State<MyNotePage> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(
-                  left: 10.0, top: 50.0, bottom: 20.0, right: 10.0),
+              padding: EdgeInsets.only(top: 60.0, bottom: 10.0,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -71,7 +65,7 @@ class _MyNotePageState extends State<MyNotePage> {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 1,
-                childAspectRatio: 0.75,
+                childAspectRatio: 0.8,
                 children: List.generate(1, (index) {
                   return Hero(
                     tag: 'item2',
@@ -91,20 +85,6 @@ class _MyNotePageState extends State<MyNotePage> {
                                 ),
                                 Text(
                                   '${itemNames[0]}',
-                                  style: TextStyle(
-                                      fontFamily: 'Rubik',
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 24.0,
-                                      color: invertColors(context)),
-                                  textAlign: TextAlign.center,
-                                  softWrap: true,
-                                  overflow: TextOverflow.fade,
-                                ),
-                                SizedBox(
-                                  height: 20.0,
-                                ),
-                                Text(
-                                  '${itemNames[1]}',
                                   style: MyTextStyles.highlightStyle,
                                   textAlign: TextAlign.center,
                                   softWrap: true,
@@ -114,25 +94,11 @@ class _MyNotePageState extends State<MyNotePage> {
                                   height: 20.0,
                                 ),
                                 Text(
-                                  '${itemNames[2]}',
+                                  '${itemNames[1]}',
                                   style: TextStyle(
                                       fontFamily: 'Rubik',
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 18.0,
-                                      color: invertColors(context)),
-                                  textAlign: TextAlign.left,
-                                  softWrap: true,
-                                  overflow: TextOverflow.fade,
-                                ),
-                                SizedBox(
-                                  height: 10.0,
-                                ),
-                                Text(
-                                  '${itemNames[3]}',
-                                  style: TextStyle(
-                                      fontFamily: 'Rubik',
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16.0,
                                       color: invertColors(context)),
                                   textAlign: TextAlign.left,
                                   softWrap: true,
@@ -160,8 +126,8 @@ class _MyNotePageState extends State<MyNotePage> {
         heroTag: 'fab',
         child: Icon(Icons.check),
         tooltip: 'Accept',
-        foregroundColor: MyColors.white,
-        backgroundColor: MyColors.cyan,
+        foregroundColor: invertInvertColors(context),
+        backgroundColor: invertAccentColors(context),
         elevation: 5.0,
         onPressed: () {
           Navigator.push(context, CupertinoPageRoute(builder: (context) {

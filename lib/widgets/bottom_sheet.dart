@@ -219,7 +219,7 @@ class ExpandedBookItem extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Material++',
-                  style: MyTextStyles.headingStyle,
+                  style: TextStyle(fontFamily: 'Rubik', fontWeight: FontWeight.w600, fontSize: 20.0, color: invertColors(context)),
                 ),
               ]),
           onTap: () => null,
@@ -228,7 +228,7 @@ class ExpandedBookItem extends StatelessWidget {
     );
   }
 
-  Widget _buildContent() {
+  Widget buildContent() {
     return Column(
       children: <Widget>[
         Text(title, style: TextStyle(fontSize: 16)),
@@ -283,7 +283,7 @@ class MenuButton extends StatelessWidget {
               icon: AnimatedIcons.menu_close,
               progress: controller,
               semanticLabel: 'Open/close',
-              color: MyColors.dark,
+              color: invertColors(context),
             )));
   }
 }

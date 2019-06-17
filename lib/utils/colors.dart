@@ -7,7 +7,7 @@ import 'package:dashboard_reborn/widgets/tile.dart';
 class MyColors {
   //primary/accent color for the app theme
   static const primaryColor = Color(0xff212121);
-  static const accentColor = Color(0xfffafafa);
+  static const accentColor = Color(0xff4dd0e1);
 
   //standard colors to be used elsewhere
   static const red = Color(0xfff44336);

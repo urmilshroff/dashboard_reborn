@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: EdgeInsets.only(
                   left: 20.0, top: 50.0, bottom: 20.0,),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     'Dashboard Reborn',
@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ? 'Switch to light mode'
             : 'Switch to dark mode',
         foregroundColor: invertInvertColors(context),
-        backgroundColor: invertColors(context),
+        backgroundColor: invertAccentColors(context),
         elevation: 5.0,
         onPressed: () {
           DynamicTheme.of(context).setBrightness(

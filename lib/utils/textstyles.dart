@@ -21,7 +21,7 @@ class MyTextStyles {
       fontFamily: 'Rubik',
       fontWeight: FontWeight.w500,
       fontSize: 18.0,
-      color: MyColors.cyan);
+      color: MyColors.accentColor);
 
   static const monoStyle = TextStyle(
     fontFamily: 'RobotoMono',

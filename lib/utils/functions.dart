@@ -32,6 +32,14 @@ Color invertInvertColors(BuildContext context) {
   }
 } //returns inappropriate colors for text invisibility (needed sometimes)
 
+Color invertAccentColors(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.accentColor;
+  } else {
+    return MyColors.black;
+  }
+}
+
 Color shadowColor(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
     return MyColors.shadowDark;

@@ -33,7 +33,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                     icon: Icon(Icons.arrow_back), //show moon icon
                     tooltip: 'Go back',
                     color: invertColors(context),
-                    iconSize: 24.0,
+                    iconSize: 26.0,
                     onPressed: () {
                       Navigator.pop(context);
                     },

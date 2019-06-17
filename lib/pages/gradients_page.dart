@@ -40,7 +40,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                     icon: Icon(Icons.arrow_back), //show moon icon
                     tooltip: 'Go back',
                     color: MyColors.black,
-                    iconSize: 24.0,
+                    iconSize: 26.0,
                     onPressed: () {
                       Navigator.pop(context);
                     },
