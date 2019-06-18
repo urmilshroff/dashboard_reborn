@@ -16,12 +16,18 @@ class MyGradientsPage extends StatefulWidget {
 }
 
 List<String> images = [
-  'assets/images/material3.gif',
-  'assets/images/material2.gif',
-  'assets/images/material1.gif',
+  'assets/images/wallpaper6.jpg',
+  'assets/images/wallpaper5.jpg',
+  'assets/images/wallpaper4.jpg',
+  'assets/images/wallpaper3.jpg',
+  'assets/images/wallpaper2.jpg',
+  'assets/images/wallpaper1.jpg',
 ];
 
 List<String> title = [
+  'Gradient Card 6',
+  'Gradient Card 5',
+  'Gradient Card 4',
   'Gradient Card 3',
   'Gradient Card 2',
   'Gradient Card 1',
@@ -41,18 +47,19 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
       });
     });
 
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [
-              MyColors.purple,
-              MyColors.blue,
-            ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                tileMode: TileMode.clamp)),
-        child: SingleChildScrollView(
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [
+            MyColors.purple,
+            MyColors.blue,
+          ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              tileMode: TileMode.clamp)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Padding(
@@ -108,8 +115,8 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
 
 class SwipingCardsWidget extends StatelessWidget {
   var currentPage;
-  var padding = 25.0;
-  var verticalInset = 40.0;
+  var padding = 26.0;
+  var verticalInset = 42.0;
 
   SwipingCardsWidget(this.currentPage);
 
@@ -130,7 +137,7 @@ class SwipingCardsWidget extends StatelessWidget {
         var primaryCardLeft = safeWidth - widthOfPrimaryCard;
         var horizontalInset = primaryCardLeft / 2;
 
-        List<Widget> cardList = new List();
+        List<Widget> cardList = List();
 
         for (var i = 0; i < images.length; i++) {
           var delta = i - currentPage;
@@ -147,35 +154,36 @@ class SwipingCardsWidget extends StatelessWidget {
             bottom: padding + verticalInset * max(-delta, 0.0),
             start: start,
             textDirection: TextDirection.rtl,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: AspectRatio(
-                aspectRatio: cardAspectRatio,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: <Widget>[
-                    Hero(
-                        tag: "gradient$i",
-                        child: Image.asset(images[i], fit: BoxFit.cover)),
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 35.0, vertical: 20.0),
-                            child: Text(title[i],
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 20.0,
-                                    color: MyColors.light)),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
+            child: Hero(
+              tag: 'tile${images.length - i + 1}',
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15.0),
+                child: AspectRatio(
+                  aspectRatio: cardAspectRatio,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: <Widget>[
+                      Image.asset(images[i], fit: BoxFit.cover),
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 35.0, vertical: 20.0),
+                              child: Text(title[i],
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 20.0,
+                                      color: MyColors.light)),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
