@@ -45,7 +45,6 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                 padding: EdgeInsets.only(
                   left: 10.0,
                   top: 50.0,
-                  bottom: 10.0,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -76,7 +75,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                   childAspectRatio: 1,
                   children: List.generate(1, (index) {
                     return Hero(
-                      tag: 'item0',
+                      tag: 'tile0',
                       child: buildTile(
                         context,
                         tileColors[0],

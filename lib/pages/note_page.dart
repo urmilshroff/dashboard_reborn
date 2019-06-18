@@ -73,7 +73,7 @@ class _MyNotePageState extends State<MyNotePage> {
                 childAspectRatio: 0.75,
                 children: List.generate(1, (index) {
                   return Hero(
-                    tag: 'item2',
+                    tag: 'tile2',
                     child: buildTile(
                       context,
                       tileColors[0],

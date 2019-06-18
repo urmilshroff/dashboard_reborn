@@ -59,7 +59,6 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                 padding: EdgeInsets.only(
                   left: 10.0,
                   top: 50.0,
-                  bottom: 10.0,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,

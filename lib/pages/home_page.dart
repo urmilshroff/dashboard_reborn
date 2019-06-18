@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 childAspectRatio: 2.5,
                 children: List.generate(itemNames.length, (index) {
                   return Hero(
-                    tag: 'item$index',
+                    tag: 'tile$index',
                     child: buildTile(
                       context,
                       tileColors[index],
