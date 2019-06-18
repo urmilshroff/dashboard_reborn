@@ -38,12 +38,6 @@ flutter:
         - asset: assets/fonts/RobotoMono/RobotoMono-Medium.ttf
         - asset: assets/fonts/RobotoMono/RobotoMono-Bold.ttf
 
-    - family: Lato
-      fonts:
-        - asset: assets/fonts/Lato/Lato-Regular.ttf
-        - asset: assets/fonts/Lato/Lato-Italic.ttf
-          style: italic
-
     - family: Quicksand
       fonts:
         - asset: assets/fonts/Quicksand/Quicksand-Regular.ttf
