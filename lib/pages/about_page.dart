@@ -18,22 +18,24 @@ class _MyAboutPageState extends State<MyAboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          isThemeCurrentlyDark(context) ? MyColors.black : MyColors.white,
+      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                  left: 10.0, top: 50.0, bottom: 20.0,),
+                left: 10.0,
+                top: 50.0,
+                bottom: 20.0,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.arrow_back), //show moon icon
+                    icon: Icon(Icons.arrow_back_ios), //show moon icon
                     tooltip: 'Go back',
-                    color: invertColors(context),
-                    iconSize: 26.0,
+                    color: invertColorsStrong(context),
+                    iconSize: 24.0,
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -44,7 +46,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w700,
                         fontSize: 24.0,
-                        color: invertColors(context)),
+                        color: invertColorsStrong(context)),
                   ),
                 ],
               ),

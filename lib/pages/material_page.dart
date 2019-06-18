@@ -36,23 +36,25 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          isThemeCurrentlyDark(context) ? MyColors.orange : MyColors.yellow,
+      backgroundColor: invertColorsMaterial(context),
       body: Container(
         child: Stack(children: <Widget>[
           Column(
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                    left: 10.0, top: 50.0, bottom: 20.0,),
+                  left: 10.0,
+                  top: 50.0,
+                  bottom: 20.0,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.arrow_back), //show moon icon
+                      icon: Icon(Icons.arrow_back_ios), //show moon icon
                       tooltip: 'Go back',
-                      color: MyColors.white,
-                      iconSize: 26.0,
+                      color: invertColorsMild(context),
+                      iconSize: 24.0,
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -63,7 +65,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                           fontFamily: 'Rubik',
                           fontWeight: FontWeight.w700,
                           fontSize: 24.0,
-                          color: MyColors.white),
+                          color: invertColorsMild(context)),
                     ),
                   ],
                 ),
@@ -89,7 +91,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                     fontFamily: 'Rubik',
                                     fontWeight: FontWeight.w600,
                                     fontSize: 20.0,
-                                    color: invertColors(context)),
+                                    color: invertColorsMild(context)),
                                 softWrap: true,
                                 overflow: TextOverflow.fade,
                                 maxLines: 1,
@@ -103,7 +105,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                     fontFamily: 'Rubik',
                                     fontWeight: FontWeight.w600,
                                     fontSize: 20.0,
-                                    color: invertColors(context)),
+                                    color: invertColorsMild(context)),
                                 softWrap: true,
                                 overflow: TextOverflow.fade,
                                 maxLines: 1,

@@ -211,7 +211,7 @@ class ExpandedBookItem extends StatelessWidget {
         duration: Duration(milliseconds: 200),
         child: buildTile(
           context,
-          MyColors.white,
+          invertColorsMaterial(context),
           MyColors.red,
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -219,7 +219,11 @@ class ExpandedBookItem extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Material++',
-                  style: TextStyle(fontFamily: 'Rubik', fontWeight: FontWeight.w600, fontSize: 20.0, color: invertColors(context)),
+                  style: TextStyle(
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20.0,
+                      color: invertColorsMild(context)),
                 ),
               ]),
           onTap: () => null,
@@ -281,9 +285,10 @@ class MenuButton extends StatelessWidget {
             onTap: toggle,
             child: AnimatedIcon(
               icon: AnimatedIcons.menu_close,
+              size: 24.0,
               progress: controller,
               semanticLabel: 'Open/close',
-              color: invertColors(context),
+              color: invertColorsMild(context),
             )));
   }
 }

@@ -39,8 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ]; //splash color of the individual tile, mapped to index values
 
     return Scaffold(
-      backgroundColor:
-          isThemeCurrentlyDark(context) ? MyColors.black : MyColors.white,
+      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -56,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w700,
                         fontSize: 24.0,
-                        color: invertColors(context)),
+                        color: invertColorsStrong(context)),
                   ),
                 ],
               ),
@@ -82,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   fontFamily: 'Rubik',
                                   fontWeight: FontWeight.w600,
                                   fontSize: 20.0,
-                                  color: invertColors(context)),
+                                  color: invertColorsStrong(context)),
                               softWrap: true,
                               overflow: TextOverflow.fade,
                               maxLines: 1,
@@ -119,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ? 'Switch to light mode'
             : 'Switch to dark mode',
         foregroundColor: invertInvertColors(context),
-        backgroundColor: invertAccentColors(context),
+        backgroundColor: invertColorsTheme(context),
         elevation: 5.0,
         onPressed: () {
           DynamicTheme.of(context).setBrightness(

@@ -21,7 +21,10 @@ class _MyNotePageState extends State<MyNotePage> {
     'Note: this app does nothing.',
     'Yep, you read that right.\n\nIts main purpose is to serve as a template '
         'or starting point for Flutter developers and designers to use in '
-        'their own apps.\n\nThe entire source code is up and available for free on GitHub, and you have the liberty to do anything you want with it.\n\nThat said, if you are using the code or like this app, please star it on GitHub and give me a shoutout.\n\nThanks!',
+        'their own apps.\n\nThe entire source code is up and available for '
+        'free on GitHub, and you have the liberty to do anything you want '
+        'with it.\n\nThat said, if you are using the code or like this app, '
+        'please star it on GitHub and give me a shoutout. Thanks!\n\n- Urmil Shroff',
   ];
 
   List<Color> tileColors = [
@@ -41,13 +44,15 @@ class _MyNotePageState extends State<MyNotePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          isThemeCurrentlyDark(context) ? MyColors.black : MyColors.white,
+      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 60.0, bottom: 10.0,),
+              padding: EdgeInsets.only(
+                top: 60.0,
+                bottom: 10.0,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -57,7 +62,7 @@ class _MyNotePageState extends State<MyNotePage> {
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w700,
                         fontSize: 24.0,
-                        color: invertColors(context)),
+                        color: invertColorsStrong(context)),
                   ),
                 ],
               ),
@@ -99,7 +104,7 @@ class _MyNotePageState extends State<MyNotePage> {
                                       fontFamily: 'Rubik',
                                       fontWeight: FontWeight.w400,
                                       fontSize: 16.0,
-                                      color: invertColors(context)),
+                                      color: invertColorsStrong(context)),
                                   textAlign: TextAlign.left,
                                   softWrap: true,
                                   overflow: TextOverflow.fade,
@@ -127,7 +132,7 @@ class _MyNotePageState extends State<MyNotePage> {
         child: Icon(Icons.check),
         tooltip: 'Accept',
         foregroundColor: invertInvertColors(context),
-        backgroundColor: invertAccentColors(context),
+        backgroundColor: invertColorsTheme(context),
         elevation: 5.0,
         onPressed: () {
           Navigator.push(context, CupertinoPageRoute(builder: (context) {

@@ -32,15 +32,18 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                  left: 10.0, top: 50.0, bottom: 20.0,),
+                left: 10.0,
+                top: 50.0,
+                bottom: 20.0,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.arrow_back), //show moon icon
+                    icon: Icon(Icons.arrow_back_ios), //show moon icon
                     tooltip: 'Go back',
-                    color: MyColors.black,
-                    iconSize: 26.0,
+                    color: MyColors.light,
+                    iconSize: 24.0,
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -51,7 +54,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w700,
                         fontSize: 24.0,
-                        color: MyColors.black),
+                        color: MyColors.light),
                   ),
                 ],
               ),

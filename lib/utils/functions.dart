@@ -16,13 +16,21 @@ bool isThemeCurrentlyDark(BuildContext context) {
   }
 } //returns current theme status
 
-Color invertColors(BuildContext context) {
+Color invertColorsStrong(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
     return MyColors.white;
   } else {
     return MyColors.black;
   }
-} //returns appropriate colors for text visibility
+} //returns appropriate strong colors for text visibility
+
+Color invertColorsMild(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.light;
+  } else {
+    return MyColors.dark;
+  }
+} //returns appropriate mild colors for text visibility
 
 Color invertInvertColors(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
@@ -30,15 +38,23 @@ Color invertInvertColors(BuildContext context) {
   } else {
     return MyColors.white;
   }
-} //returns inappropriate colors for text invisibility (needed sometimes)
+} //keeps the same colors lol
 
-Color invertAccentColors(BuildContext context) {
+Color invertColorsTheme(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
     return MyColors.accentColor;
   } else {
-    return MyColors.black;
+    return MyColors.primaryColor;
   }
-}
+} //returns appropriate theme colors
+
+Color invertColorsMaterial(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.orange;
+  } else {
+    return MyColors.yellow;
+  }
+} //returns appropriate material colors
 
 Color shadowColor(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
@@ -46,7 +62,7 @@ Color shadowColor(BuildContext context) {
   } else {
     return MyColors.shadowLight;
   }
-} //returns appropriate shadow color
+} //returns appropriate shadow colors
 
 void showSnackBar(BuildContext context, String message) {
   final snackBar = SnackBar(content: Text(message));
