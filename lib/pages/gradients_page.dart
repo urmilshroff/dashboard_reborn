@@ -16,17 +16,17 @@ class MyGradientsPage extends StatefulWidget {
 }
 
 List<String> images = [
-  'assets/images/wallpaper6.jpg',
-  'assets/images/wallpaper5.jpg',
-  'assets/images/wallpaper4.jpg',
-  'assets/images/wallpaper3.jpg',
-  'assets/images/wallpaper2.jpg',
-  'assets/images/wallpaper1.jpg',
+  // 'assets/images/wallpaper6.jpg',
+  // 'assets/images/wallpaper5.jpg',
+  'assets/images/house.jpg',
+  'assets/images/mountains.jpg',
+  'assets/images/trees.jpg',
+  'assets/images/castle.png',
 ];
 
 List<String> title = [
-  'Gradient Card 6',
-  'Gradient Card 5',
+  // 'Gradient Card 6',
+  // 'Gradient Card 5',
   'Gradient Card 4',
   'Gradient Card 3',
   'Gradient Card 2',
