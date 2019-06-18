@@ -45,7 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                  left: 20.0, top: 50.0, bottom: 20.0,),
+                left: 20.0,
+                top: 60.0,
+                bottom: 10.0,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -53,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Dashboard Reborn',
                     style: TextStyle(
                         fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         fontSize: 24.0,
                         color: invertColorsStrong(context)),
                   ),
@@ -78,9 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             Text(
                               '${itemNames[index]}',
                               style: TextStyle(
-                                  fontFamily: 'Rubik',
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 22.0,
                                   color: invertColorsStrong(context)),
                               softWrap: true,
                               overflow: TextOverflow.fade,

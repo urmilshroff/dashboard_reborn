@@ -45,7 +45,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                 padding: EdgeInsets.only(
                   left: 10.0,
                   top: 50.0,
-                  bottom: 20.0,
+                  bottom: 10.0,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -63,7 +63,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                       'Material++',
                       style: TextStyle(
                           fontFamily: 'Rubik',
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                           fontSize: 24.0,
                           color: invertColorsMild(context)),
                     ),
@@ -88,8 +88,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                               Text(
                                 '${itemNames[0]}',
                                 style: TextStyle(
-                                    fontFamily: 'Rubik',
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w700,
                                     fontSize: 20.0,
                                     color: invertColorsMild(context)),
                                 softWrap: true,
@@ -102,8 +101,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                               Text(
                                 '${itemNames[1]}',
                                 style: TextStyle(
-                                    fontFamily: 'Rubik',
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w700,
                                     fontSize: 20.0,
                                     color: invertColorsMild(context)),
                                 softWrap: true,

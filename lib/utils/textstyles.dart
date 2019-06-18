@@ -7,18 +7,19 @@ import 'package:dashboard_reborn/widgets/tile.dart';
 class MyTextStyles {
   static const titleStyle = TextStyle(
     fontFamily: 'Rubik',
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
     fontSize: 24.0,
   );
 
   static const headingStyle = TextStyle(
-      fontFamily: 'Rubik', fontWeight: FontWeight.w600, fontSize: 20.0);
+    fontWeight: FontWeight.w700,
+    fontSize: 22.0,
+  );
 
-  static const bodyStyle =
-      TextStyle(fontFamily: 'Rubik', fontWeight: FontWeight.w500);
+  static const bodyStyle = TextStyle(fontWeight: FontWeight.w500);
 
   static const highlightStyle = TextStyle(
-      fontFamily: 'Rubik',
+      fontFamily: 'RobotoMono',
       fontWeight: FontWeight.w500,
       fontSize: 18.0,
       color: MyColors.accentColor);
@@ -27,6 +28,9 @@ class MyTextStyles {
     fontFamily: 'RobotoMono',
   );
 
-  static const buttonStyle =
-      TextStyle(fontFamily: 'RobotoMono', fontWeight: FontWeight.w600);
+  static const buttonStyle = TextStyle(
+    fontFamily: 'Rubik',
+    fontWeight: FontWeight.w600,
+    fontSize: 20.0,
+  );
 }

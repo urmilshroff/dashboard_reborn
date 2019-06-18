@@ -220,9 +220,8 @@ class ExpandedBookItem extends StatelessWidget {
                 Text(
                   'Material++',
                   style: TextStyle(
-                      fontFamily: 'Rubik',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20.0,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 22.0,
                       color: invertColorsMild(context)),
                 ),
               ]),
@@ -235,7 +234,9 @@ class ExpandedBookItem extends StatelessWidget {
   Widget buildContent() {
     return Column(
       children: <Widget>[
-        Text(title, style: TextStyle(fontSize: 16)),
+        Text(
+          'Fix me $title',
+        ),
       ],
     );
   }

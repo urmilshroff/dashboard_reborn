@@ -60,7 +60,7 @@ class _MyNotePageState extends State<MyNotePage> {
                     'Welcome!',
                     style: TextStyle(
                         fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         fontSize: 24.0,
                         color: invertColorsStrong(context)),
                   ),
@@ -70,7 +70,7 @@ class _MyNotePageState extends State<MyNotePage> {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 1,
-                childAspectRatio: 0.8,
+                childAspectRatio: 0.75,
                 children: List.generate(1, (index) {
                   return Hero(
                     tag: 'item2',
@@ -86,7 +86,7 @@ class _MyNotePageState extends State<MyNotePage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 SizedBox(
-                                  height: 30.0,
+                                  height: 10.0,
                                 ),
                                 Text(
                                   '${itemNames[0]}',
@@ -101,8 +101,7 @@ class _MyNotePageState extends State<MyNotePage> {
                                 Text(
                                   '${itemNames[1]}',
                                   style: TextStyle(
-                                      fontFamily: 'Rubik',
-                                      fontWeight: FontWeight.w400,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 16.0,
                                       color: invertColorsStrong(context)),
                                   textAlign: TextAlign.left,

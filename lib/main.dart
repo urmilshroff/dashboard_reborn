@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
               primaryColor: MyColors.primaryColor,
               accentColor: MyColors.accentColor,
               brightness: brightness,
+              fontFamily: 'Quicksand',
             ),
         themedWidgetBuilder: (context, theme) {
           return MaterialApp(

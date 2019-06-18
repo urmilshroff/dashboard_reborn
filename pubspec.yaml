@@ -20,20 +20,32 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-assets:
-   - assets/images/
+  assets:
+     - assets/images/
 
-fonts:
-  - family: Rubik
-    fonts:
-      - asset: assets/fonts/Rubik/Rubik-Regular.ttf
-      - asset: assets/fonts/Rubik/Rubik-Medium.ttf
-      - asset: assets/fonts/Rubik/Rubik-Bold.ttf
-      - asset: assets/fonts/Rubik/Rubik-Italic.ttf
-        style: italic
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik/Rubik-Regular.ttf
+        - asset: assets/fonts/Rubik/Rubik-Medium.ttf
+        - asset: assets/fonts/Rubik/Rubik-Bold.ttf
+        - asset: assets/fonts/Rubik/Rubik-Italic.ttf
+          style: italic
 
-  - family: RobotoMono
-    fonts:
-      - asset: assets/fonts/RobotoMono/RobotoMono-Regular.ttf
-      - asset: assets/fonts/RobotoMono/RobotoMono-Medium.ttf
-      - asset: assets/fonts/RobotoMono/RobotoMono-Bold.ttf
+    - family: RobotoMono
+      fonts:
+        - asset: assets/fonts/RobotoMono/RobotoMono-Regular.ttf
+        - asset: assets/fonts/RobotoMono/RobotoMono-Medium.ttf
+        - asset: assets/fonts/RobotoMono/RobotoMono-Bold.ttf
+
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato/Lato-Regular.ttf
+        - asset: assets/fonts/Lato/Lato-Italic.ttf
+          style: italic
+
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand/Quicksand-Regular.ttf
+        - asset: assets/fonts/Quicksand/Quicksand-Medium.ttf
+        - asset: assets/fonts/Quicksand/Quicksand-Bold.ttf

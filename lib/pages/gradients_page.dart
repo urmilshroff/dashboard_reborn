@@ -59,7 +59,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                 padding: EdgeInsets.only(
                   left: 10.0,
                   top: 50.0,
-                  bottom: 20.0,
+                  bottom: 10.0,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -77,7 +77,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                       'Gradient Cards',
                       style: TextStyle(
                           fontFamily: 'Rubik',
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                           fontSize: 24.0,
                           color: MyColors.light),
                     ),
@@ -169,9 +169,8 @@ class SwipingCardsWidget extends StatelessWidget {
                                 horizontal: 35.0, vertical: 20.0),
                             child: Text(title[i],
                                 style: TextStyle(
-                                    fontFamily: "Rubik",
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20.0,
                                     color: MyColors.light)),
                           ),
                         ],
