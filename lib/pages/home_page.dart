@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ]; //color of the individual tile, mapped to index values
 
     List<Color> splashColors = [
-      MyColors.red,
+      invertColorsMaterial(context),
       MyColors.purple,
       MyColors.accentColor,
     ]; //splash color of the individual tile, mapped to index values

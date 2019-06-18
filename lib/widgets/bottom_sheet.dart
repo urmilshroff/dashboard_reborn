@@ -11,13 +11,13 @@ import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-const double minHeight = 75;
-const double iconStartSize = 60;
-const double iconEndSize = 80;
+const double minHeight = 80;
+const double iconStartSize = 75;
+const double iconEndSize = 110;
 const double iconStartMarginTop = -15;
 const double iconEndMarginTop = 50;
-const double iconsVerticalSpacing = 20;
-const double iconsHorizontalSpacing = 20;
+const double iconsVerticalSpacing = 0;
+const double iconsHorizontalSpacing = 0;
 AnimationController controller;
 
 void toggle() {
@@ -37,13 +37,11 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
   double get headerTopMargin =>
       lerp(16, 0 + MediaQuery.of(context).padding.top);
 
-  double get headerFontSize => lerp(16, 24);
-
   double get itemBorderRadius => lerp(8, 15);
 
   double get iconLeftBorderRadius => itemBorderRadius;
 
-  double get iconRightBorderRadius => lerp(8, 0);
+  double get iconRightBorderRadius => itemBorderRadius;
 
   double get iconSize => lerp(iconStartSize, iconEndSize);
 
@@ -84,36 +82,33 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
           bottom: 0,
           child: GestureDetector(
             onTap: toggle,
-            onVerticalDragUpdate: _handleDragUpdate,
-            onVerticalDragEnd: _handleDragEnd,
+            onVerticalDragUpdate: handleDragUpdate,
+            onVerticalDragEnd: handleDragEnd,
             child: Container(
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     color: shadowColor(context),
-                    blurRadius: 5.0,
+                    blurRadius: 15.0,
                   ),
                 ],
               ),
               child: Material(
-                elevation: 50.0,
+                elevation: 10.0,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15.0),
                     topRight: Radius.circular(15.0)),
                 shadowColor: shadowColor(context),
                 child: InkWell(
-                  onTap: null,
+                  onTap: doNothing,
+                  splashColor: MyColors.accentColor,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(
                       children: <Widget>[
                         MenuButton(),
-                        SheetHeader(
-                          fontSize: headerFontSize,
-                          topMargin: headerTopMargin,
-                        ),
-                        for (Book book in books) _buildFullItem(book),
-                        for (Book book in books) _buildIcon(book),
+                        for (SheetItem item in items) buildFullItem(item),
+                        for (SheetItem item in items) buildIcon(item),
                       ],
                     ),
                   ),
@@ -126,47 +121,44 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
     );
   }
 
-  Widget _buildIcon(Book book) {
-    int index = books.indexOf(book);
+  Widget buildIcon(SheetItem item) {
+    int index = items.indexOf(item);
     return Positioned(
       height: iconSize,
       width: iconSize,
       top: iconTopMargin(index),
       left: iconLeftMargin(index),
       child: Container(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(15.0),
         child: ClipRRect(
-          borderRadius: BorderRadius.horizontal(
-            left: Radius.circular(iconLeftBorderRadius),
-            right: Radius.circular(iconRightBorderRadius),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(15.0)),
           child: Image.asset(
-            'assets/images/material1.gif',
+            'assets/images/material2.gif',
             fit: BoxFit.cover,
-            alignment: Alignment(lerp(1, 0), 0),
+            alignment: Alignment(lerp(0, 0), 0),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildFullItem(Book book) {
-    int index = books.indexOf(book);
-    return ExpandedBookItem(
+  Widget buildFullItem(SheetItem item) {
+    int index = items.indexOf(item);
+    return ExpandedSheetItem(
       topMargin: iconTopMargin(index),
       leftMargin: iconLeftMargin(index),
       height: iconSize,
       isVisible: controller.status == AnimationStatus.completed,
       borderRadius: itemBorderRadius,
-      title: book.title,
+      title: item.title,
     );
   }
 
-  void _handleDragUpdate(DragUpdateDetails details) {
+  void handleDragUpdate(DragUpdateDetails details) {
     controller.value -= details.primaryDelta / maxHeight;
   }
 
-  void _handleDragEnd(DragEndDetails details) {
+  void handleDragEnd(DragEndDetails details) {
     if (controller.isAnimating ||
         controller.status == AnimationStatus.completed) return;
 
@@ -181,7 +173,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
   }
 }
 
-class ExpandedBookItem extends StatelessWidget {
+class ExpandedSheetItem extends StatelessWidget {
   final double topMargin;
   final double leftMargin;
   final double height;
@@ -189,7 +181,7 @@ class ExpandedBookItem extends StatelessWidget {
   final double borderRadius;
   final String title;
 
-  const ExpandedBookItem(
+  const ExpandedSheetItem(
       {Key key,
       this.topMargin,
       this.height,
@@ -212,17 +204,22 @@ class ExpandedBookItem extends StatelessWidget {
         child: buildTile(
           context,
           invertColorsMaterial(context),
-          MyColors.red,
+          MyColors.pink,
           Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  'Material++',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 22.0,
-                      color: invertColorsMild(context)),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 100.0,
+                  ),
+                  child: Text(
+                    'Press & hold me',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 22.0,
+                        color: invertColorsMild(context)),
+                  ),
                 ),
               ]),
           onTap: () => null,
@@ -242,18 +239,18 @@ class ExpandedBookItem extends StatelessWidget {
   }
 }
 
-final List<Book> books = [
-  Book('assets/images/material2.gif', 'Material 1'),
-  Book('assets/images/material2.gif', 'Material 2'),
-  Book('assets/images/material2.gif', 'Material 3'),
-  Book('assets/images/material2.gif', 'Material 4'),
+final List<SheetItem> items = [
+  SheetItem('assets/images/material1.gif', 'Material 1'),
+  SheetItem('assets/images/material2.gif', 'Material 2'),
+  SheetItem('assets/images/material3.gif', 'Material 3'),
+  SheetItem('assets/images/material4.gif', 'Material 4'),
 ];
 
-class Book {
+class SheetItem {
   final String assetName;
   final String title;
 
-  Book(this.assetName, this.title);
+  SheetItem(this.assetName, this.title);
 }
 
 class SheetHeader extends StatelessWidget {
@@ -265,15 +262,7 @@ class SheetHeader extends StatelessWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      top: topMargin,
-      child: Text(
-        '',
-        style: MyTextStyles.titleStyle,
-      ),
-    );
-  }
+  Widget build(BuildContext context) {}
 }
 
 class MenuButton extends StatelessWidget {

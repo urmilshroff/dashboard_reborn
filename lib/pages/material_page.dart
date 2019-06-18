@@ -16,25 +16,25 @@ class MyMaterialPage extends StatefulWidget {
 }
 
 class _MyMaterialPageState extends State<MyMaterialPage> {
-  List<String> itemNames = [
-    'Go ahead,',
-    'Swipe up from below.',
-  ]; //name of each individual tile
-
-  List<Color> tileColors = [
-    null,
-    null,
-    null,
-  ]; //color of the individual tile, mapped to index values
-
-  List<Color> splashColors = [
-    MyColors.red,
-    null,
-    null,
-  ]; //splash color of the individual tile, mapped to index values
-
   @override
   Widget build(BuildContext context) {
+    List<String> itemNames = [
+      'Go ahead,',
+      'Swipe up from below.',
+    ]; //name of each individual tile
+
+    List<Color> tileColors = [
+      null,
+      null,
+      null,
+    ]; //color of the individual tile, mapped to index values
+
+    List<Color> splashColors = [
+      MyColors.red,
+      null,
+      null,
+    ]; //splash color of the individual tile, mapped to index values
+
     return Scaffold(
       backgroundColor: invertColorsMaterial(context),
       body: Container(
