@@ -8,7 +8,7 @@ class MyTextStyles {
   static const titleStyle = TextStyle(
     fontFamily: 'Rubik',
     fontWeight: FontWeight.w600,
-    fontSize: 24.0,
+    fontSize: 22.0,
   );
 
   static const headingStyle = TextStyle(

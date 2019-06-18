@@ -53,7 +53,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                       icon: Icon(Icons.arrow_back_ios), //show moon icon
                       tooltip: 'Go back',
                       color: invertColorsMild(context),
-                      iconSize: 24.0,
+                      iconSize: 22.0,
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -63,7 +63,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                       style: TextStyle(
                           fontFamily: 'Rubik',
                           fontWeight: FontWeight.w600,
-                          fontSize: 24.0,
+                          fontSize: 22.0,
                           color: invertColorsMild(context)),
                     ),
                   ],

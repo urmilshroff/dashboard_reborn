@@ -61,7 +61,7 @@ class _MyNotePageState extends State<MyNotePage> {
                     style: TextStyle(
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w600,
-                        fontSize: 24.0,
+                        fontSize: 22.0,
                         color: invertColorsStrong(context)),
                   ),
                 ],

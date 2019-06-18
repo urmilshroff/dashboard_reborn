@@ -33,9 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
     ]; //color of the individual tile, mapped to index values
 
     List<Color> splashColors = [
-      null,
-      null,
-      null,
+      MyColors.red,
+      MyColors.purple,
+      MyColors.accentColor,
     ]; //splash color of the individual tile, mapped to index values
 
     return Scaffold(
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w600,
-                        fontSize: 24.0,
+                        fontSize: 22.0,
                         color: invertColorsStrong(context)),
                   ),
                 ],
