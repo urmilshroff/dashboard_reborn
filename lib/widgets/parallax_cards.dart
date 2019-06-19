@@ -13,8 +13,8 @@ import 'package:dashboard_reborn/pages/gradients_page.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
 import 'package:meta/meta.dart';
 
-class IntroPageItem extends StatelessWidget {
-  IntroPageItem({
+class ParallaxCardsWidget extends StatelessWidget {
+  ParallaxCardsWidget({
     @required this.item,
     @required this.pageVisibility,
   });
@@ -43,40 +43,37 @@ class IntroPageItem extends StatelessWidget {
   }
 
   _buildTextContainer(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
     var categoryText = _applyTextEffects(
       translationFactor: 300.0,
-      child: Text(
-        item.category,
-        style: textTheme.caption.copyWith(
-          color: Colors.white70,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 2.0,
-          fontSize: 14.0,
+      child: Padding(
+        padding: EdgeInsets.all(5.0),
+        child: Text(
+          item.body,
+          style: MyTextStyles.cardBodyStyle,
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
       ),
     );
 
     var titleText = _applyTextEffects(
       translationFactor: 200.0,
       child: Padding(
-        padding: const EdgeInsets.only(top: 16.0),
+        padding: EdgeInsets.all(5.0),
         child: Text(
           item.title,
-          style: textTheme.title
-              .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+          style: MyTextStyles.cardTitleStyle,
           textAlign: TextAlign.center,
         ),
       ),
     );
 
     return Positioned(
-      bottom: 56.0,
-      left: 32.0,
-      right: 32.0,
+      bottom: 50.0,
+      left: 10.0,
+      right: 10.0,
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           categoryText,
           titleText,
@@ -99,31 +96,32 @@ class IntroPageItem extends StatelessWidget {
     var imageOverlayGradient = DecoratedBox(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: FractionalOffset.bottomCenter,
-          end: FractionalOffset.topCenter,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [
-            const Color(0xFF000000),
-            const Color(0x00000000),
+            Colors.transparent,
+            MyColors.black,
           ],
         ),
       ),
     );
 
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 16.0,
+      padding: EdgeInsets.symmetric(
+        vertical: 22.0,
         horizontal: 8.0,
       ),
-      child: Material(
-        elevation: 4.0,
-        borderRadius: BorderRadius.circular(8.0),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            image,
-            imageOverlayGradient,
-            _buildTextContainer(context),
-          ],
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: Material(
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              image,
+              imageOverlayGradient,
+              _buildTextContainer(context),
+            ],
+          ),
         ),
       ),
     );

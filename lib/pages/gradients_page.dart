@@ -14,17 +14,15 @@ import 'package:dashboard_reborn/widgets/parallax_cards.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
 
 List<String> swipingCardImages = [
-  // 'assets/images/wallpaper6.jpg',
-  // 'assets/images/wallpaper5.jpg',
-  'assets/images/house.jpg',
-  'assets/images/mountains.jpg',
-  'assets/images/trees.jpg',
-  'assets/images/castle.png',
+  'assets/images/wallpaper11.jpg',
+  'assets/images/wallpaper10.jpg',
+  'assets/images/wallpaper9.jpg',
+  'assets/images/wallpaper8.jpg',
+  'assets/images/wallpaper7.jpg',
 ];
 
 List<String> swipingCardTitles = [
-  // 'Gradient Card 6',
-  // 'Gradient Card 5',
+  'Gradient Card 5',
   'Gradient Card 4',
   'Gradient Card 3',
   'Gradient Card 2',
@@ -36,9 +34,13 @@ List<Color> gradientStartColors = [
   GradientColors.purple,
   GradientColors.blue,
   GradientColors.purple,
+  GradientColors.blue,
+  GradientColors.purple,
 ];
 
 List<Color> gradientEndColors = [
+  GradientColors.purple,
+  GradientColors.blue,
   GradientColors.purple,
   GradientColors.blue,
   GradientColors.purple,
@@ -48,31 +50,41 @@ List<Color> gradientEndColors = [
 class ParallaxCardItem {
   ParallaxCardItem({
     this.title,
-    this.category,
+    this.body,
     this.imagePath,
   });
 
   final String title;
-  final String category;
+  final String body;
   final String imagePath;
 }
 
 final parallaxCardItemsList = <ParallaxCardItem>[
   ParallaxCardItem(
     title: 'Card Title',
-    category: 'Card Category',
-    imagePath: 'assets/images/castle.png',
+    body: 'Card Category',
+    imagePath: 'assets/images/wallpaper1.jpg',
   ),
   ParallaxCardItem(
     title: 'Card Title',
-    category: 'Card Category',
-    imagePath: 'assets/images/trees.jpg',
+    body: 'Card Category',
+    imagePath: 'assets/images/wallpaper2.jpg',
   ),
   ParallaxCardItem(
     title: 'Card Title',
-    category: 'Card Category',
-    imagePath: 'assets/images/mountains.jpg',
+    body: 'Card Category',
+    imagePath: 'assets/images/wallpaper3.jpg',
   ),
+//  ParallaxCardItem(
+//    title: 'Card Title',
+//    body: 'Card Category',
+//    imagePath: 'assets/images/wallpaper4.jpg',
+//  ),
+//  ParallaxCardItem(
+//    title: 'Card Title',
+//    body: 'Card Category',
+//    imagePath: 'assets/images/wallpaper5.jpg',
+//  ),
 ];
 
 var cardAspectRatio = 12.0 / 16.0;
@@ -159,9 +171,10 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                   )
                 ],
               ),
-              Center(
+              Padding(
+                padding: EdgeInsets.only(bottom: 30.0),
                 child: SizedBox.fromSize(
-                  size: const Size.fromHeight(500.0),
+                  size: Size.fromHeight(500.0),
                   child: PageTransformer(
                     pageViewBuilder: (context, visibilityResolver) {
                       return PageView.builder(
@@ -172,7 +185,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                           final pageVisibility =
                               visibilityResolver.resolvePageVisibility(index);
 
-                          return IntroPageItem(
+                          return ParallaxCardsWidget(
                             item: item,
                             pageVisibility: pageVisibility,
                           );

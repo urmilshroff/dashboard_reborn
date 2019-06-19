@@ -11,12 +11,11 @@ class MyTextStyles {
     fontSize: 22.0,
   );
 
-  static const headingStyle = TextStyle(
-    fontWeight: FontWeight.w700,
-    fontSize: 22.0,
-  );
+  static const cardTitleStyle = TextStyle(
+      fontWeight: FontWeight.w700, fontSize: 20.0, color: MyColors.white);
 
-  static const bodyStyle = TextStyle(fontWeight: FontWeight.w500);
+  static const cardBodyStyle = TextStyle(
+      fontWeight: FontWeight.w500, fontSize: 16.0, color: MyColors.white);
 
   static const highlightStyle = TextStyle(
       fontFamily: 'RobotoMono',

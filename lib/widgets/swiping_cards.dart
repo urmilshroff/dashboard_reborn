@@ -11,6 +11,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:dashboard_reborn/pages/gradients_page.dart';
 
+// ignore: must_be_immutable
 class SwipingCardsWidget extends StatelessWidget {
   var currentPage;
   var padding = 26.0;
@@ -59,7 +60,7 @@ class SwipingCardsWidget extends StatelessWidget {
                   doNothing();
                 },
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(10.0),
                   child: Material(
                     child: AspectRatio(
                       aspectRatio: cardAspectRatio,
@@ -77,10 +78,7 @@ class SwipingCardsWidget extends StatelessWidget {
                                   padding: EdgeInsets.only(left: 15.0),
                                   child: Text(
                                     swipingCardTitles[i],
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20.0,
-                                        color: MyColors.light),
+                                    style: MyTextStyles.cardTitleStyle,
                                     softWrap: false,
                                     overflow: TextOverflow.fade,
                                     maxLines: 1,
