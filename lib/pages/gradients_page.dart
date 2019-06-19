@@ -9,13 +9,11 @@ import 'package:dashboard_reborn/widgets/tile.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:dashboard_reborn/widgets/swiping_cards.dart';
+import 'package:dashboard_reborn/widgets/parallax_cards.dart';
+import 'package:dashboard_reborn/utils/page_transformer.dart';
 
-class MyGradientsPage extends StatefulWidget {
-  @override
-  _MyGradientsPageState createState() => _MyGradientsPageState();
-}
-
-List<String> images = [
+List<String> swipingCardImages = [
   // 'assets/images/wallpaper6.jpg',
   // 'assets/images/wallpaper5.jpg',
   'assets/images/house.jpg',
@@ -24,7 +22,7 @@ List<String> images = [
   'assets/images/castle.png',
 ];
 
-List<String> title = [
+List<String> swipingCardTitles = [
   // 'Gradient Card 6',
   // 'Gradient Card 5',
   'Gradient Card 4',
@@ -47,19 +45,56 @@ List<Color> gradientEndColors = [
   GradientColors.blue,
 ];
 
+class ParallaxCardItem {
+  ParallaxCardItem({
+    this.title,
+    this.category,
+    this.imagePath,
+  });
+
+  final String title;
+  final String category;
+  final String imagePath;
+}
+
+final parallaxCardItemsList = <ParallaxCardItem>[
+  ParallaxCardItem(
+    title: 'Card Title',
+    category: 'Card Category',
+    imagePath: 'assets/images/castle.png',
+  ),
+  ParallaxCardItem(
+    title: 'Card Title',
+    category: 'Card Category',
+    imagePath: 'assets/images/trees.jpg',
+  ),
+  ParallaxCardItem(
+    title: 'Card Title',
+    category: 'Card Category',
+    imagePath: 'assets/images/mountains.jpg',
+  ),
+];
+
 var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
 var gradientStartColor;
 var gradientEndColor;
-PageController controller = PageController(initialPage: images.length - 1);
-var i = images.length - 1;
+PageController controller =
+    PageController(initialPage: swipingCardImages.length - 1);
+var i = swipingCardImages.length - 1;
+
+class MyGradientsPage extends StatefulWidget {
+  @override
+  _MyGradientsPageState createState() => _MyGradientsPageState();
+}
 
 class _MyGradientsPageState extends State<MyGradientsPage> {
-  var currentPage = images.length - 1.0;
+  var currentPage = swipingCardImages.length - 1.0;
 
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController(initialPage: images.length - 1);
+    PageController controller =
+        PageController(initialPage: swipingCardImages.length - 1);
     controller.addListener(() {
       setState(() {
         currentPage = controller.page;
@@ -114,7 +149,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                   SwipingCardsWidget(currentPage),
                   Positioned.fill(
                     child: PageView.builder(
-                      itemCount: images.length,
+                      itemCount: swipingCardImages.length,
                       controller: controller,
                       reverse: true,
                       itemBuilder: (context, index) {
@@ -124,111 +159,33 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                   )
                 ],
               ),
+              Center(
+                child: SizedBox.fromSize(
+                  size: const Size.fromHeight(500.0),
+                  child: PageTransformer(
+                    pageViewBuilder: (context, visibilityResolver) {
+                      return PageView.builder(
+                        controller: PageController(viewportFraction: 0.85),
+                        itemCount: parallaxCardItemsList.length,
+                        itemBuilder: (context, index) {
+                          final item = parallaxCardItemsList[index];
+                          final pageVisibility =
+                              visibilityResolver.resolvePageVisibility(index);
+
+                          return IntroPageItem(
+                            item: item,
+                            pageVisibility: pageVisibility,
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class SwipingCardsWidget extends StatelessWidget {
-  var currentPage;
-  var padding = 26.0;
-  var verticalInset = 42.0;
-
-  SwipingCardsWidget(this.currentPage);
-
-  @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: widgetAspectRatio,
-      child: LayoutBuilder(builder: (context, contraints) {
-        var width = contraints.maxWidth;
-        var height = contraints.maxHeight;
-
-        var safeWidth = width - 2 * padding;
-        var safeHeight = height - 2 * padding;
-
-        var heightOfPrimaryCard = safeHeight;
-        var widthOfPrimaryCard = heightOfPrimaryCard * cardAspectRatio;
-
-        var primaryCardLeft = safeWidth - widthOfPrimaryCard;
-        var horizontalInset = primaryCardLeft / 2;
-
-        List<Widget> cardList = List();
-
-        for (var i = 0; i < images.length; i++) {
-          var delta = i - currentPage;
-          bool isOnRight = delta > 0;
-
-          var start = padding +
-              max(
-                  primaryCardLeft -
-                      horizontalInset * -delta * (isOnRight ? 15 : 1),
-                  0.0);
-
-          var cardItem = Positioned.directional(
-            top: padding + verticalInset * max(-delta, 0.0),
-            bottom: padding + verticalInset * max(-delta, 0.0),
-            start: start,
-            textDirection: TextDirection.rtl,
-            child: Hero(
-              tag: 'tile${i - 2}',
-              child: GestureDetector(
-                onTap: () {
-                  doNothing();
-                },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
-                  child: Material(
-                    child: AspectRatio(
-                      aspectRatio: cardAspectRatio,
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: <Widget>[
-                          Image.asset(images[i], fit: BoxFit.cover),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Padding(
-                                  padding: EdgeInsets.only(left: 15.0),
-                                  child: Text(
-                                    title[i],
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20.0,
-                                        color: MyColors.light),
-                                    softWrap: false,
-                                    overflow: TextOverflow.fade,
-                                    maxLines: 1,
-                                  ),
-                                ),
-                                IconButton(
-                                    icon: Icon(EvaIcons.plusCircle),
-                                    color: MyColors.light,
-                                    iconSize: 30.0,
-                                    onPressed: () => doNothing),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          );
-          cardList.add(cardItem);
-        }
-        return Stack(
-          children: cardList,
-        );
-      }),
     );
   }
 }
