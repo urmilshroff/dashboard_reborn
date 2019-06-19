@@ -50,10 +50,10 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.arrow_back_ios), //show moon icon
+                      icon: Icon(EvaIcons.arrowIosBack),
                       tooltip: 'Go back',
                       color: invertColorsMild(context),
-                      iconSize: 22.0,
+                      iconSize: 26.0,
                       onPressed: () {
                         Navigator.pop(context);
                       },

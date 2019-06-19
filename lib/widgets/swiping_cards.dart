@@ -88,11 +88,6 @@ class SwipingCardsWidget extends StatelessWidget {
                                     maxLines: 1,
                                   ),
                                 ),
-//                                IconButton(
-//                                    icon: Icon(EvaIcons.plusCircle),
-//                                    color: MyColors.light,
-//                                    iconSize: 30.0,
-//                                    onPressed: () => doNothing),
                               ],
                             ),
                           )

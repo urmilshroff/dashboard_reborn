@@ -111,10 +111,10 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.arrow_back_ios), //show moon icon
+                      icon: Icon(EvaIcons.arrowIosBack),
                       tooltip: 'Go back',
                       color: GradientColors.lightEnd,
-                      iconSize: 22.0,
+                      iconSize: 26.0,
                       onPressed: () {
                         Navigator.pop(context);
                       },

@@ -39,7 +39,6 @@ class _MyHomePageState extends State<MyHomePage> {
     ]; //splash color of the individual tile, mapped to index values
 
     return Scaffold(
-      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -114,8 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         heroTag: 'fab',
         child: isThemeCurrentlyDark(context)
-            ? Icon(Icons.brightness_5) //show sun icon
-            : Icon(Icons.brightness_2), //show moon icon,
+            ? Icon(EvaIcons.sun) //show sun icon
+            : Icon(EvaIcons.moon), //show moon icon,
         tooltip: isThemeCurrentlyDark(context)
             ? 'Switch to light mode'
             : 'Switch to dark mode',

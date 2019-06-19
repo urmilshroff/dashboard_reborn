@@ -18,7 +18,6 @@ class _MyAboutPageState extends State<MyAboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -31,10 +30,10 @@ class _MyAboutPageState extends State<MyAboutPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.arrow_back_ios),
+                    icon: Icon(EvaIcons.arrowIosBack),
                     tooltip: 'Go back',
                     color: invertColorsStrong(context),
-                    iconSize: 22.0,
+                    iconSize: 26.0,
                     onPressed: () {
                       Navigator.pop(context);
                     },

@@ -44,7 +44,6 @@ class _MyNotePageState extends State<MyNotePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -128,7 +127,10 @@ class _MyNotePageState extends State<MyNotePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         heroTag: 'fab',
-        child: Icon(Icons.check),
+        child: Icon(
+          EvaIcons.checkmark,
+          size: 30.0,
+        ),
         tooltip: 'Accept',
         foregroundColor: invertInvertColors(context),
         backgroundColor: invertColorsTheme(context),
