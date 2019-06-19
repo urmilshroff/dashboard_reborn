@@ -27,20 +27,6 @@ class _MyNotePageState extends State<MyNotePage> {
         'please star it on GitHub and give me a shoutout. Thanks!\n\n- Urmil Shroff',
   ];
 
-  List<Color> tileColors = [
-    null,
-    null,
-    null,
-    null,
-  ]; //color of the individual tile, mapped to index values
-
-  List<Color> splashColors = [
-    MyColors.accentColor,
-    null,
-    null,
-    null,
-    null,
-  ]; //splash color of the individual tile, mapped to index values
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,8 +61,8 @@ class _MyNotePageState extends State<MyNotePage> {
                     tag: 'tile2',
                     child: buildTile(
                       context,
-                      tileColors[0],
-                      splashColors[0],
+                      null,
+                      MyColors.accentColor,
                       Container(
                         child: Padding(
                           padding: EdgeInsets.all(20.0),

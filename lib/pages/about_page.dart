@@ -58,7 +58,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                   child: buildTile(
                     context,
                     null,
-                    MyColors.accentColor,
+                    invertColorsStrong(context),
                     Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -162,7 +162,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                 buildTile(
                   context,
                   null,
-                  MyColors.accentColor,
+                  invertColorsStrong(context),
                   Container(
                     child: Padding(
                       padding: EdgeInsets.all(20.0),
@@ -208,11 +208,11 @@ class _MyAboutPageState extends State<MyAboutPage> {
         heroTag: 'fab',
         child: Icon(
           EvaIcons.github,
-          size: 32.0,
+          size: 36.0,
         ),
         tooltip: 'View GitHub repo',
-        foregroundColor: MyColors.white,
-        backgroundColor: MyColors.black,
+        foregroundColor: invertInvertColors(context),
+        backgroundColor: invertColorsStrong(context),
         elevation: 5.0,
         onPressed: () {
           doNothing();

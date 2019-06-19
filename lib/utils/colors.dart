@@ -6,7 +6,7 @@ import 'package:dashboard_reborn/widgets/tile.dart';
 
 class MyColors {
   static const primaryColor = Color(0xff212121);
-  static const accentColor = Color(0xff00bfa5);
+  static const accentColor = Color(0xff00e5ff);
   static const light = Color(0xffeceff1);
   static const dark = Color(0xff37474f);
   static const white = Color(0xfffafafa);

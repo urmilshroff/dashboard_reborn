@@ -90,10 +90,6 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
               colors: isThemeCurrentlyDark(context)
                   ? [GradientColors.darkStart, GradientColors.darkEnd]
                   : [GradientColors.lightStart, GradientColors.lightEnd],
-//              colors: [
-//            gradientStartColors[i],
-//            gradientEndColors[i],
-//          ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               tileMode: TileMode.clamp)),

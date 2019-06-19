@@ -113,8 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         heroTag: 'fab',
         child: isThemeCurrentlyDark(context)
-            ? Icon(EvaIcons.sun) //show sun icon
-            : Icon(EvaIcons.moon), //show moon icon,
+            ? Icon(EvaIcons.sun, size: 30.0,) //show sun icon
+            : Icon(EvaIcons.moon, size: 26.0,), //show moon icon,
         tooltip: isThemeCurrentlyDark(context)
             ? 'Switch to light mode'
             : 'Switch to dark mode',
