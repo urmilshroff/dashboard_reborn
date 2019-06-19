@@ -210,7 +210,7 @@ class ExpandedSheetItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(
+                  padding: EdgeInsets.only(
                     left: 100.0,
                   ),
                   child: Text(

@@ -8,7 +8,7 @@ Widget buildTile(
     BuildContext context, Color color, Color splashColor, Widget child,
     {Function() onTap}) {
   return Container(
-    margin: const EdgeInsets.all(15.0),
+    margin: EdgeInsets.all(15.0),
     child: Material(
         color: color,
         elevation: 10.0,

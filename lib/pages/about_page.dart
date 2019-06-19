@@ -166,7 +166,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                   MyColors.accentColor,
                   Container(
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding: EdgeInsets.all(20.0),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,

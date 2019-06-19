@@ -33,14 +33,33 @@ List<String> title = [
   'Gradient Card 1',
 ];
 
+List<Color> gradientStartColors = [
+  GradientColors.blue,
+  GradientColors.purple,
+  GradientColors.blue,
+  GradientColors.purple,
+];
+
+List<Color> gradientEndColors = [
+  GradientColors.purple,
+  GradientColors.blue,
+  GradientColors.purple,
+  GradientColors.blue,
+];
+
 var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
-var currentPage = images.length - 1.0;
+var gradientStartColor;
+var gradientEndColor;
 PageController controller = PageController(initialPage: images.length - 1);
+var i = images.length - 1;
 
 class _MyGradientsPageState extends State<MyGradientsPage> {
+  var currentPage = images.length - 1.0;
+
   @override
   Widget build(BuildContext context) {
+    PageController controller = PageController(initialPage: images.length - 1);
     controller.addListener(() {
       setState(() {
         currentPage = controller.page;
@@ -51,8 +70,8 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
       decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [
-            MyColors.purple,
-            MyColors.blue,
+            gradientStartColors[i],
+            gradientEndColors[i],
           ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -155,34 +174,50 @@ class SwipingCardsWidget extends StatelessWidget {
             start: start,
             textDirection: TextDirection.rtl,
             child: Hero(
-              tag: 'tile${images.length - i + 1}',
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: AspectRatio(
-                  aspectRatio: cardAspectRatio,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: <Widget>[
-                      Image.asset(images[i], fit: BoxFit.cover),
-                      Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 35.0, vertical: 20.0),
-                              child: Text(title[i],
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 20.0,
-                                      color: MyColors.light)),
+              tag: 'tile${i - 2}',
+              child: GestureDetector(
+                onTap: () {
+                  doNothing();
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Material(
+                    child: AspectRatio(
+                      aspectRatio: cardAspectRatio,
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: <Widget>[
+                          Image.asset(images[i], fit: BoxFit.cover),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.only(left: 15.0),
+                                  child: Text(
+                                    title[i],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 20.0,
+                                        color: MyColors.light),
+                                    softWrap: false,
+                                    overflow: TextOverflow.fade,
+                                    maxLines: 1,
+                                  ),
+                                ),
+                                IconButton(
+                                    icon: Icon(EvaIcons.plusCircle),
+                                    color: MyColors.light,
+                                    iconSize: 30.0,
+                                    onPressed: () => doNothing),
+                              ],
                             ),
-                          ],
-                        ),
-                      )
-                    ],
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),

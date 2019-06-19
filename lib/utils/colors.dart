@@ -25,3 +25,8 @@ class MyColors {
   static const shadowLight = Color(0x80718792);
   static const shadowDark = Color(0x801c313a);
 }
+
+class GradientColors {
+  static const blue = Color(0xff29b6f6);
+  static const purple = Color(0xffab47bc);
+}

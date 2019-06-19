@@ -80,7 +80,7 @@ class _MyNotePageState extends State<MyNotePage> {
                       splashColors[0],
                       Container(
                         child: Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: EdgeInsets.all(20.0),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
