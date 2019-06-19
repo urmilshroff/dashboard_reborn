@@ -101,7 +101,9 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
-                  splashColor: MyColors.accentColor,
+                  splashColor: isThemeCurrentlyDark(context)
+                      ? MaterialColors.purple
+                      : MaterialColors.blue,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(
@@ -204,7 +206,9 @@ class ExpandedSheetItem extends StatelessWidget {
         child: buildTile(
           context,
           invertColorsMaterial(context),
-          MyColors.pink,
+          isThemeCurrentlyDark(context)
+              ? MaterialColors.green
+              : MaterialColors.teal,
           Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,

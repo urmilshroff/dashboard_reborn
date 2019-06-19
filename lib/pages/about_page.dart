@@ -103,7 +103,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               ),
                               Icon(
                                 EvaIcons.heart,
-                                color: MyColors.pink,
+                                color: MyColors.heart,
                                 size: 18.0,
                               ),
                               SizedBox(
@@ -139,7 +139,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               IconButton(
                                 icon: Icon(
                                   EvaIcons.twitter,
-                                  color: MyColors.blue,
+                                  color: MyColors.twitter,
                                   size: 26.0,
                                 ),
                                 onPressed: doNothing,

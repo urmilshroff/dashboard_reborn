@@ -30,7 +30,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
     ]; //color of the individual tile, mapped to index values
 
     List<Color> splashColors = [
-      MyColors.red,
+      isThemeCurrentlyDark(context) ? MaterialColors.pink : MaterialColors.red,
       null,
       null,
     ]; //splash color of the individual tile, mapped to index values

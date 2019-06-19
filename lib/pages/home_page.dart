@@ -34,8 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     List<Color> splashColors = [
       invertColorsMaterial(context),
-      MyColors.purple,
-      MyColors.accentColor,
+      MaterialColors.purple,
+      invertColorsStrong(context),
     ]; //splash color of the individual tile, mapped to index values
 
     return Scaffold(

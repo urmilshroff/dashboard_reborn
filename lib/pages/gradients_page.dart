@@ -28,20 +28,6 @@ List<String> swipingCardTitles = [
   'Gradient Card 1',
 ];
 
-//List<Color> gradientStartColors = [
-//  GradientColors.blue,
-//  GradientColors.blue,
-//  GradientColors.blue,
-//  GradientColors.blue,
-//];
-//
-//List<Color> gradientEndColors = [
-//  GradientColors.purple,
-//  GradientColors.purple,
-//  GradientColors.purple,
-//  GradientColors.purple,
-//];
-
 class ParallaxCardItem {
   ParallaxCardItem({
     this.title,
@@ -56,30 +42,20 @@ class ParallaxCardItem {
 
 final parallaxCardItemsList = <ParallaxCardItem>[
   ParallaxCardItem(
-    title: 'Card Title',
-    body: 'Card Category',
+    title: 'Card 1',
+    body: 'Category 1',
     imagePath: 'assets/images/wallpaper1.jpg',
   ),
   ParallaxCardItem(
-    title: 'Card Title',
-    body: 'Card Category',
+    title: 'Card 2',
+    body: 'Category 2',
     imagePath: 'assets/images/wallpaper2.jpg',
   ),
   ParallaxCardItem(
-    title: 'Card Title',
-    body: 'Card Category',
+    title: 'Card 3',
+    body: 'Category 3',
     imagePath: 'assets/images/wallpaper3.jpg',
   ),
-//  ParallaxCardItem(
-//    title: 'Card Title',
-//    body: 'Card Category',
-//    imagePath: 'assets/images/wallpaper4.jpg',
-//  ),
-//  ParallaxCardItem(
-//    title: 'Card Title',
-//    body: 'Card Category',
-//    imagePath: 'assets/images/wallpaper5.jpg',
-//  ),
 ];
 
 var cardAspectRatio = 12.0 / 16.0;
@@ -137,7 +113,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                     IconButton(
                       icon: Icon(Icons.arrow_back_ios), //show moon icon
                       tooltip: 'Go back',
-                      color: MyColors.light,
+                      color: GradientColors.lightEnd,
                       iconSize: 22.0,
                       onPressed: () {
                         Navigator.pop(context);
