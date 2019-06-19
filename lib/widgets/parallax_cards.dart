@@ -12,6 +12,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:dashboard_reborn/pages/gradients_page.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
 import 'package:meta/meta.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 
 class ParallaxCardsWidget extends StatelessWidget {
   ParallaxCardsWidget({
@@ -47,9 +48,11 @@ class ParallaxCardsWidget extends StatelessWidget {
       translationFactor: 300.0,
       child: Padding(
         padding: EdgeInsets.all(5.0),
-        child: Text(
+        child: GradientText(
           item.body,
-          style: MyTextStyles.cardBodyStyle,
+          shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
+          gradient: Gradients.coldLinear,
+          style: MyTextStyles.gradientCardBodyStyle,
           textAlign: TextAlign.center,
         ),
       ),
@@ -59,9 +62,11 @@ class ParallaxCardsWidget extends StatelessWidget {
       translationFactor: 200.0,
       child: Padding(
         padding: EdgeInsets.all(5.0),
-        child: Text(
+        child: GradientText(
           item.title,
-          style: MyTextStyles.cardTitleStyle,
+          shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
+          gradient: Gradients.coldLinear,
+          style: MyTextStyles.gradientCardTitleStyle,
           textAlign: TextAlign.center,
         ),
       ),

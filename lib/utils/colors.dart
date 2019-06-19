@@ -27,6 +27,8 @@ class MyColors {
 }
 
 class GradientColors {
-  static const blue = Color(0xff29b6f6);
-  static const purple = Color(0xffab47bc);
+  static const lightStart = Color(0xff64ffda);
+  static const lightEnd = Color(0xff3d5afe);
+  static const darkStart = Color(0xff6200ea);
+  static const darkEnd = Color(0xff00bfa5);
 }

@@ -12,6 +12,7 @@ dependencies:
   dynamic_theme:
   eva_icons_flutter:
   flutter_staggered_grid_view:
+  gradient_widgets:
 
 dev_dependencies:
   flutter_test:

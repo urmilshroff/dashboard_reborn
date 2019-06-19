@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 
 class MyTextStyles {
   static const titleStyle = TextStyle(
@@ -11,10 +12,10 @@ class MyTextStyles {
     fontSize: 22.0,
   );
 
-  static const cardTitleStyle = TextStyle(
+  static const gradientCardTitleStyle = TextStyle(
       fontWeight: FontWeight.w700, fontSize: 20.0, color: MyColors.white);
 
-  static const cardBodyStyle = TextStyle(
+  static const gradientCardBodyStyle = TextStyle(
       fontWeight: FontWeight.w500, fontSize: 16.0, color: MyColors.white);
 
   static const highlightStyle = TextStyle(

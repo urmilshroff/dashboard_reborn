@@ -12,40 +12,35 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:dashboard_reborn/widgets/swiping_cards.dart';
 import 'package:dashboard_reborn/widgets/parallax_cards.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 
 List<String> swipingCardImages = [
-  'assets/images/wallpaper11.jpg',
-  'assets/images/wallpaper10.jpg',
-  'assets/images/wallpaper9.jpg',
   'assets/images/wallpaper8.jpg',
   'assets/images/wallpaper7.jpg',
+  'assets/images/wallpaper6.jpg',
+  'assets/images/wallpaper5.jpg',
 ];
 
 List<String> swipingCardTitles = [
-  'Gradient Card 5',
   'Gradient Card 4',
   'Gradient Card 3',
   'Gradient Card 2',
   'Gradient Card 1',
 ];
 
-List<Color> gradientStartColors = [
-  GradientColors.blue,
-  GradientColors.purple,
-  GradientColors.blue,
-  GradientColors.purple,
-  GradientColors.blue,
-  GradientColors.purple,
-];
-
-List<Color> gradientEndColors = [
-  GradientColors.purple,
-  GradientColors.blue,
-  GradientColors.purple,
-  GradientColors.blue,
-  GradientColors.purple,
-  GradientColors.blue,
-];
+//List<Color> gradientStartColors = [
+//  GradientColors.blue,
+//  GradientColors.blue,
+//  GradientColors.blue,
+//  GradientColors.blue,
+//];
+//
+//List<Color> gradientEndColors = [
+//  GradientColors.purple,
+//  GradientColors.purple,
+//  GradientColors.purple,
+//  GradientColors.purple,
+//];
 
 class ParallaxCardItem {
   ParallaxCardItem({
@@ -116,10 +111,13 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [
-            gradientStartColors[i],
-            gradientEndColors[i],
-          ],
+              colors: isThemeCurrentlyDark(context)
+                  ? [GradientColors.darkStart, GradientColors.darkEnd]
+                  : [GradientColors.lightStart, GradientColors.lightEnd],
+//              colors: [
+//            gradientStartColors[i],
+//            gradientEndColors[i],
+//          ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               tileMode: TileMode.clamp)),
@@ -145,13 +143,25 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                         Navigator.pop(context);
                       },
                     ),
-                    Text(
+//                    Text(
+//                      'Gradient Cards',
+//                      style: TextStyle(
+//                          fontFamily: 'Rubik',
+//                          fontWeight: FontWeight.w600,
+//                          fontSize: 22.0,
+//                          color: MyColors.light),
+//                    ),
+                    GradientText(
                       'Gradient Cards',
+                      shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
+                      gradient: isThemeCurrentlyDark(context)
+                          ? Gradients.coldLinear
+                          : Gradients.cosmicFusion,
                       style: TextStyle(
-                          fontFamily: 'Rubik',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 22.0,
-                          color: MyColors.light),
+                        fontFamily: 'Rubik',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 22.0,
+                      ),
                     ),
                   ],
                 ),

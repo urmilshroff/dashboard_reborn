@@ -10,6 +10,7 @@ import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:dashboard_reborn/pages/gradients_page.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 
 // ignore: must_be_immutable
 class SwipingCardsWidget extends StatelessWidget {
@@ -71,24 +72,27 @@ class SwipingCardsWidget extends StatelessWidget {
                           Align(
                             alignment: Alignment.bottomLeft,
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Padding(
-                                  padding: EdgeInsets.only(left: 15.0),
-                                  child: Text(
+                                  padding: EdgeInsets.all(20.0),
+                                  child: GradientText(
                                     swipingCardTitles[i],
-                                    style: MyTextStyles.cardTitleStyle,
+                                    shaderRect:
+                                        Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
+                                    gradient: Gradients.coldLinear,
+                                    style: MyTextStyles.gradientCardTitleStyle,
                                     softWrap: false,
                                     overflow: TextOverflow.fade,
                                     maxLines: 1,
                                   ),
                                 ),
-                                IconButton(
-                                    icon: Icon(EvaIcons.plusCircle),
-                                    color: MyColors.light,
-                                    iconSize: 30.0,
-                                    onPressed: () => doNothing),
+//                                IconButton(
+//                                    icon: Icon(EvaIcons.plusCircle),
+//                                    color: MyColors.light,
+//                                    iconSize: 30.0,
+//                                    onPressed: () => doNothing),
                               ],
                             ),
                           )
