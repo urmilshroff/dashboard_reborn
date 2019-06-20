@@ -8,6 +8,7 @@ import 'package:dashboard_reborn/widgets/tile.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyAboutPage extends StatefulWidget {
   @override
@@ -142,7 +143,8 @@ class _MyAboutPageState extends State<MyAboutPage> {
                                   color: MyColors.twitter,
                                   size: 26.0,
                                 ),
-                                onPressed: doNothing,
+                                onPressed: () => launchURL(
+                                    'https://twitter.com/urmilshroff'),
                               ),
                             ],
                           ),
@@ -207,9 +209,8 @@ class _MyAboutPageState extends State<MyAboutPage> {
         foregroundColor: invertInvertColors(context),
         backgroundColor: invertColorsStrong(context),
         elevation: 5.0,
-        onPressed: () {
-          doNothing();
-        },
+        onPressed: () =>
+            launchURL('https://github.com/urmilshroff/dashboard_reborn'),
       ),
     );
   }

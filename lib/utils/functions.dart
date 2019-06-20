@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void doNothing() {
   print('Nothing is happening here');
@@ -73,4 +74,13 @@ void navigateToPage(BuildContext context, pageToOpen) async {
   await Navigator.push(context, CupertinoPageRoute(builder: (context) {
     return pageToOpen();
   }));
+}
+
+launchURL(String url) async {
+  if (await canLaunch(url)) {
+    print('Launching $url...');
+    await launch(url);
+  } else {
+    print('Error launching $url!');
+  }
 }
