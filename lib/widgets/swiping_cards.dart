@@ -79,9 +79,7 @@ class SwipingCardsWidget extends StatelessWidget {
                                   swipingCardTitles[i],
                                   shaderRect:
                                       Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
-                                  gradient: isThemeCurrentlyDark(context)
-                                      ? Gradients.coldLinear
-                                      : Gradients.backToFuture,
+                                  gradient: Gradients.haze,
                                   style: MyTextStyles.gradientCardTitleStyle,
                                   softWrap: false,
                                   overflow: TextOverflow.fade,

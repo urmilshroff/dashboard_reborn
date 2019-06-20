@@ -25,9 +25,9 @@ List<String> swipingCardImages = [
 
 List<String> swipingCardTitles = [
   'Random Access Memories',
-  'Starboy',
+  'Voicenotes',
+  'Stargazing',
   'Night Visions',
-  'All This Bad Blood',
   'In A Perfect World',
   'Native',
 ];
@@ -115,7 +115,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                       tooltip: 'Go back',
                       color: isThemeCurrentlyDark(context)
                           ? MaterialColors.teal
-                          : MaterialColors.yellow,
+                          : MyColors.light,
                       iconSize: 26.0,
                       onPressed: () {
                         Navigator.pop(context);
@@ -126,7 +126,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                       shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
                       gradient: isThemeCurrentlyDark(context)
                           ? Gradients.coldLinear
-                          : Gradients.backToFuture,
+                          : Gradients.haze,
                       style: TextStyle(
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w600,
