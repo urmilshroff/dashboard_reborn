@@ -8,11 +8,22 @@ A very sexy Flutter template app with great focus on UI, design and animations. 
 
 ## Screenshots📱
 
-<p><img height="306px" width="170px" src="./branding/screener/screener_1561033293088.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/screener_1561033399521.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/screener_1561033572346.png" alt="Dashboard Reborn"/></p>
+<p><img height="300px" width="170px" src="./branding/screener/screener_1561033293088.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033399521.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033572346.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033595285.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033642367.png" alt="Dashboard Reborn"/></p>
 
 ## UI Demos📱
 
-<p><img height="306px" width="170px" src="./branding/gifs/about_page.gif" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/gifs/material_page.gif" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/gifs/gradients_page.gif" alt="Dashboard Reborn"/></p>
+<p><img height="520px" width="285px" src="./branding/gifs/about_page.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/material_page.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/gradients_page.gif" alt="Dashboard Reborn"/></p>
+
+## Usage💻
+
+There are three main pages in the app:
+- **About Page:** a clean, neutral cards layout mostly consisting of text.
+- **Material Page:** a lively, heavily animated page consisting of bold Material Design colors.
+- **Gradients Page:** a beautiful paginated cards layout complete with a colorful gradients theme.
+
+You can use these individual components or all of them together as a template or starting point in your own Flutter app. It's completely free, as in beer and speech!
+
+That said, if you liked this project and found it helpful, kindly fork/star this repo to show your support, and perhaps checkout some of [my other projects](https://github.com/urmilshroff?tab=repositories). It really helps!😁
 
 ## Building🛠
 
@@ -23,10 +34,6 @@ To build and run the app on your device, do the following:
 -   Connect your devices/emulators and run the app using `flutter run --release` in the root of the project directory.
 
 **Note:** you can also run it faster in debug mode using 'flutter run', but the animations will be choppy and performance won't be as expected.
-
-## Usage💻
-
-Feel free to use this project as a template or starting point in your own Flutter app - it's completely free (as in beer and speech!). However, if you did like this project and found it helpful, kindly fork/star this repo to show your support. It really helps!😁
 
 ## Contributing💭
 
