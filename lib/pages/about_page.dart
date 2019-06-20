@@ -16,6 +16,25 @@ class MyAboutPage extends StatefulWidget {
 }
 
 class _MyAboutPageState extends State<MyAboutPage> {
+  List<String> itemContent = [
+    'What is this app about?',
+    'Dashboard Reborn is a showcase of beautiful UI elements '
+        'written purely in Dart code.\n\nThe entire '
+        'project is open source, and you can use the '
+        'code however you want in your own apps.\n\nThat '
+        'said, if you liked this app or found it '
+        'helpful, please fork/star it on GitHub and give '
+        'me a shoutout. Pull requests are more than '
+        'welcome too.\n\nThanks!',
+    'Credits',
+    'This app would not have been possible without '
+        'the Flutter framework, the open source '
+        'projects that I\'ve used and the tireless efforts of developers and '
+        'contributors in '
+        'the Flutter community. \n\nPlease see the '
+        'README.md file in the repository below for '
+        'more details.',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,14 +79,11 @@ class _MyAboutPageState extends State<MyAboutPage> {
                   child: buildTile(
                     context,
                     null,
-                    invertColorsStrong(context),
+                    MyColors.accentColor,
                     Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          SizedBox(
-                            height: 15.0,
-                          ),
                           Container(
                               width: 70.0,
                               height: 70.0,
@@ -121,7 +137,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                             ],
                           ),
                           SizedBox(
-                            height: 5.0,
+                            height: 10.0,
                           ),
                           Text(
                             'Urmil Shroff',
@@ -166,7 +182,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                 buildTile(
                   context,
                   null,
-                  invertColorsStrong(context),
+                  MyColors.accentColor,
                   Container(
                     child: Padding(
                       padding: EdgeInsets.all(20.0),
@@ -175,13 +191,17 @@ class _MyAboutPageState extends State<MyAboutPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              'Dashboard Reborn is a showcase of beautiful UI elements '
-                              'written purely in Dart code. The entire '
-                              'project is open source, and you can use the '
-                              'code however you want in your own apps.\n\nThat '
-                              'said, if you liked this app or found it '
-                              'helpful, please fork/star it on GitHub and give '
-                              'me a shoutout.\n\nThanks!',
+                              itemContent[0],
+                              style: MyTextStyles.highlightStyle,
+                              textAlign: TextAlign.center,
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                            ),
+                            SizedBox(
+                              height: 20.0,
+                            ),
+                            Text(
+                              itemContent[1],
                               style: TextStyle(
                                   fontFamily: 'RobotoMono',
                                   fontWeight: FontWeight.w400,
@@ -198,10 +218,52 @@ class _MyAboutPageState extends State<MyAboutPage> {
                     doNothing();
                   },
                 ),
+                buildTile(
+                  context,
+                  null,
+                  MyColors.accentColor,
+                  Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              itemContent[2],
+                              style: MyTextStyles.highlightStyle,
+                              textAlign: TextAlign.center,
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                            ),
+                            SizedBox(
+                              height: 20.0,
+                            ),
+                            Text(
+                              itemContent[3],
+                              style: TextStyle(
+                                  fontFamily: 'RobotoMono',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16.0,
+                                  color: invertColorsStrong(context)),
+                              textAlign: TextAlign.left,
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                            ),
+                          ]),
+                    ),
+                  ),
+                  onTap: () {
+                    doNothing();
+                  },
+                ),
+                SizedBox(),
               ],
               staggeredTiles: [
-                StaggeredTile.extent(2, 275.0),
-                StaggeredTile.extent(2, 400.0),
+                StaggeredTile.extent(2, 270.0),
+                StaggeredTile.extent(2, 480.0),
+                StaggeredTile.extent(2, 380.0),
+                StaggeredTile.extent(2, 75.0),
               ],
             )),
           ],

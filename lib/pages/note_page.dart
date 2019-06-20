@@ -17,7 +17,7 @@ class MyNotePage extends StatefulWidget {
 }
 
 class _MyNotePageState extends State<MyNotePage> {
-  List<String> itemNames = [
+  List<String> itemContent = [
     'Note: this app does nothing.',
     'Yep, you read that right! It\'s only meant to serve as a UI template for'
         ' Flutter developers to use in their own apps.\n\nThe '
@@ -55,7 +55,7 @@ class _MyNotePageState extends State<MyNotePage> {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 1,
-                childAspectRatio: 0.75,
+                childAspectRatio: 0.8,
                 children: List.generate(1, (index) {
                   return Hero(
                     tag: 'tile2',
@@ -67,14 +67,11 @@ class _MyNotePageState extends State<MyNotePage> {
                         child: Padding(
                           padding: EdgeInsets.all(20.0),
                           child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                SizedBox(
-                                  height: 10.0,
-                                ),
                                 Text(
-                                  '${itemNames[0]}',
+                                  itemContent[0],
                                   style: MyTextStyles.highlightStyle,
                                   textAlign: TextAlign.center,
                                   softWrap: true,
@@ -84,7 +81,7 @@ class _MyNotePageState extends State<MyNotePage> {
                                   height: 20.0,
                                 ),
                                 Text(
-                                  '${itemNames[1]}',
+                                  itemContent[1],
                                   style: TextStyle(
                                       fontFamily: 'RobotoMono',
                                       fontWeight: FontWeight.w400,
@@ -98,10 +95,7 @@ class _MyNotePageState extends State<MyNotePage> {
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) {
-                          return MyHomePage();
-                        }));
+                        doNothing();
                       },
                     ),
                   );
