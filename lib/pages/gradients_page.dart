@@ -88,18 +88,18 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
       });
     });
 
-    return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: isThemeCurrentlyDark(context)
-                  ? [GradientColors.darkStart, GradientColors.darkEnd]
-                  : [GradientColors.lightStart, GradientColors.lightEnd],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              tileMode: TileMode.clamp)),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: isThemeCurrentlyDark(context)
+                    ? [GradientColors.darkStart, GradientColors.darkEnd]
+                    : [GradientColors.lightStart, GradientColors.lightEnd],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                tileMode: TileMode.clamp)),
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Padding(

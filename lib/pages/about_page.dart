@@ -139,6 +139,15 @@ class _MyAboutPageState extends State<MyAboutPage> {
                             children: <Widget>[
                               IconButton(
                                 icon: Icon(
+                                  EvaIcons.person,
+                                  color: invertColorsMild(context),
+                                  size: 24.0,
+                                ),
+                                onPressed: () =>
+                                    launchURL('https://urmilshroff.tech/'),
+                              ),
+                              IconButton(
+                                icon: Icon(
                                   EvaIcons.twitter,
                                   color: MyColors.twitter,
                                   size: 26.0,
