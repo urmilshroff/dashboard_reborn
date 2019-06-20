@@ -54,45 +54,44 @@ class SwipingCardsWidget extends StatelessWidget {
             bottom: padding + verticalInset * max(-delta, 0.0),
             start: start,
             textDirection: TextDirection.rtl,
-            child: Hero(
-              tag: 'tile${i - 2}',
-              child: GestureDetector(
-                onTap: () {
-                  doNothing();
-                },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: Material(
-                    child: AspectRatio(
-                      aspectRatio: cardAspectRatio,
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: <Widget>[
-                          Image.asset(swipingCardImages[i], fit: BoxFit.cover),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Padding(
-                                  padding: EdgeInsets.all(20.0),
-                                  child: GradientText(
-                                    swipingCardTitles[i],
-                                    shaderRect:
-                                        Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
-                                    gradient: Gradients.coldLinear,
-                                    style: MyTextStyles.gradientCardTitleStyle,
-                                    softWrap: false,
-                                    overflow: TextOverflow.fade,
-                                    maxLines: 1,
-                                  ),
+            child: GestureDetector(
+              onTap: () {
+                doNothing();
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: Material(
+                  child: AspectRatio(
+                    aspectRatio: cardAspectRatio,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: <Widget>[
+                        Image.asset(swipingCardImages[i], fit: BoxFit.cover),
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(20.0),
+                                child: GradientText(
+                                  swipingCardTitles[i],
+                                  shaderRect:
+                                      Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
+                                  gradient: isThemeCurrentlyDark(context)
+                                      ? Gradients.coldLinear
+                                      : Gradients.backToFuture,
+                                  style: MyTextStyles.gradientCardTitleStyle,
+                                  softWrap: false,
+                                  overflow: TextOverflow.fade,
+                                  maxLines: 1,
                                 ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ),

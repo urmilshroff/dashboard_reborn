@@ -109,30 +109,25 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                     IconButton(
                       icon: Icon(EvaIcons.arrowIosBack),
                       tooltip: 'Go back',
-                      color: GradientColors.lightEnd,
+                      color: isThemeCurrentlyDark(context)
+                          ? MaterialColors.teal
+                          : MaterialColors.yellow,
                       iconSize: 26.0,
                       onPressed: () {
                         Navigator.pop(context);
                       },
                     ),
-//                    Text(
-//                      'Gradient Cards',
-//                      style: TextStyle(
-//                          fontFamily: 'Rubik',
-//                          fontWeight: FontWeight.w600,
-//                          fontSize: 22.0,
-//                          color: MyColors.light),
-//                    ),
                     GradientText(
                       'Gradient Cards',
                       shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
                       gradient: isThemeCurrentlyDark(context)
                           ? Gradients.coldLinear
-                          : Gradients.cosmicFusion,
+                          : Gradients.backToFuture,
                       style: TextStyle(
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w600,
                         fontSize: 22.0,
+                        fontStyle: FontStyle.italic,
                       ),
                     ),
                   ],

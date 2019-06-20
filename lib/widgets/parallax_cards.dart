@@ -51,7 +51,9 @@ class ParallaxCardsWidget extends StatelessWidget {
         child: GradientText(
           item.body,
           shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
-          gradient: Gradients.coldLinear,
+          gradient: isThemeCurrentlyDark(context)
+              ? Gradients.coldLinear
+              : Gradients.backToFuture,
           style: MyTextStyles.gradientCardBodyStyle,
           textAlign: TextAlign.center,
         ),
@@ -65,7 +67,9 @@ class ParallaxCardsWidget extends StatelessWidget {
         child: GradientText(
           item.title,
           shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
-          gradient: Gradients.coldLinear,
+          gradient: isThemeCurrentlyDark(context)
+              ? Gradients.coldLinear
+              : Gradients.backToFuture,
           style: MyTextStyles.gradientCardTitleStyle,
           textAlign: TextAlign.center,
         ),

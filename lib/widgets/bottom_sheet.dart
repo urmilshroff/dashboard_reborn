@@ -101,9 +101,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
-                  splashColor: isThemeCurrentlyDark(context)
-                      ? MaterialColors.purple
-                      : MaterialColors.blue,
+                  splashColor: MaterialColors.blue,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(
@@ -206,9 +204,7 @@ class ExpandedSheetItem extends StatelessWidget {
         child: buildTile(
           context,
           invertColorsMaterial(context),
-          isThemeCurrentlyDark(context)
-              ? MaterialColors.green
-              : MaterialColors.teal,
+          MaterialColors.green,
           Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -221,7 +217,7 @@ class ExpandedSheetItem extends StatelessWidget {
                     'Press & hold me',
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontSize: 22.0,
+                        fontSize: 20.0,
                         color: invertColorsMild(context)),
                   ),
                 ),

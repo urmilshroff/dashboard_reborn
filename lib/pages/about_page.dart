@@ -44,6 +44,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w600,
                         fontSize: 22.0,
+                        fontStyle: FontStyle.italic,
                         color: invertColorsStrong(context)),
                   ),
                 ],
@@ -143,14 +144,6 @@ class _MyAboutPageState extends State<MyAboutPage> {
                                 ),
                                 onPressed: doNothing,
                               ),
-                              IconButton(
-                                icon: Icon(
-                                  EvaIcons.github,
-                                  color: invertColorsStrong(context),
-                                  size: 24.0,
-                                ),
-                                onPressed: doNothing,
-                              ),
                             ],
                           ),
                         ]),
@@ -171,12 +164,12 @@ class _MyAboutPageState extends State<MyAboutPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              'This app is a showcase of beautiful UI elements '
-                              'written in Dart & Flutter. The entire '
+                              'Dashboard Reborn is a showcase of beautiful UI elements '
+                              'written purely in Dart code. The entire '
                               'project is open source, and you can use the '
                               'code however you want in your own apps.\n\nThat '
                               'said, if you liked this app or found it '
-                              'helpful, please star it on GitHub and give '
+                              'helpful, please fork/star it on GitHub and give '
                               'me a shoutout.\n\nThanks!',
                               style: TextStyle(
                                   fontFamily: 'RobotoMono',

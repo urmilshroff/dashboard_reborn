@@ -28,10 +28,10 @@ class MaterialColors {
 }
 
 class GradientColors {
-  static const lightStart = Color(0xff64ffda);
-  static const lightEnd = Color(0xff3d5afe);
-  static const darkStart = Color(0xff6200ea);
-  static const darkEnd = Color(0xff00bfa5);
+  static const lightStart = Color(0xffdd2c00);
+  static const lightEnd = Color(0xffffa000);
+  static const darkStart = Color(0xff304ffe);
+  static const darkEnd = Color(0xff00bcd4);
 }
 
 class ShadowColors {

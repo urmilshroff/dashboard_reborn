@@ -19,12 +19,12 @@ class MyNotePage extends StatefulWidget {
 class _MyNotePageState extends State<MyNotePage> {
   List<String> itemNames = [
     'Note: this app does nothing.',
-    'Yep, you read that right.\n\nIts main purpose is to serve as a template '
-        'or starting point for Flutter developers and designers to use in '
-        'their own apps.\n\nThe entire source code is up and available for '
-        'free on GitHub, and you have the liberty to do anything you want '
-        'with it.\n\nThat said, if you are using the code or like this app, '
-        'please star it on GitHub and give me a shoutout. Thanks!\n\n- Urmil Shroff',
+    'Yep, you read that right! It\'s only meant to serve as a UI template for'
+        ' Flutter developers to use in their own apps.\n\nThe '
+        'entire source code is freely available on GitHub, and you have the '
+        'liberty to do whatever you want with it.\n\nEnjoy, and don\'t forget'
+        ' to star the project on GitHub. It really helps me out!\n\n- '
+        'Urmil Shroff',
   ];
 
   @override
@@ -46,7 +46,7 @@ class _MyNotePageState extends State<MyNotePage> {
                     style: TextStyle(
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w600,
-                        fontSize: 22.0,
+                        fontSize: 24.0,
                         color: invertColorsStrong(context)),
                   ),
                 ],
@@ -86,7 +86,8 @@ class _MyNotePageState extends State<MyNotePage> {
                                 Text(
                                   '${itemNames[1]}',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'RobotoMono',
+                                      fontWeight: FontWeight.w400,
                                       fontSize: 16.0,
                                       color: invertColorsStrong(context)),
                                   textAlign: TextAlign.left,

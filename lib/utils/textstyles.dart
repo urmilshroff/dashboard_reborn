@@ -24,10 +24,6 @@ class MyTextStyles {
       fontSize: 18.0,
       color: MyColors.accentColor);
 
-  static const monoStyle = TextStyle(
-    fontFamily: 'RobotoMono',
-  );
-
   static const buttonStyle = TextStyle(
     fontFamily: 'Rubik',
     fontWeight: FontWeight.w600,
