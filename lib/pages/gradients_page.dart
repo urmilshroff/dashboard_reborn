@@ -15,17 +15,21 @@ import 'package:dashboard_reborn/utils/page_transformer.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 
 List<String> swipingCardImages = [
-  'assets/images/wallpaper8.jpg',
-  'assets/images/wallpaper7.jpg',
-  'assets/images/wallpaper6.jpg',
-  'assets/images/wallpaper5.jpg',
+  'assets/images/album6.jpg',
+  'assets/images/album5.jpg',
+  'assets/images/album4.jpg',
+  'assets/images/album3.jpg',
+  'assets/images/album2.jpg',
+  'assets/images/album1.jpg',
 ];
 
 List<String> swipingCardTitles = [
-  'Gradient Card 4',
-  'Gradient Card 3',
-  'Gradient Card 2',
-  'Gradient Card 1',
+  'Random Access Memories',
+  'Starboy',
+  'Night Visions',
+  'All This Bad Blood',
+  'In A Perfect World',
+  'Native',
 ];
 
 class ParallaxCardItem {
@@ -42,19 +46,19 @@ class ParallaxCardItem {
 
 final parallaxCardItemsList = <ParallaxCardItem>[
   ParallaxCardItem(
-    title: 'Card 1',
-    body: 'Category 1',
-    imagePath: 'assets/images/wallpaper1.jpg',
+    title: 'Blurryface',
+    body: 'Twenty One Pilots',
+    imagePath: 'assets/images/album8.jpg',
   ),
   ParallaxCardItem(
-    title: 'Card 2',
-    body: 'Category 2',
-    imagePath: 'assets/images/wallpaper2.jpg',
+    title: 'Free Spirit',
+    body: 'Khalid',
+    imagePath: 'assets/images/album7.jpg',
   ),
   ParallaxCardItem(
-    title: 'Card 3',
-    body: 'Category 3',
-    imagePath: 'assets/images/wallpaper3.jpg',
+    title: 'Overexposed',
+    body: 'Maroon 5',
+    imagePath: 'assets/images/album9.jpg',
   ),
 ];
 
