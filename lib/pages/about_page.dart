@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:dashboard_reborn/main.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/widgets/tile.dart';
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MyAboutPage extends StatefulWidget {
   @override
@@ -34,7 +31,8 @@ class _MyAboutPageState extends State<MyAboutPage> {
         'the Flutter community. \n\nPlease see the '
         'README.md file in the repository below for '
         'more details.',
-  ];
+  ]; //the text in the tile
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

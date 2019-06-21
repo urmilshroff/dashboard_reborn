@@ -1,15 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:dashboard_reborn/main.dart';
+import 'package:dashboard_reborn/pages/home_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/widgets/tile.dart';
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:dashboard_reborn/pages/home_page.dart';
-import 'package:dashboard_reborn/pages/about_page.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MyNotePage extends StatefulWidget {
   @override
@@ -21,11 +17,11 @@ class _MyNotePageState extends State<MyNotePage> {
     'Note: this app does nothing.',
     'Yep, you read that right! It\'s only meant to serve as a UI template for'
         ' Flutter developers to use in their own apps.\n\nThe '
-        'entire source code is freely available on GitHub, and you have the '
-        'liberty to do whatever you want with it.\n\nEnjoy, and don\'t forget'
-        ' to star the project on GitHub. It really helps me out!\n\n- '
-        'Urmil Shroff',
-  ];
+        'entire source code is freely available on GitHub, and you can tweak '
+        'it and use it as per your liking.\n\nEnjoy, and don\'t forget'
+        ' to star the project on GitHub. It really helps me out!\n\n- Urmil '
+        'Shroff',
+  ]; //the text in the tile
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +54,7 @@ class _MyNotePageState extends State<MyNotePage> {
                 childAspectRatio: 0.8,
                 children: List.generate(1, (index) {
                   return Hero(
+                    //hero widget renders a smooth animation
                     tag: 'tile2',
                     child: buildTile(
                       context,

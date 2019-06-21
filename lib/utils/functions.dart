@@ -1,13 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/textstyles.dart';
-import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void doNothing() {
-  print('Nothing is happening here');
-}
+  print('Nothing is happening here (yet)');
+} //better than doing null-ing, right? ;)
 
 bool isThemeCurrentlyDark(BuildContext context) {
   if (Theme.of(context).brightness == Brightness.dark) {
@@ -65,17 +63,6 @@ Color shadowColor(BuildContext context) {
   }
 } //returns appropriate shadow colors
 
-void showSnackBar(BuildContext context, String message) {
-  final snackBar = SnackBar(content: Text(message));
-  Scaffold.of(context).showSnackBar(snackBar);
-} //easily show a snackbar
-
-void navigateToPage(BuildContext context, pageToOpen) async {
-  await Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return pageToOpen();
-  }));
-}
-
 launchURL(String url) async {
   if (await canLaunch(url)) {
     print('Launching $url...');
@@ -83,4 +70,4 @@ launchURL(String url) async {
   } else {
     print('Error launching $url!');
   }
-}
+} //opens a custom url in the system browser

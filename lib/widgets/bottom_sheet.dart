@@ -1,15 +1,13 @@
 import 'dart:math' as math;
 import 'dart:ui';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:dashboard_reborn/main.dart';
+
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/widgets/tile.dart';
-import 'package:dynamic_theme/dynamic_theme.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+//this code is borrowed and then modified from https://github.com/MarcinusX/buy_ticket_design
 
 const double minHeight = 80;
 const double iconStartSize = 75;
@@ -101,7 +99,6 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
-                  splashColor: MaterialColors.blue,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(
@@ -133,7 +130,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(15.0)),
           child: Image.asset(
-            'assets/images/material2.gif',
+            'assets/images/icon-nobg.png',
             fit: BoxFit.cover,
             alignment: Alignment(lerp(0, 0), 0),
           ),
@@ -204,7 +201,7 @@ class ExpandedSheetItem extends StatelessWidget {
         child: buildTile(
           context,
           invertColorsMaterial(context),
-          MaterialColors.green,
+          MyColors.accentColor,
           Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
