@@ -1,16 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:dashboard_reborn/main.dart';
+import 'package:dashboard_reborn/pages/about_page.dart';
+import 'package:dashboard_reborn/pages/gradients_page.dart';
+import 'package:dashboard_reborn/pages/material_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/textstyles.dart';
 import 'package:dashboard_reborn/widgets/tile.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:dashboard_reborn/pages/gradients_page.dart';
-import 'package:dashboard_reborn/pages/material_page.dart';
-import 'package:dashboard_reborn/pages/about_page.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+//this page is based on https://github.com/Ivaskuu/dashboard
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -69,7 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 childAspectRatio: 2.5,
                 children: List.generate(itemNames.length, (index) {
                   return Hero(
-                    tag: 'tile$index',
+                    tag: 'tile$index', //using a different hero widget tag for
+                    // each page mapped to the page's index value
                     child: buildTile(
                       context,
                       tileColors[index],
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             return null;
                           }
                         }));
-                      },
+                      }, //opens appropriate page
                     ),
                   );
                 }),
@@ -117,11 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ? Icon(
                 EvaIcons.sun,
                 size: 30.0,
-              ) //show sun icon
+              ) //show sun icon when in dark mode
             : Icon(
                 EvaIcons.moon,
                 size: 26.0,
-              ), //show moon icon,
+              ), //show moon icon when in light mode
         tooltip: isThemeCurrentlyDark(context)
             ? 'Switch to light mode'
             : 'Switch to dark mode',

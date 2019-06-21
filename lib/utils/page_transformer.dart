@@ -11,7 +11,7 @@ class PageVisibilityResolver {
   PageVisibilityResolver({
     ScrollMetrics metrics,
     double viewPortFraction,
-  }) : this._pageMetrics = metrics,
+  })  : this._pageMetrics = metrics,
         this._viewPortFraction = viewPortFraction;
 
   final ScrollMetrics _pageMetrics;

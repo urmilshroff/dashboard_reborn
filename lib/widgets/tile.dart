@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/textstyles.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+//this is the main tile builder taken and modified from https://github.com/Ivaskuu/dashboard
 
 Widget buildTile(
     BuildContext context, Color color, Color splashColor, Widget child,
@@ -21,7 +21,8 @@ Widget buildTile(
                   print('Nothing set yet!');
                 },
           child: child,
-          splashColor: splashColor,
+          splashColor: splashColor, //additional parameters to customize the
+          // colors on a per-tile basis
         )),
   );
 }

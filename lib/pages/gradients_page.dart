@@ -1,17 +1,11 @@
-import 'dart:math';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:dashboard_reborn/main.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/textstyles.dart';
-import 'package:dashboard_reborn/widgets/tile.dart';
-import 'package:dynamic_theme/dynamic_theme.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:dashboard_reborn/widgets/swiping_cards.dart';
-import 'package:dashboard_reborn/widgets/parallax_cards.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
+import 'package:dashboard_reborn/widgets/parallax_cards.dart';
+import 'package:dashboard_reborn/widgets/swiping_cards.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 
 List<String> swipingCardImages = [
@@ -93,6 +87,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
+                //gradient colors change according to set theme
                 colors: isThemeCurrentlyDark(context)
                     ? [GradientColors.darkStart, GradientColors.darkEnd]
                     : [GradientColors.lightStart, GradientColors.lightEnd],
@@ -126,7 +121,8 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                       shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
                       gradient: isThemeCurrentlyDark(context)
                           ? Gradients.coldLinear
-                          : Gradients.haze,
+                          : Gradients
+                              .haze, //gradient colors change according to set theme
                       style: TextStyle(
                         fontFamily: 'Rubik',
                         fontWeight: FontWeight.w600,
