@@ -101,7 +101,6 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
-                  splashColor: MaterialColors.blue,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(
@@ -133,7 +132,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(15.0)),
           child: Image.asset(
-            'assets/images/material2.gif',
+            'assets/images/icon-nobg.png',
             fit: BoxFit.cover,
             alignment: Alignment(lerp(0, 0), 0),
           ),
@@ -204,7 +203,7 @@ class ExpandedSheetItem extends StatelessWidget {
         child: buildTile(
           context,
           invertColorsMaterial(context),
-          MaterialColors.green,
+          MyColors.accentColor,
           Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,

@@ -30,7 +30,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
     ]; //color of the individual tile, mapped to index values
 
     List<Color> splashColors = [
-      MaterialColors.red,
+      MyColors.accentColor,
       null,
       null,
     ]; //splash color of the individual tile, mapped to index values

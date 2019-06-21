@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     List<Color> splashColors = [
       invertColorsMaterial(context),
       MaterialColors.blue,
-      invertColorsStrong(context),
+      MyColors.accentColor,
     ]; //splash color of the individual tile, mapped to index values
 
     return Scaffold(
@@ -114,8 +114,14 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         heroTag: 'fab',
         child: isThemeCurrentlyDark(context)
-            ? Icon(EvaIcons.sun, size: 30.0,) //show sun icon
-            : Icon(EvaIcons.moon, size: 26.0,), //show moon icon,
+            ? Icon(
+                EvaIcons.sun,
+                size: 30.0,
+              ) //show sun icon
+            : Icon(
+                EvaIcons.moon,
+                size: 26.0,
+              ), //show moon icon,
         tooltip: isThemeCurrentlyDark(context)
             ? 'Switch to light mode'
             : 'Switch to dark mode',

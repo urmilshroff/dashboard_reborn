@@ -21,10 +21,10 @@ class _MyNotePageState extends State<MyNotePage> {
     'Note: this app does nothing.',
     'Yep, you read that right! It\'s only meant to serve as a UI template for'
         ' Flutter developers to use in their own apps.\n\nThe '
-        'entire source code is freely available on GitHub, and you have the '
-        'liberty to do whatever you want with it.\n\nEnjoy, and don\'t forget'
-        ' to star the project on GitHub. It really helps me out!\n\n- '
-        'Urmil Shroff',
+        'entire source code is freely available on GitHub, and you can tweak '
+        'it and use it as per your liking.\n\nEnjoy, and don\'t forget'
+        ' to star the project on GitHub. It really helps me out!\n\n- Urmil '
+        'Shroff',
   ];
 
   @override
