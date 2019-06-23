@@ -26,6 +26,7 @@ class _MyNotePageState extends State<MyNotePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[

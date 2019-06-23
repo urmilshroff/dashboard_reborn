@@ -36,6 +36,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
