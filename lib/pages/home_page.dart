@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ]; //splash color of the individual tile, mapped to index values
 
     return Scaffold(
+      backgroundColor: invertInvertColors(context),
       body: Container(
         child: Column(
           children: <Widget>[
