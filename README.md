@@ -2,6 +2,11 @@
 
 # Dashboard Reborn✨
 
+[![Issues](https://img.shields.io/github/issues/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/issues)
+[![Stars](https://img.shields.io/github/stars/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/stargazers)
+[![Forks](https://img.shields.io/github/forks/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/network/members)
+[![License](https://img.shields.io/github/license/urmilshroff/dashboard_reborn.svg)](https://opensource.org/licenses/MIT)
+
 A very sexy Flutter template app with great focus on UI, design and animations. It is written entirely in Dart code and built using Flutter widgets, so it can be compiled to run (very smoothly) on both Android and iOS.
 
 [<img height="75" width="200" src="./branding/other/google-play-badge.png" alt="Play Store"/>](https://play.google.com/store/apps/details?id=tech.urmilshroff.dashboard_reborn)
