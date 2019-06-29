@@ -1,6 +1,6 @@
 name: dashboard_reborn
 description: A very sexy Flutter template app
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -23,14 +23,16 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path_android: "assets/images/icon-nobg.png"
-  image_path_ios: "assets/images/icon-bg.png"
+  image_path_android: "assets/images/icon/icon-nobg.png"
+  image_path_ios: "assets/images/icon/icon-bg.png"
 
 flutter:
   uses-material-design: true
 
   assets:
-     - assets/images/
+     - assets/images/icon/
+     - assets/images/music/
+     - assets/images/profile/
 
   fonts:
     - family: Rubik

@@ -130,7 +130,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(15.0)),
           child: Image.asset(
-            'assets/images/icon-nobg.png',
+            'assets/images/icon/icon-nobg.png',
             fit: BoxFit.cover,
             alignment: Alignment(lerp(0, 0), 0),
           ),
@@ -238,10 +238,10 @@ class ExpandedSheetItem extends StatelessWidget {
 }
 
 final List<SheetItem> items = [
-  SheetItem('assets/images/material1.gif', 'Material 1'),
-  SheetItem('assets/images/material2.gif', 'Material 2'),
-  SheetItem('assets/images/material3.gif', 'Material 3'),
-  SheetItem('assets/images/material4.gif', 'Material 4'),
+  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 1'),
+  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 2'),
+  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 3'),
+  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 4'),
 ];
 
 class SheetItem {
