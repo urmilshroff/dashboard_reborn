@@ -90,7 +90,8 @@ class _MyAboutPageState extends State<MyAboutPage> {
                                   shape: BoxShape.circle,
                                   image: DecorationImage(
                                       image: AssetImage(
-                                          'assets/images/urmil-vector.png')))),
+                                          'assets/images/profile/urmil-vector'
+                                              '.png')))),
                           SizedBox(
                             height: 15.0,
                           ),

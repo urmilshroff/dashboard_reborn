@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 
 List<String> swipingCardImages = [
-  'assets/images/album6.jpg',
-  'assets/images/album5.jpg',
-  'assets/images/album4.jpg',
-  'assets/images/album3.jpg',
-  'assets/images/album2.jpg',
-  'assets/images/album1.jpg',
+  'assets/images/music/album6.jpg',
+  'assets/images/music/album5.jpg',
+  'assets/images/music/album4.jpg',
+  'assets/images/music/album3.jpg',
+  'assets/images/music/album2.jpg',
+  'assets/images/music/album1.jpg',
 ];
 
 List<String> swipingCardTitles = [
@@ -42,17 +42,17 @@ final parallaxCardItemsList = <ParallaxCardItem>[
   ParallaxCardItem(
     title: 'Blurryface',
     body: 'Twenty One Pilots',
-    imagePath: 'assets/images/album8.jpg',
+    imagePath: 'assets/images/music/album8.jpg',
   ),
   ParallaxCardItem(
     title: 'Free Spirit',
     body: 'Khalid',
-    imagePath: 'assets/images/album7.jpg',
+    imagePath: 'assets/images/music/album7.jpg',
   ),
   ParallaxCardItem(
     title: 'Overexposed',
     body: 'Maroon 5',
-    imagePath: 'assets/images/album9.jpg',
+    imagePath: 'assets/images/music/album9.jpg',
   ),
 ];
 
