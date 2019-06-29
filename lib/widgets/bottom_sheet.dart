@@ -203,22 +203,23 @@ class ExpandedSheetItem extends StatelessWidget {
           invertColorsMaterial(context),
           MyColors.accentColor,
           Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 100.0,
-                  ),
-                  child: Text(
-                    'Press & hold me',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20.0,
-                        color: invertColorsMild(context)),
-                  ),
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 100.0,
                 ),
-              ]),
+                child: Text(
+                  'Press & hold me',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20.0,
+                      color: invertColorsMild(context)),
+                ),
+              ),
+            ],
+          ),
           onTap: () => null,
         ),
       ),
@@ -266,16 +267,18 @@ class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-        right: 0,
-        bottom: 30,
-        child: GestureDetector(
-            onTap: toggle,
-            child: AnimatedIcon(
-              icon: AnimatedIcons.menu_close,
-              size: 24.0,
-              progress: controller,
-              semanticLabel: 'Open/close',
-              color: invertColorsMild(context),
-            )));
+      right: 0,
+      bottom: 30,
+      child: GestureDetector(
+        onTap: toggle,
+        child: AnimatedIcon(
+          icon: AnimatedIcons.menu_close,
+          size: 24.0,
+          progress: controller,
+          semanticLabel: 'Open/close',
+          color: invertColorsMild(context),
+        ),
+      ),
+    );
   }
 }

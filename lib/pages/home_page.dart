@@ -67,46 +67,53 @@ class _MyHomePageState extends State<MyHomePage> {
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: 2.5,
-                children: List.generate(itemNames.length, (index) {
-                  return Hero(
-                    tag: 'tile$index', //using a different hero widget tag for
-                    // each page mapped to the page's index value
-                    child: buildTile(
-                      context,
-                      tileColors[index],
-                      splashColors[index],
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              '${itemNames[index]}',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 22.0,
-                                  color: invertColorsStrong(context)),
-                              softWrap: true,
-                              overflow: TextOverflow.fade,
-                              maxLines: 1,
-                            )
-                          ]),
-                      onTap: () {
-                        Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) {
-                          if (index == 0) {
-                            return MyMaterialPage();
-                          } else if (index == 1) {
-                            return MyGradientsPage();
-                          } else if (index == 2) {
-                            return MyAboutPage();
-                          } else {
-                            return null;
-                          }
-                        }));
-                      }, //opens appropriate page
-                    ),
-                  );
-                }),
+                children: List.generate(
+                  itemNames.length,
+                  (index) {
+                    return Hero(
+                      tag: 'tile$index', //using a different hero widget tag for
+                      // each page mapped to the page's index value
+                      child: buildTile(
+                        context,
+                        tileColors[index],
+                        splashColors[index],
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                '${itemNames[index]}',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 22.0,
+                                    color: invertColorsStrong(context)),
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                                maxLines: 1,
+                              )
+                            ]),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) {
+                                if (index == 0) {
+                                  return MyMaterialPage();
+                                } else if (index == 1) {
+                                  return MyGradientsPage();
+                                } else if (index == 2) {
+                                  return MyAboutPage();
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          );
+                        }, //opens appropriate page
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
           ],

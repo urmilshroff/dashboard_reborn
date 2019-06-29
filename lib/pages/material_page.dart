@@ -35,89 +35,94 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
       backgroundColor: invertColorsMaterial(context), //color changes
       // according to currently set theme
       body: Container(
-        child: Stack(children: <Widget>[
-          Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 10.0,
-                  top: 50.0,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(EvaIcons.arrowIosBack),
-                      tooltip: 'Go back',
-                      color: invertColorsMild(context),
-                      iconSize: 26.0,
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                    Text(
-                      'Material++',
-                      style: TextStyle(
-                          fontFamily: 'Rubik',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 22.0,
-                          fontStyle: FontStyle.italic,
-                          color: invertColorsMild(context)),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1,
-                  childAspectRatio: 1,
-                  children: List.generate(1, (index) {
-                    return Hero(
-                      tag: 'tile0',
-                      child: buildTile(
-                        context,
-                        tileColors[0],
-                        splashColors[0],
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                '${itemNames[0]}',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 20.0,
-                                    color: invertColorsMild(context)),
-                                softWrap: true,
-                                overflow: TextOverflow.fade,
-                                maxLines: 1,
-                              ),
-                              SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                '${itemNames[1]}',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 20.0,
-                                    color: invertColorsMild(context)),
-                                softWrap: true,
-                                overflow: TextOverflow.fade,
-                                maxLines: 1,
-                              ),
-                            ]),
-                        onTap: () {
-                          doNothing();
+        child: Stack(
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 10.0,
+                    top: 50.0,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(EvaIcons.arrowIosBack),
+                        tooltip: 'Go back',
+                        color: invertColorsMild(context),
+                        iconSize: 26.0,
+                        onPressed: () {
+                          Navigator.pop(context);
                         },
                       ),
-                    );
-                  }),
+                      Text(
+                        'Material++',
+                        style: TextStyle(
+                            fontFamily: 'Rubik',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 22.0,
+                            fontStyle: FontStyle.italic,
+                            color: invertColorsMild(context)),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-          SexyBottomSheet(), //the awesome sliding up bottom sheet
-        ]),
+                Expanded(
+                  child: GridView.count(
+                    crossAxisCount: 1,
+                    childAspectRatio: 1,
+                    children: List.generate(
+                      1,
+                      (index) {
+                        return Hero(
+                          tag: 'tile0',
+                          child: buildTile(
+                            context,
+                            tileColors[0],
+                            splashColors[0],
+                            Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    '${itemNames[0]}',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 20.0,
+                                        color: invertColorsMild(context)),
+                                    softWrap: true,
+                                    overflow: TextOverflow.fade,
+                                    maxLines: 1,
+                                  ),
+                                  SizedBox(
+                                    height: 5.0,
+                                  ),
+                                  Text(
+                                    '${itemNames[1]}',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 20.0,
+                                        color: invertColorsMild(context)),
+                                    softWrap: true,
+                                    overflow: TextOverflow.fade,
+                                    maxLines: 1,
+                                  ),
+                                ]),
+                            onTap: () {
+                              doNothing();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SexyBottomSheet(), //the awesome sliding up bottom sheet
+          ],
+        ),
       ),
     );
   }

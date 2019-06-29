@@ -70,16 +70,16 @@ class _MyAboutPageState extends State<MyAboutPage> {
               ),
             ),
             Expanded(
-                child: StaggeredGridView.count(
-              crossAxisCount: 2,
-              children: <Widget>[
-                Hero(
-                  tag: 'tile2',
-                  child: buildTile(
-                    context,
-                    null,
-                    MyColors.accentColor,
-                    Column(
+              child: StaggeredGridView.count(
+                crossAxisCount: 2,
+                children: <Widget>[
+                  Hero(
+                    tag: 'tile2',
+                    child: buildTile(
+                      context,
+                      null,
+                      MyColors.accentColor,
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
@@ -172,20 +172,21 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               ),
                             ],
                           ),
-                        ]),
-                    onTap: () {
-                      doNothing();
-                    },
+                        ],
+                      ),
+                      onTap: () {
+                        doNothing();
+                      },
+                    ),
                   ),
-                ),
-                buildTile(
-                  context,
-                  null,
-                  MyColors.accentColor,
-                  Container(
-                    child: Padding(
-                      padding: EdgeInsets.all(20.0),
-                      child: Column(
+                  buildTile(
+                    context,
+                    null,
+                    MyColors.accentColor,
+                    Container(
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -210,21 +211,22 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               softWrap: true,
                               overflow: TextOverflow.fade,
                             ),
-                          ]),
+                          ],
+                        ),
+                      ),
                     ),
+                    onTap: () {
+                      doNothing();
+                    },
                   ),
-                  onTap: () {
-                    doNothing();
-                  },
-                ),
-                buildTile(
-                  context,
-                  null,
-                  MyColors.accentColor,
-                  Container(
-                    child: Padding(
-                      padding: EdgeInsets.all(20.0),
-                      child: Column(
+                  buildTile(
+                    context,
+                    null,
+                    MyColors.accentColor,
+                    Container(
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -249,22 +251,24 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               softWrap: true,
                               overflow: TextOverflow.fade,
                             ),
-                          ]),
+                          ],
+                        ),
+                      ),
                     ),
+                    onTap: () {
+                      doNothing();
+                    },
                   ),
-                  onTap: () {
-                    doNothing();
-                  },
-                ),
-                SizedBox(),
-              ],
-              staggeredTiles: [
-                StaggeredTile.extent(2, 270.0),
-                StaggeredTile.extent(2, 480.0),
-                StaggeredTile.extent(2, 380.0),
-                StaggeredTile.extent(2, 75.0),
-              ],
-            )),
+                  SizedBox(),
+                ],
+                staggeredTiles: [
+                  StaggeredTile.extent(2, 270.0),
+                  StaggeredTile.extent(2, 480.0),
+                  StaggeredTile.extent(2, 380.0),
+                  StaggeredTile.extent(2, 75.0),
+                ],
+              ),
+            ),
           ],
         ),
       ),
