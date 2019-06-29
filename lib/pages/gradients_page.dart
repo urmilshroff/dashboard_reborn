@@ -76,11 +76,15 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
   Widget build(BuildContext context) {
     PageController controller =
         PageController(initialPage: swipingCardImages.length - 1);
-    controller.addListener(() {
-      setState(() {
-        currentPage = controller.page;
-      });
-    });
+    controller.addListener(
+      () {
+        setState(
+          () {
+            currentPage = controller.page;
+          },
+        );
+      },
+    );
 
     return Scaffold(
       backgroundColor: Colors.transparent,

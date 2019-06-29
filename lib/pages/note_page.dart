@@ -53,18 +53,20 @@ class _MyNotePageState extends State<MyNotePage> {
               child: GridView.count(
                 crossAxisCount: 1,
                 childAspectRatio: 0.8,
-                children: List.generate(1, (index) {
-                  return Hero(
-                    //hero widget renders a smooth animation
-                    tag: 'tile2',
-                    child: buildTile(
-                      context,
-                      null,
-                      MyColors.accentColor,
-                      Container(
-                        child: Padding(
-                          padding: EdgeInsets.all(20.0),
-                          child: Column(
+                children: List.generate(
+                  1,
+                  (index) {
+                    return Hero(
+                      //hero widget renders a smooth animation
+                      tag: 'tile2',
+                      child: buildTile(
+                        context,
+                        null,
+                        MyColors.accentColor,
+                        Container(
+                          child: Padding(
+                            padding: EdgeInsets.all(20.0),
+                            child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
@@ -89,15 +91,17 @@ class _MyNotePageState extends State<MyNotePage> {
                                   softWrap: true,
                                   overflow: TextOverflow.fade,
                                 ),
-                              ]),
+                              ],
+                            ),
+                          ),
                         ),
+                        onTap: () {
+                          doNothing();
+                        },
                       ),
-                      onTap: () {
-                        doNothing();
-                      },
-                    ),
-                  );
-                }),
+                    );
+                  },
+                ),
               ),
             ),
           ],
@@ -115,9 +119,14 @@ class _MyNotePageState extends State<MyNotePage> {
         backgroundColor: invertColorsTheme(context),
         elevation: 5.0,
         onPressed: () {
-          Navigator.push(context, CupertinoPageRoute(builder: (context) {
-            return MyHomePage();
-          }));
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context) {
+                return MyHomePage();
+              },
+            ),
+          );
         },
       ),
     );

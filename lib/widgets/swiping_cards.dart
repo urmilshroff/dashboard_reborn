@@ -21,84 +21,86 @@ class SwipingCardsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: widgetAspectRatio,
-      child: LayoutBuilder(builder: (context, constraints) {
-        var width = constraints.maxWidth;
-        var height = constraints.maxHeight;
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          var width = constraints.maxWidth;
+          var height = constraints.maxHeight;
 
-        var safeWidth = width - 2 * padding;
-        var safeHeight = height - 2 * padding;
+          var safeWidth = width - 2 * padding;
+          var safeHeight = height - 2 * padding;
 
-        var heightOfPrimaryCard = safeHeight;
-        var widthOfPrimaryCard = heightOfPrimaryCard * cardAspectRatio;
+          var heightOfPrimaryCard = safeHeight;
+          var widthOfPrimaryCard = heightOfPrimaryCard * cardAspectRatio;
 
-        var primaryCardLeft = safeWidth - widthOfPrimaryCard;
-        var horizontalInset = primaryCardLeft / 2;
+          var primaryCardLeft = safeWidth - widthOfPrimaryCard;
+          var horizontalInset = primaryCardLeft / 2;
 
-        List<Widget> cardList = List();
+          List<Widget> cardList = List();
 
-        for (var i = 0; i < swipingCardImages.length; i++) {
-          var delta = i - currentPage;
-          bool isOnRight = delta > 0;
+          for (var i = 0; i < swipingCardImages.length; i++) {
+            var delta = i - currentPage;
+            bool isOnRight = delta > 0;
 
-          var start = padding +
-              max(
-                  primaryCardLeft -
-                      horizontalInset * -delta * (isOnRight ? 15 : 1),
-                  0.0);
+            var start = padding +
+                max(
+                    primaryCardLeft -
+                        horizontalInset * -delta * (isOnRight ? 15 : 1),
+                    0.0);
 
-          var cardItem = Positioned.directional(
-            top: padding + verticalInset * max(-delta, 0.0),
-            bottom: padding + verticalInset * max(-delta, 0.0),
-            start: start,
-            textDirection: TextDirection.rtl,
-            child: GestureDetector(
-              onTap: () {
-                doNothing();
-              },
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
-                child: Material(
-                  child: AspectRatio(
-                    aspectRatio: cardAspectRatio,
-                    child: Stack(
-                      fit: StackFit.expand,
-                      children: <Widget>[
-                        Image.asset(swipingCardImages[i], fit: BoxFit.cover),
-                        Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.all(20.0),
-                                child: GradientText(
-                                  swipingCardTitles[i],
-                                  shaderRect:
-                                      Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
-                                  gradient: Gradients.haze,
-                                  style: MyTextStyles.gradientCardTitleStyle,
-                                  softWrap: false,
-                                  overflow: TextOverflow.fade,
-                                  maxLines: 1,
+            var cardItem = Positioned.directional(
+              top: padding + verticalInset * max(-delta, 0.0),
+              bottom: padding + verticalInset * max(-delta, 0.0),
+              start: start,
+              textDirection: TextDirection.rtl,
+              child: GestureDetector(
+                onTap: () {
+                  doNothing();
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Material(
+                    child: AspectRatio(
+                      aspectRatio: cardAspectRatio,
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: <Widget>[
+                          Image.asset(swipingCardImages[i], fit: BoxFit.cover),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(20.0),
+                                  child: GradientText(
+                                    swipingCardTitles[i],
+                                    shaderRect:
+                                        Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
+                                    gradient: Gradients.haze,
+                                    style: MyTextStyles.gradientCardTitleStyle,
+                                    softWrap: false,
+                                    overflow: TextOverflow.fade,
+                                    maxLines: 1,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
+            );
+            cardList.add(cardItem);
+          }
+          return Stack(
+            children: cardList,
           );
-          cardList.add(cardItem);
-        }
-        return Stack(
-          children: cardList,
-        );
-      }),
+        },
+      ),
     );
   }
 }
