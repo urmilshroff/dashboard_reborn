@@ -65,6 +65,6 @@ And of course, the [Flutter framework](https://github.com/flutter/flutter) by Go
 
 Take a look at the entire list of [contributors](https://github.com/urmilshroff/dashboard_reborn/graphs/contributors) to see who all have helped with the project directly.
 
-## License⚖
+## License
 
 This project is licensed under the MIT License - do anything you want with the code! See the [LICENSE](LICENSE) file for details.
