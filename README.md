@@ -11,15 +11,15 @@ A very sexy Flutter template app with great focus on UI, design and animations. 
 
 [<img height="75" width="200" src="./branding/other/google-play-badge.png" alt="Play Store"/>](https://play.google.com/store/apps/details?id=tech.urmilshroff.dashboard_reborn)
 
-## Screenshots📸
+## Screenshots
 
 <p><img height="300px" width="170px" src="./branding/screener/screener_1561033293088.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033399521.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033572346.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033595285.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033642367.png" alt="Dashboard Reborn"/></p>
 
-## UI Demos📱
+## UI Demos
 
 <p><img height="520px" width="285px" src="./branding/gifs/about_page.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/material_page.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/gradients_page.gif" alt="Dashboard Reborn"/></p>
 
-## Usage💻
+## Usage
 
 There are three main pages in the app:
 
@@ -31,7 +31,7 @@ You can use these individual components or all of them together as a template or
 
 That said, if you liked this project and found it helpful, kindly fork/star this repo to show your support, and perhaps checkout some of [my other projects](https://github.com/urmilshroff?tab=repositories). It really helps!😁
 
-## Building🛠
+## Building
 
 To build and run the app on your device, do the following:
 
@@ -41,11 +41,11 @@ To build and run the app on your device, do the following:
 
 **Note:** you can also run it faster in debug mode using `flutter run`, but the animations will be choppy and performance won't be as expected.
 
-## Contributing💭
+## Contributing
 
 Found any bugs? Have any suggestions or code improvements? [Submit an issue](https://github.com/urmilshroff/dashboard_reborn/issues) or fork and [send a pull request](https://github.com/urmilshroff/dashboard_reborn/pulls) with your changes. All contributions are more than welcome, and will be merged into `master` if satisfactory.
 
-## Credits👑
+## Credits
 
 Huge shoutout to all the amazing libraries and projects that I've used, without which this app wouldn't have been possible:
 
