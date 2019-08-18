@@ -18,10 +18,9 @@ const double iconsVerticalSpacing = 0;
 const double iconsHorizontalSpacing = 0;
 AnimationController controller;
 
-void toggle() {
-  final bool isOpen = controller.status == AnimationStatus.completed;
-  controller.fling(velocity: isOpen ? -2 : 2);
-}
+void toggleBottomSheet() =>
+    controller.fling(velocity: isBottomSheetOpen ? -2 : 2);
+bool get isBottomSheetOpen => (controller.status == AnimationStatus.completed);
 
 class SexyBottomSheet extends StatefulWidget {
   @override
@@ -79,7 +78,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
           right: 0,
           bottom: 0,
           child: GestureDetector(
-            onTap: toggle,
+            onTap: toggleBottomSheet,
             onVerticalDragUpdate: handleDragUpdate,
             onVerticalDragEnd: handleDragEnd,
             child: Container(
@@ -270,7 +269,7 @@ class MenuButton extends StatelessWidget {
       right: 0,
       bottom: 30,
       child: GestureDetector(
-        onTap: toggle,
+        onTap: toggleBottomSheet,
         child: AnimatedIcon(
           icon: AnimatedIcons.menu_close,
           size: 24.0,
