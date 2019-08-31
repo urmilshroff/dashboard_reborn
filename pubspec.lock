@@ -225,7 +225,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.3"
+    version: "5.1.2"
   vector_math:
     dependency: transitive
     description:

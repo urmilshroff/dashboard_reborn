@@ -3,7 +3,7 @@ import 'package:dashboard_reborn/pages/gradients_page.dart';
 import 'package:dashboard_reborn/pages/material_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -54,11 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text(
                     'Dashboard Reborn',
                     style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 22.0,
-                        fontStyle: FontStyle.italic,
-                        color: invertColorsStrong(context)),
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 22.0,
+                      fontStyle: FontStyle.italic,
+                      color: invertColorsStrong(context),
+                    ),
                   ),
                 ],
               ),
@@ -73,25 +74,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     return Hero(
                       tag: 'tile$index', //using a different hero widget tag for
                       // each page mapped to the page's index value
-                      child: buildTile(
+                      child: sexyTile(
                         context,
                         tileColors[index],
                         splashColors[index],
                         Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                '${itemNames[index]}',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 22.0,
-                                    color: invertColorsStrong(context)),
-                                softWrap: true,
-                                overflow: TextOverflow.fade,
-                                maxLines: 1,
-                              )
-                            ]),
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              '${itemNames[index]}',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 22.0,
+                                color: invertColorsStrong(context),
+                              ),
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
                         onTap: () {
                           Navigator.push(
                             context,

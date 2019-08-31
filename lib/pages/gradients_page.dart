@@ -90,14 +90,15 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
       backgroundColor: Colors.transparent,
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                //gradient colors change according to set theme
-                colors: isThemeCurrentlyDark(context)
-                    ? [GradientColors.darkStart, GradientColors.darkEnd]
-                    : [GradientColors.lightStart, GradientColors.lightEnd],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                tileMode: TileMode.clamp)),
+          gradient: LinearGradient(
+              //gradient colors change according to set theme
+              colors: isThemeCurrentlyDark(context)
+                  ? [GradientColors.darkStart, GradientColors.darkEnd]
+                  : [GradientColors.lightStart, GradientColors.lightEnd],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              tileMode: TileMode.clamp),
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[

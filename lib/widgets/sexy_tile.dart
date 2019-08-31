@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 //this is the main tile builder taken and modified from https://github.com/Ivaskuu/dashboard
 
-Widget buildTile(
+Widget sexyTile(
     BuildContext context, Color color, Color splashColor, Widget child,
     {Function() onTap}) {
   return Container(

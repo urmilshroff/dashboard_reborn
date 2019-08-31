@@ -1,7 +1,7 @@
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
-import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -60,11 +60,12 @@ class _MyAboutPageState extends State<MyAboutPage> {
                   Text(
                     'About',
                     style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 22.0,
-                        fontStyle: FontStyle.italic,
-                        color: invertColorsStrong(context)),
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 22.0,
+                      fontStyle: FontStyle.italic,
+                      color: invertColorsStrong(context),
+                    ),
                   ),
                 ],
               ),
@@ -75,7 +76,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                 children: <Widget>[
                   Hero(
                     tag: 'tile2',
-                    child: buildTile(
+                    child: sexyTile(
                       context,
                       null,
                       MyColors.accentColor,
@@ -84,14 +85,16 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Container(
-                              width: 70.0,
-                              height: 70.0,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/profile/urmil-vector'
-                                              '.png')))),
+                            width: 70.0,
+                            height: 70.0,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/profile/urmil.png'),
+                              ),
+                            ),
+                          ),
                           SizedBox(
                             height: 15.0,
                           ),
@@ -110,10 +113,11 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               Text(
                                 'with',
                                 style: TextStyle(
-                                    fontFamily: 'RobotoMono',
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16.0,
-                                    color: invertColorsStrong(context)),
+                                  fontFamily: 'RobotoMono',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16.0,
+                                  color: invertColorsStrong(context),
+                                ),
                               ),
                               SizedBox(
                                 width: 5.0,
@@ -129,10 +133,11 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               Text(
                                 'by',
                                 style: TextStyle(
-                                    fontFamily: 'RobotoMono',
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16.0,
-                                    color: invertColorsStrong(context)),
+                                  fontFamily: 'RobotoMono',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16.0,
+                                  color: invertColorsStrong(context),
+                                ),
                               ),
                             ],
                           ),
@@ -142,9 +147,10 @@ class _MyAboutPageState extends State<MyAboutPage> {
                           Text(
                             'Urmil Shroff',
                             style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 22.0,
-                                color: invertColorsStrong(context)),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 22.0,
+                              color: invertColorsStrong(context),
+                            ),
                             softWrap: true,
                             overflow: TextOverflow.fade,
                             maxLines: 1,
@@ -180,7 +186,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                       },
                     ),
                   ),
-                  buildTile(
+                  sexyTile(
                     context,
                     null,
                     MyColors.accentColor,
@@ -204,10 +210,11 @@ class _MyAboutPageState extends State<MyAboutPage> {
                             Text(
                               itemContent[1],
                               style: TextStyle(
-                                  fontFamily: 'RobotoMono',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16.0,
-                                  color: invertColorsStrong(context)),
+                                fontFamily: 'RobotoMono',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.0,
+                                color: invertColorsStrong(context),
+                              ),
                               textAlign: TextAlign.left,
                               softWrap: true,
                               overflow: TextOverflow.fade,
@@ -220,7 +227,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                       doNothing();
                     },
                   ),
-                  buildTile(
+                  sexyTile(
                     context,
                     null,
                     MyColors.accentColor,
@@ -244,10 +251,11 @@ class _MyAboutPageState extends State<MyAboutPage> {
                             Text(
                               itemContent[3],
                               style: TextStyle(
-                                  fontFamily: 'RobotoMono',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16.0,
-                                  color: invertColorsStrong(context)),
+                                fontFamily: 'RobotoMono',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.0,
+                                color: invertColorsStrong(context),
+                              ),
                               textAlign: TextAlign.left,
                               softWrap: true,
                               overflow: TextOverflow.fade,

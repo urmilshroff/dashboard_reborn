@@ -1,7 +1,7 @@
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/widgets/bottom_sheet.dart';
-import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -61,11 +61,12 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                         Text(
                           'Material++',
                           style: TextStyle(
-                              fontFamily: 'Rubik',
-                              fontWeight: FontWeight.w600,
-                              fontSize: 22.0,
-                              fontStyle: FontStyle.italic,
-                              color: invertColorsMild(context)),
+                            fontFamily: 'Rubik',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 22.0,
+                            fontStyle: FontStyle.italic,
+                            color: invertColorsMild(context),
+                          ),
                         ),
                       ],
                     ),
@@ -79,7 +80,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                         (index) {
                           return Hero(
                             tag: 'tile0',
-                            child: buildTile(
+                            child: sexyTile(
                               context,
                               tileColors[0],
                               splashColors[0],
@@ -90,9 +91,10 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                     Text(
                                       '${itemNames[0]}',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 20.0,
-                                          color: invertColorsMild(context)),
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 20.0,
+                                        color: invertColorsMild(context),
+                                      ),
                                       softWrap: true,
                                       overflow: TextOverflow.fade,
                                       maxLines: 1,
@@ -103,9 +105,10 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                     Text(
                                       '${itemNames[1]}',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 20.0,
-                                          color: invertColorsMild(context)),
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 20.0,
+                                        color: invertColorsMild(context),
+                                      ),
                                       softWrap: true,
                                       overflow: TextOverflow.fade,
                                       maxLines: 1,

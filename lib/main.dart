@@ -10,14 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DynamicTheme(
-      //for dark mode/light mode
       defaultBrightness: Brightness.dark,
       data: (brightness) => ThemeData(
-            primaryColor: MyColors.primaryColor,
-            accentColor: MyColors.accentColor,
-            brightness: brightness,
-            fontFamily: 'Quicksand',
-          ),
+        primaryColor: MyColors.primaryColor,
+        accentColor: MyColors.accentColor,
+        brightness: brightness,
+        fontFamily: 'Quicksand',
+      ),
       themedWidgetBuilder: (context, theme) {
         return MaterialApp(
           title: 'Dashboard Reborn',

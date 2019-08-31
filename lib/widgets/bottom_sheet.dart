@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -43,8 +43,10 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
   double get iconSize => lerp(iconStartSize, iconEndSize);
 
   double iconTopMargin(int index) =>
-      lerp(iconStartMarginTop,
-          iconEndMarginTop + index * (iconsVerticalSpacing + iconEndSize)) +
+      lerp(
+        iconStartMarginTop,
+        iconEndMarginTop + index * (iconsVerticalSpacing + iconEndSize),
+      ) +
       headerTopMargin;
 
   double iconLeftMargin(int index) =>
@@ -93,8 +95,9 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
               child: Material(
                 elevation: 10.0,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15.0),
-                    topRight: Radius.circular(15.0)),
+                  topLeft: Radius.circular(15.0),
+                  topRight: Radius.circular(15.0),
+                ),
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
@@ -127,7 +130,9 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
       child: Container(
         padding: EdgeInsets.all(15.0),
         child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+          borderRadius: BorderRadius.all(
+            Radius.circular(15.0),
+          ),
           child: Image.asset(
             'assets/images/icon/icon-nobg.png',
             fit: BoxFit.cover,
@@ -161,9 +166,13 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
     final double flingVelocity =
         details.velocity.pixelsPerSecond.dy / maxHeight;
     if (flingVelocity < 0.0)
-      controller.fling(velocity: math.max(2.0, -flingVelocity));
+      controller.fling(
+        velocity: math.max(2.0, -flingVelocity),
+      );
     else if (flingVelocity > 0.0)
-      controller.fling(velocity: math.min(-2.0, -flingVelocity));
+      controller.fling(
+        velocity: math.min(-2.0, -flingVelocity),
+      );
     else
       controller.fling(velocity: controller.value < 0.5 ? -2.0 : 2.0);
   }
@@ -197,7 +206,7 @@ class ExpandedSheetItem extends StatelessWidget {
       child: AnimatedOpacity(
         opacity: isVisible ? 1 : 0,
         duration: Duration(milliseconds: 200),
-        child: buildTile(
+        child: sexyTile(
           context,
           invertColorsMaterial(context),
           MyColors.accentColor,
@@ -212,9 +221,10 @@ class ExpandedSheetItem extends StatelessWidget {
                 child: Text(
                   'Press & hold me',
                   style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20.0,
-                      color: invertColorsMild(context)),
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20.0,
+                    color: invertColorsMild(context),
+                  ),
                 ),
               ),
             ],

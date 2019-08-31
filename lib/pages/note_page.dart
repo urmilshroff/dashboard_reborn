@@ -2,7 +2,7 @@ import 'package:dashboard_reborn/pages/home_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/textstyles.dart';
-import 'package:dashboard_reborn/widgets/tile.dart';
+import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,10 +41,11 @@ class _MyNotePageState extends State<MyNotePage> {
                   Text(
                     'Welcome!',
                     style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24.0,
-                        color: invertColorsStrong(context)),
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24.0,
+                      color: invertColorsStrong(context),
+                    ),
                   ),
                 ],
               ),
@@ -59,7 +60,7 @@ class _MyNotePageState extends State<MyNotePage> {
                     return Hero(
                       //hero widget renders a smooth animation
                       tag: 'tile2',
-                      child: buildTile(
+                      child: sexyTile(
                         context,
                         null,
                         MyColors.accentColor,
@@ -83,10 +84,11 @@ class _MyNotePageState extends State<MyNotePage> {
                                 Text(
                                   itemContent[1],
                                   style: TextStyle(
-                                      fontFamily: 'RobotoMono',
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 16.0,
-                                      color: invertColorsStrong(context)),
+                                    fontFamily: 'RobotoMono',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16.0,
+                                    color: invertColorsStrong(context),
+                                  ),
                                   textAlign: TextAlign.left,
                                   softWrap: true,
                                   overflow: TextOverflow.fade,

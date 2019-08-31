@@ -109,7 +109,9 @@ class _PageTransformerState extends State<PageTransformer> {
   @override
   Widget build(BuildContext context) {
     final pageView = widget.pageViewBuilder(
-        context, _visibilityResolver ?? PageVisibilityResolver());
+      context,
+      _visibilityResolver ?? PageVisibilityResolver(),
+    );
 
     final controller = pageView.controller;
     final viewPortFraction = controller.viewportFraction;
