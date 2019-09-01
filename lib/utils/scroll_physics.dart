@@ -15,11 +15,9 @@ class CustomScrollPhysics extends ScrollPhysics {
   double _getPage(ScrollPosition position) {
     return position.pixels /
         (position.maxScrollExtent / (todos.length.toDouble() - 1));
-    // return position.pixels / position.viewportDimension;
   }
 
   double _getPixels(ScrollPosition position, double page) {
-    // return page * position.viewportDimension;
     return page * (position.maxScrollExtent / (todos.length.toDouble() - 1));
   }
 
