@@ -1,6 +1,5 @@
 import 'package:dashboard_reborn/pages/about_page.dart';
 import 'package:dashboard_reborn/pages/gradients_page.dart';
-import 'package:dashboard_reborn/pages/material+++.dart';
 import 'package:dashboard_reborn/pages/material_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
@@ -102,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             CupertinoPageRoute(
                               builder: (context) {
                                 if (index == 0) {
-                                  return MyMaterialXPage();
+                                  return MyMaterialPage();
                                 } else if (index == 1) {
                                   return MyGradientsPage();
                                 } else if (index == 2) {

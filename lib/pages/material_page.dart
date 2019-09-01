@@ -1,19 +1,63 @@
+import 'dart:ui';
+
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/scroll_physics.dart';
+import 'package:dashboard_reborn/utils/todo.dart';
+import 'package:dashboard_reborn/utils/todo_detail.dart';
 import 'package:dashboard_reborn/widgets/bottom_sheet.dart';
-import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class MyMaterialPage extends StatefulWidget {
   @override
   _MyMaterialPageState createState() => _MyMaterialPageState();
 }
 
-class _MyMaterialPageState extends State<MyMaterialPage> {
+class _MyMaterialPageState extends State<MyMaterialPage>
+    with TickerProviderStateMixin {
+  ScrollController scrollController;
+  Color backgroundColor;
+  LinearGradient backgroundGradient;
+  Tween<Color> colorTween;
+  int currentPage = 0;
+  Color constBackColor;
+
+  @override
+  void initState() {
+    colorTween = ColorTween(begin: todos[0].color, end: todos[0].color);
+    backgroundColor = todos[0].color;
+    backgroundGradient = todos[0].gradient;
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      ScrollPosition position = scrollController.position;
+      ScrollDirection direction = position.userScrollDirection;
+      int page = position.pixels ~/
+          (position.maxScrollExtent / (todos.length.toDouble() - 1));
+      double pageDo = (position.pixels /
+          (position.maxScrollExtent / (todos.length.toDouble() - 1)));
+      double percent = pageDo - page;
+      if (todos.length - 1 < page + 1) {
+        return;
+      }
+      colorTween.begin = todos[page].color;
+      colorTween.end = todos[page + 1].color;
+      setState(() {
+        backgroundColor = colorTween.lerp(percent);
+        backgroundGradient =
+            todos[page].gradient.lerpTo(todos[page + 1].gradient, percent);
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final double _width = MediaQuery.of(context).size.width;
+    final double _height = MediaQuery.of(context).size.height;
+
     List<String> itemNames = [
       'Go ahead,',
       'Swipe up from below.',
@@ -71,58 +115,140 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: GridView.count(
-                      crossAxisCount: 1,
-                      childAspectRatio: 1,
-                      children: List.generate(
-                        1,
-                        (index) {
-                          return Hero(
-                            tag: 'tile0',
-                            child: sexyTile(
-                              context,
-                              tileColors[0],
-                              splashColors[0],
-                              Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[
-                                    Text(
-                                      '${itemNames[0]}',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20.0,
-                                        color: invertColorsMild(context),
+                  Container(
+                    height: _height / 1.5,
+                    width: _width,
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        TodoObject todoObject = todos[index];
+                        EdgeInsets padding = EdgeInsets.only(
+                            left: 10.0, right: 10.0, top: 20.0, bottom: 30.0);
+
+                        return Padding(
+                          padding: padding,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                PageRouteBuilder(
+                                  pageBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double>
+                                              secondaryAnimation) =>
+                                      DetailPage(todoObject: todoObject),
+                                  transitionsBuilder: (
+                                    BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secondaryAnimation,
+                                    Widget child,
+                                  ) {
+                                    return SlideTransition(
+                                      position: Tween<Offset>(
+                                        begin: Offset(0.0, 1.0),
+                                        end: Offset.zero,
+                                      ).animate(animation),
+                                      child: SlideTransition(
+                                        position: Tween<Offset>(
+                                          begin: Offset.zero,
+                                          end: Offset(0.0, 1.0),
+                                        ).animate(secondaryAnimation),
+                                        child: child,
                                       ),
-                                      softWrap: true,
-                                      overflow: TextOverflow.fade,
-                                      maxLines: 1,
-                                    ),
-                                    SizedBox(
-                                      height: 5.0,
-                                    ),
-                                    Text(
-                                      '${itemNames[1]}',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20.0,
-                                        color: invertColorsMild(context),
-                                      ),
-                                      softWrap: true,
-                                      overflow: TextOverflow.fade,
-                                      maxLines: 1,
-                                    ),
+                                    );
+                                  },
+                                  transitionDuration:
+                                      Duration(milliseconds: 500),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: shadowColor(context),
+                                        offset: Offset(3.0, 10.0),
+                                        blurRadius: 15.0)
                                   ]),
-                              onTap: () {
-                                doNothing();
-                              },
+                              height: 250.0,
+                              child: Stack(
+                                children: <Widget>[
+                                  Hero(
+                                    tag: todoObject.uuid +
+                                        "_background", // TODO: fix this
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: invertInvertColors(context),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
+                      padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                      scrollDirection: Axis.horizontal,
+                      physics: CustomScrollPhysics(),
+                      controller: scrollController,
+                      itemExtent: _width - _width / 5,
+                      itemCount: todos.length,
                     ),
                   ),
+//                  Expanded(
+//                    child: GridView.count(
+//                      crossAxisCount: 1,
+//                      childAspectRatio: 1,
+//                      children: List.generate(
+//                        1,
+//                        (index) {
+//                          return Hero(
+//                            tag: 'tile0',
+//                            child: sexyTile(
+//                              context,
+//                              tileColors[0],
+//                              splashColors[0],
+//                              Column(
+//                                  mainAxisAlignment: MainAxisAlignment.center,
+//                                  crossAxisAlignment: CrossAxisAlignment.center,
+//                                  children: <Widget>[
+//                                    Text(
+//                                      '${itemNames[0]}',
+//                                      style: TextStyle(
+//                                        fontWeight: FontWeight.w700,
+//                                        fontSize: 20.0,
+//                                        color: invertColorsMild(context),
+//                                      ),
+//                                      softWrap: true,
+//                                      overflow: TextOverflow.fade,
+//                                      maxLines: 1,
+//                                    ),
+//                                    SizedBox(
+//                                      height: 5.0,
+//                                    ),
+//                                    Text(
+//                                      '${itemNames[1]}',
+//                                      style: TextStyle(
+//                                        fontWeight: FontWeight.w700,
+//                                        fontSize: 20.0,
+//                                        color: invertColorsMild(context),
+//                                      ),
+//                                      softWrap: true,
+//                                      overflow: TextOverflow.fade,
+//                                      maxLines: 1,
+//                                    ),
+//                                  ]),
+//                              onTap: () {
+//                                doNothing();
+//                              },
+//                            ),
+//                          );
+//                        },
+//                      ),
+//                    ),
+//                  ),
                 ],
               ),
               SexyBottomSheet(), //the awesome sliding up bottom sheet
