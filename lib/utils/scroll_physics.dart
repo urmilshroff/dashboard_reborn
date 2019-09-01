@@ -1,4 +1,4 @@
-import 'package:dashboard_reborn/utils/todo.dart';
+import 'package:dashboard_reborn/utils/material_element.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +14,11 @@ class CustomScrollPhysics extends ScrollPhysics {
 
   double _getPage(ScrollPosition position) {
     return position.pixels /
-        (position.maxScrollExtent / (todos.length.toDouble() - 1));
+        (position.maxScrollExtent / (elements.length.toDouble() - 1));
   }
 
   double _getPixels(ScrollPosition position, double page) {
-    return page * (position.maxScrollExtent / (todos.length.toDouble() - 1));
+    return page * (position.maxScrollExtent / (elements.length.toDouble() - 1));
   }
 
   double _getTargetPixels(

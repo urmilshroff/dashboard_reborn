@@ -1,24 +1,23 @@
 import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/todo.dart';
+import 'package:dashboard_reborn/utils/material_element.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class DetailPage extends StatefulWidget {
-  DetailPage({@required this.todoObject, Key key}) : super(key: key);
+class MaterialDetailPage extends StatefulWidget {
+  MaterialDetailPage({@required this.todoObject, Key key}) : super(key: key);
 
-  final TodoObject todoObject;
+  final MaterialObject todoObject;
 
   @override
-  _DetailPageState createState() => _DetailPageState();
+  _MaterialDetailPageState createState() => _MaterialDetailPageState();
 }
 
-class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
-  double percentComplete;
+class _MaterialDetailPageState extends State<MaterialDetailPage>
+    with TickerProviderStateMixin {
   AnimationController animationBar;
-  double barPercent = 0.0;
   Tween<double> animT;
   AnimationController scaleAnimation;
 
@@ -30,16 +29,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
         lowerBound: 0.0,
         upperBound: 1.0);
 
-    percentComplete = widget.todoObject.percentComplete();
-    barPercent = percentComplete;
-    animationBar = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 100))
-      ..addListener(() {
-        setState(() {
-          barPercent = animT.lerp(animationBar.value);
-        });
-      });
-    animT = Tween<double>(begin: percentComplete, end: percentComplete);
     scaleAnimation.forward();
     super.initState();
   }

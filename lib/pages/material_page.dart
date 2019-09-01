@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/material_element.dart';
 import 'package:dashboard_reborn/utils/scroll_physics.dart';
-import 'package:dashboard_reborn/utils/todo.dart';
-import 'package:dashboard_reborn/utils/todo_detail.dart';
+import 'package:dashboard_reborn/widgets/material_detail.dart';
 import 'package:dashboard_reborn/widgets/bottom_sheet.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/animation.dart';
@@ -28,27 +28,28 @@ class _MyMaterialPageState extends State<MyMaterialPage>
 
   @override
   void initState() {
-    colorTween = ColorTween(begin: todos[0].color, end: todos[0].color);
-    backgroundColor = todos[0].color;
-    backgroundGradient = todos[0].gradient;
+    colorTween = ColorTween(begin: elements[0].color, end: elements[0].color);
+    backgroundColor = elements[0].color;
+    backgroundGradient = elements[0].gradient;
     scrollController = ScrollController();
     scrollController.addListener(() {
       ScrollPosition position = scrollController.position;
       ScrollDirection direction = position.userScrollDirection;
       int page = position.pixels ~/
-          (position.maxScrollExtent / (todos.length.toDouble() - 1));
+          (position.maxScrollExtent / (elements.length.toDouble() - 1));
       double pageDo = (position.pixels /
-          (position.maxScrollExtent / (todos.length.toDouble() - 1)));
+          (position.maxScrollExtent / (elements.length.toDouble() - 1)));
       double percent = pageDo - page;
-      if (todos.length - 1 < page + 1) {
+      if (elements.length - 1 < page + 1) {
         return;
       }
-      colorTween.begin = todos[page].color;
-      colorTween.end = todos[page + 1].color;
+      colorTween.begin = elements[page].color;
+      colorTween.end = elements[page + 1].color;
       setState(() {
         backgroundColor = colorTween.lerp(percent);
-        backgroundGradient =
-            todos[page].gradient.lerpTo(todos[page + 1].gradient, percent);
+        backgroundGradient = elements[page]
+            .gradient
+            .lerpTo(elements[page + 1].gradient, percent);
       });
     });
   }
@@ -120,7 +121,7 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                     width: _width,
                     child: ListView.builder(
                       itemBuilder: (context, index) {
-                        TodoObject todoObject = todos[index];
+                        MaterialObject todoObject = elements[index];
                         EdgeInsets padding = EdgeInsets.only(
                             left: 10.0, right: 10.0, top: 20.0, bottom: 30.0);
 
@@ -134,7 +135,7 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                                           Animation<double> animation,
                                           Animation<double>
                                               secondaryAnimation) =>
-                                      DetailPage(todoObject: todoObject),
+                                      MaterialDetailPage(todoObject: todoObject),
                                   transitionsBuilder: (
                                     BuildContext context,
                                     Animation<double> animation,
@@ -194,7 +195,7 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                       physics: CustomScrollPhysics(),
                       controller: scrollController,
                       itemExtent: _width - _width / 5,
-                      itemCount: todos.length,
+                      itemCount: elements.length,
                     ),
                   ),
 //                  Expanded(
