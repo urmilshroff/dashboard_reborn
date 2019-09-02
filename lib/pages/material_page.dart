@@ -59,55 +59,59 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                       ],
                     ),
                   ),
-                  Container(
-                    height: _height / 1.8,
-                    width: _width / 1.2,
-                    margin: EdgeInsets.all(20.0),
-                    child: Material(
-                      color: invertInvertColorsMild(context),
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(10.0),
-                      shadowColor: shadowColor(context),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(10.0),
-                        splashColor: invertColorsStrong(context),
-                        child: Stack(
-                          children: <Widget>[
-                            Positioned(
-                              bottom: 100.0,
-                              left: 40.0,
-                              child: Hero(
-                                tag: 'text1',
-                                child: Text(
-                                  'Hello, world!',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 20.0,
-                                    color: invertColorsMild(context),
-                                  ),
-                                ),
-                              ),
+                  Stack(
+                    children: <Widget>[
+                      Hero(
+                        tag: 'tile0',
+                        child: Container(
+                          height: _height / 1.8,
+                          width: _width / 1.2,
+                          margin: EdgeInsets.all(20.0),
+                          child: Material(
+                            color: invertInvertColorsMild(context),
+                            elevation: 5.0,
+                            borderRadius: BorderRadius.circular(10.0),
+                            shadowColor: shadowColor(context),
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(10.0),
+                              splashColor: invertColorsStrong(context),
+                              child: null,
+                              onTap: doNothing,
                             ),
-                            Positioned(
-                              bottom: 60.0,
-                              left: 40.0,
-                              child: Hero(
-                                tag: 'text2',
-                                child: Text(
-                                  'Click me',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 28.0,
-                                    color: invertColorsMild(context),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                        onTap: doNothing,
                       ),
-                    ),
+                      Positioned(
+                        bottom: 100.0,
+                        left: 40.0,
+                        child: Hero(
+                          tag: 'text0',
+                          child: Text(
+                            'Hello, world!',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20.0,
+                              color: invertColorsMild(context),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 60.0,
+                        left: 40.0,
+                        child: Hero(
+                          tag: 'text1',
+                          child: Text(
+                            'Click me.',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 30.0,
+                              color: invertColorsMild(context),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
