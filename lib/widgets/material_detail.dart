@@ -41,7 +41,7 @@ class _MaterialDetailPageState extends State<MaterialDetailPage>
           tag: widget.todoObject.uuid + "_background",
           child: Container(
             decoration: BoxDecoration(
-              color: invertInvertColors(context),
+              color: invertInvertColorsMild(context),
               borderRadius: BorderRadius.circular(10.0),
             ),
           ),

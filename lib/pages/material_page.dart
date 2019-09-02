@@ -135,7 +135,8 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                                           Animation<double> animation,
                                           Animation<double>
                                               secondaryAnimation) =>
-                                      MaterialDetailPage(todoObject: todoObject),
+                                      MaterialDetailPage(
+                                          todoObject: todoObject),
                                   transitionsBuilder: (
                                     BuildContext context,
                                     Animation<double> animation,
@@ -178,7 +179,7 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                                         "_background", // TODO: fix this
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: invertInvertColors(context),
+                                        color: invertInvertColorsMild(context),
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),

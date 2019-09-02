@@ -93,6 +93,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 ],
               ),
               child: Material(
+                color: invertInvertColorsMild(context),
                 elevation: 10.0,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(15.0),

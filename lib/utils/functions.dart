@@ -15,14 +15,6 @@ bool isThemeCurrentlyDark(BuildContext context) {
   }
 } //returns current theme status
 
-Color invertColorsStrong(BuildContext context) {
-  if (isThemeCurrentlyDark(context)) {
-    return MyColors.white;
-  } else {
-    return MyColors.black;
-  }
-} //returns appropriate strong colors for text visibility
-
 Color invertColorsMild(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
     return MyColors.light;
@@ -31,13 +23,13 @@ Color invertColorsMild(BuildContext context) {
   }
 } //returns appropriate mild colors for text visibility
 
-Color invertInvertColors(BuildContext context) {
+Color invertColorsStrong(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.black;
-  } else {
     return MyColors.white;
+  } else {
+    return MyColors.black;
   }
-} //keeps the same colors lol
+} //returns appropriate strong colors for text visibility
 
 Color invertColorsTheme(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
@@ -54,6 +46,22 @@ Color invertColorsMaterial(BuildContext context) {
     return MaterialColors.yellow;
   }
 } //returns appropriate material colors
+
+Color invertInvertColorsMild(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.dark;
+  } else {
+    return MyColors.light;
+  }
+} //keeps the same mild colors lol
+
+Color invertInvertColorsStrong(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.black;
+  } else {
+    return MyColors.white;
+  }
+} //keeps the same strong colors lol
 
 Color shadowColor(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
