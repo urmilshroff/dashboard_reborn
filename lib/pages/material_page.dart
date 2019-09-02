@@ -3,9 +3,7 @@ import 'dart:ui';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/material_element.dart';
-import 'package:dashboard_reborn/utils/scroll_physics.dart';
 import 'package:dashboard_reborn/widgets/bottom_sheet.dart';
-import 'package:dashboard_reborn/widgets/material_card_expanded.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
@@ -85,6 +83,8 @@ class _MyMaterialPageState extends State<MyMaterialPage>
           child: Stack(
             children: <Widget>[
               Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
@@ -116,110 +116,30 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                       ],
                     ),
                   ),
-                  Container(
-                    height: _height / 1.5,
-                    width: _width,
-                    child: ListView.builder(
-                      itemBuilder: (context, index) {
-                        MaterialObject todoObject = elements[index];
-                        EdgeInsets padding = EdgeInsets.only(
-                            left: 10.0, right: 10.0, top: 20.0, bottom: 30.0);
-
-                        return Padding(
-                          padding: padding,
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                PageRouteBuilder(
-                                  pageBuilder: (BuildContext context,
-                                          Animation<double> animation,
-                                          Animation<double>
-                                              secondaryAnimation) =>
-                                      MaterialCardExpanded(
-                                          todoObject: todoObject),
-                                  transitionsBuilder: (
-                                    BuildContext context,
-                                    Animation<double> animation,
-                                    Animation<double> secondaryAnimation,
-                                    Widget child,
-                                  ) {
-                                    return SlideTransition(
-                                      position: Tween<Offset>(
-                                        begin: Offset(0.0, 1.0),
-                                        end: Offset.zero,
-                                      ).animate(animation),
-                                      child: SlideTransition(
-                                        position: Tween<Offset>(
-                                          begin: Offset.zero,
-                                          end: Offset(0.0, 1.0),
-                                        ).animate(secondaryAnimation),
-                                        child: child,
-                                      ),
-                                    );
-                                  },
-                                  transitionDuration:
-                                      Duration(milliseconds: 500),
-                                ),
-                              );
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: shadowColor(context),
-                                        offset: Offset(3.0, 10.0),
-                                        blurRadius: 15.0)
-                                  ]),
-                              height: 250.0,
-                              child: Stack(
-                                children: <Widget>[
-                                  Hero(
-                                    tag: 'matCard$index', // TODO: fix this
-                                    child: Material(
-                                      color: invertInvertColorsMild(context),
-                                      elevation: 5,
-                                      borderRadius: BorderRadius.circular(10.0),
-                                      shadowColor: shadowColor(context),
-                                      child: InkWell(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        splashColor:
-                                            invertColorsStrong(context),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(30.0),
-                                          child: Center(
-                                            child: Text(
-                                              'Swipe left, right, up or down.',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 20.0,
-                                                color:
-                                                    invertColorsMild(context),
-                                              ),
-                                              softWrap: true,
-                                              overflow: TextOverflow.ellipsis,
-                                              maxLines: 5,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                  Hero(
+                    tag: 'tile0',
+                    child: Container(
+                      height: _height / 1.6,
+                      width: _width / 1.2,
+                      margin: EdgeInsets.all(15.0),
+                      child: Material(
+                        color: invertInvertColorsMild(context),
+                        elevation: 5.0,
+                        borderRadius: BorderRadius.circular(10.0),
+                        shadowColor: shadowColor(context),
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(10.0),
+                          splashColor: invertColorsStrong(context),
+                          child: Stack(
+                            children: <Widget>[
+                              Center(child: Text('Hello, world!')),
+                            ],
                           ),
-                        );
-                      },
-                      padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                      scrollDirection: Axis.horizontal,
-                      physics: CustomScrollPhysics(),
-                      controller: scrollController,
-                      itemExtent: _width - _width / 5,
-                      itemCount: elements.length,
+                          onTap: doNothing,
+                        ),
+                      ),
                     ),
-                  ),
+                  )
                 ],
               ),
               SexyBottomSheet(), //the awesome sliding up bottom sheet
