@@ -4,8 +4,8 @@ import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/utils/material_element.dart';
 import 'package:dashboard_reborn/utils/scroll_physics.dart';
-import 'package:dashboard_reborn/widgets/material_detail.dart';
 import 'package:dashboard_reborn/widgets/bottom_sheet.dart';
+import 'package:dashboard_reborn/widgets/material_card_expanded.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
@@ -135,7 +135,7 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                                           Animation<double> animation,
                                           Animation<double>
                                               secondaryAnimation) =>
-                                      MaterialDetailPage(
+                                      MaterialCardExpanded(
                                           todoObject: todoObject),
                                   transitionsBuilder: (
                                     BuildContext context,
@@ -175,8 +175,7 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                               child: Stack(
                                 children: <Widget>[
                                   Hero(
-                                    tag: todoObject.uuid +
-                                        "_background", // TODO: fix this
+                                    tag: 'matCard$index', // TODO: fix this
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: invertInvertColorsMild(context),
