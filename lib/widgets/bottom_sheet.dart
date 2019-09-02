@@ -93,14 +93,16 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 ],
               ),
               child: Material(
+                color: invertInvertColorsMild(context),
                 elevation: 10.0,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15.0),
-                  topRight: Radius.circular(15.0),
+                  topLeft: Radius.circular(10.0),
+                  topRight: Radius.circular(10.0),
                 ),
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
+                  splashColor: invertColorsStrong(context),
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(
@@ -131,7 +133,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
         padding: EdgeInsets.all(15.0),
         child: ClipRRect(
           borderRadius: BorderRadius.all(
-            Radius.circular(15.0),
+            Radius.circular(10.0),
           ),
           child: Image.asset(
             'assets/images/icon/icon-nobg.png',

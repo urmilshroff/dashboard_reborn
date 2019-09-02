@@ -26,7 +26,7 @@ class _MyNotePageState extends State<MyNotePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: invertInvertColors(context),
+      backgroundColor: invertInvertColorsStrong(context),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -117,7 +117,7 @@ class _MyNotePageState extends State<MyNotePage> {
           size: 30.0,
         ),
         tooltip: 'Accept',
-        foregroundColor: invertInvertColors(context),
+        foregroundColor: invertInvertColorsStrong(context),
         backgroundColor: invertColorsTheme(context),
         elevation: 5.0,
         onPressed: () {

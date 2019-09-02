@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ]; //splash color of the individual tile, mapped to index values
 
     return Scaffold(
-      backgroundColor: invertInvertColors(context),
+      backgroundColor: invertInvertColorsStrong(context),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: isThemeCurrentlyDark(context)
             ? 'Switch to light mode'
             : 'Switch to dark mode',
-        foregroundColor: invertInvertColors(context),
+        foregroundColor: invertInvertColorsStrong(context),
         backgroundColor: invertColorsTheme(context),
         elevation: 5.0,
         onPressed: () {
