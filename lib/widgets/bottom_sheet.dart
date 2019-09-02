@@ -102,6 +102,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
+                  splashColor: invertColorsStrong(context),
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(

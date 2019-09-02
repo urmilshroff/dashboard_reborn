@@ -38,11 +38,43 @@ class _MaterialCardExpandedState extends State<MaterialCardExpanded>
       child: Stack(
         children: <Widget>[
           Hero(
-            tag: 'matCardindex',
+            tag: 'matCard0',
             child: Container(
               decoration: BoxDecoration(
                 color: invertInvertColorsMild(context),
                 borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(50.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Cool, wasn\'t it?',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 22.0,
+                          color: invertColorsMild(context),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Container(
+                        width: 150.0,
+                        height: 150.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                AssetImage('assets/images/icon/icon-nobg.png'),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),

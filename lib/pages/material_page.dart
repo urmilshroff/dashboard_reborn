@@ -176,11 +176,33 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                                 children: <Widget>[
                                   Hero(
                                     tag: 'matCard$index', // TODO: fix this
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: invertInvertColorsMild(context),
+                                    child: Material(
+                                      color: invertInvertColorsMild(context),
+                                      elevation: 5,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      shadowColor: shadowColor(context),
+                                      child: InkWell(
                                         borderRadius:
                                             BorderRadius.circular(10.0),
+                                        splashColor:
+                                            invertColorsStrong(context),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(30.0),
+                                          child: Center(
+                                            child: Text(
+                                              'Swipe left, right, up or down.',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 20.0,
+                                                color:
+                                                    invertColorsMild(context),
+                                              ),
+                                              softWrap: true,
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 5,
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -198,58 +220,6 @@ class _MyMaterialPageState extends State<MyMaterialPage>
                       itemCount: elements.length,
                     ),
                   ),
-//                  Expanded(
-//                    child: GridView.count(
-//                      crossAxisCount: 1,
-//                      childAspectRatio: 1,
-//                      children: List.generate(
-//                        1,
-//                        (index) {
-//                          return Hero(
-//                            tag: 'tile0',
-//                            child: sexyTile(
-//                              context,
-//                              tileColors[0],
-//                              splashColors[0],
-//                              Column(
-//                                  mainAxisAlignment: MainAxisAlignment.center,
-//                                  crossAxisAlignment: CrossAxisAlignment.center,
-//                                  children: <Widget>[
-//                                    Text(
-//                                      '${itemNames[0]}',
-//                                      style: TextStyle(
-//                                        fontWeight: FontWeight.w700,
-//                                        fontSize: 20.0,
-//                                        color: invertColorsMild(context),
-//                                      ),
-//                                      softWrap: true,
-//                                      overflow: TextOverflow.fade,
-//                                      maxLines: 1,
-//                                    ),
-//                                    SizedBox(
-//                                      height: 5.0,
-//                                    ),
-//                                    Text(
-//                                      '${itemNames[1]}',
-//                                      style: TextStyle(
-//                                        fontWeight: FontWeight.w700,
-//                                        fontSize: 20.0,
-//                                        color: invertColorsMild(context),
-//                                      ),
-//                                      softWrap: true,
-//                                      overflow: TextOverflow.fade,
-//                                      maxLines: 1,
-//                                    ),
-//                                  ]),
-//                              onTap: () {
-//                                doNothing();
-//                              },
-//                            ),
-//                          );
-//                        },
-//                      ),
-//                    ),
-//                  ),
                 ],
               ),
               SexyBottomSheet(), //the awesome sliding up bottom sheet
