@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/widgets/bottom_sheet.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -76,7 +77,91 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                               borderRadius: BorderRadius.circular(10.0),
                               splashColor: invertColorsStrong(context),
                               child: null,
-                              onTap: doNothing,
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  PageRouteBuilder(
+                                    transitionsBuilder: (
+                                      BuildContext context,
+                                      Animation<double> animation,
+                                      Animation<double> secondaryAnimation,
+                                      Widget child,
+                                    ) {
+                                      return SlideTransition(
+                                        position: Tween<Offset>(
+                                          begin: Offset(0.0, 1.0),
+                                          end: Offset.zero,
+                                        ).animate(animation),
+                                        child: SlideTransition(
+                                          position: Tween<Offset>(
+                                            begin: Offset.zero,
+                                            end: Offset(0.0, 1.0),
+                                          ).animate(secondaryAnimation),
+                                          child: child,
+                                        ),
+                                      );
+                                    },
+                                    transitionDuration:
+                                        Duration(milliseconds: 500),
+                                    pageBuilder: (BuildContext context,
+                                            Animation<double> animation,
+                                            Animation<double>
+                                                secondaryAnimation) =>
+                                        Stack(
+                                      children: <Widget>[
+                                        Hero(
+                                          tag: 'tile0',
+                                          child: Container(
+                                            child: Material(
+                                              color: invertInvertColorsMild(
+                                                  context),
+                                              elevation: 5.0,
+                                              shadowColor: shadowColor(context),
+                                              child: InkWell(
+                                                splashColor:
+                                                    invertColorsStrong(context),
+                                                child: null,
+                                                onTap: doNothing,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Center(
+                                          child: Hero(
+                                            tag: 'text1',
+                                            child: Text(
+                                              'Dope, huh?',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 30.0,
+                                                color:
+                                                    invertColorsMild(context),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 10.0,
+                                          right: 10.0,
+                                          child: Hero(
+                                            tag: 'icon',
+                                            child: Material(
+                                              color: Colors.transparent,
+                                              child: IconButton(
+                                                icon: Icon(Icons.add_circle),
+                                                iconSize: 60.0,
+                                                color:
+                                                    invertColorsMild(context),
+                                                splashColor: Colors.transparent,
+                                                onPressed: doNothing,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),
@@ -107,6 +192,23 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                               fontWeight: FontWeight.w700,
                               fontSize: 30.0,
                               color: invertColorsMild(context),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 25.0,
+                        right: 25.0,
+                        child: Hero(
+                          tag: 'icon',
+                          child: Material(
+                            color: Colors.transparent,
+                            child: IconButton(
+                              icon: Icon(Icons.add_circle),
+                              iconSize: 40.0,
+                              color: MyColors.accentColor,
+                              splashColor: Colors.transparent,
+                              onPressed: doNothing,
                             ),
                           ),
                         ),
