@@ -1,7 +1,9 @@
 import 'dart:ui';
 
+import 'package:dashboard_reborn/pages/about_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/functions.dart' as prefix0;
 import 'package:dashboard_reborn/widgets/bottom_sheet.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -125,36 +127,67 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                             ),
                                           ),
                                         ),
+                                        Positioned(
+                                          top: 50.0,
+                                          left: 10.0,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: <Widget>[
+                                              Material(
+                                                color: Colors.transparent,
+                                                child: IconButton(
+                                                  icon: Icon(EvaIcons.close),
+                                                  tooltip: 'Go back',
+                                                  color:
+                                                      invertColorsMild(context),
+                                                  iconSize: 26.0,
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
+                                              ),
+                                              Text(
+                                                'Close',
+                                                style: TextStyle(
+                                                  fontFamily: 'Rubik',
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 22.0,
+                                                  fontStyle: FontStyle.italic,
+                                                  color:
+                                                      invertColorsMild(context),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                         Center(
                                           child: Hero(
-                                            tag: 'text1',
-                                            child: Text(
-                                              'Dope, huh?',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 30.0,
-                                                color:
-                                                    invertColorsMild(context),
+                                            tag: 'elt1',
+                                            child: Container(
+                                              width: 200.0,
+                                              height: 200.0,
+                                              child: Image.asset(
+                                                'assets/images/icon/icon-nobg.png',
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          bottom: 10.0,
-                                          right: 10.0,
-                                          child: Hero(
-                                            tag: 'icon',
-                                            child: Material(
-                                              color: Colors.transparent,
-                                              child: IconButton(
-                                                icon: Icon(Icons.add_circle),
-                                                iconSize: 60.0,
-                                                color:
-                                                    invertColorsMild(context),
-                                                splashColor: Colors.transparent,
-                                                onPressed: doNothing,
-                                              ),
-                                            ),
+                                          bottom: 15.0,
+                                          right: 15.0,
+                                          child: FloatingActionButton(
+                                            heroTag: 'elt2',
+                                            foregroundColor:
+                                                invertInvertColorsMild(context),
+                                            backgroundColor:
+                                                MyColors.accentColor,
+                                            elevation: 5.0,
+                                            child: Icon(EvaIcons.close),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
                                           ),
                                         ),
                                       ],
@@ -169,15 +202,12 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                       Positioned(
                         bottom: 100.0,
                         left: 40.0,
-                        child: Hero(
-                          tag: 'text0',
-                          child: Text(
-                            'Hello, world!',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20.0,
-                              color: invertColorsMild(context),
-                            ),
+                        child: Text(
+                          'Hello, world!',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20.0,
+                            color: invertColorsMild(context),
                           ),
                         ),
                       ),
@@ -185,7 +215,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                         bottom: 60.0,
                         left: 40.0,
                         child: Hero(
-                          tag: 'text1',
+                          tag: 'elt1',
                           child: Text(
                             'Click me.',
                             style: TextStyle(
@@ -197,19 +227,27 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                         ),
                       ),
                       Positioned(
-                        top: 25.0,
-                        right: 25.0,
-                        child: Hero(
-                          tag: 'icon',
-                          child: Material(
-                            color: Colors.transparent,
-                            child: IconButton(
-                              icon: Icon(Icons.add_circle),
-                              iconSize: 40.0,
-                              color: MyColors.accentColor,
-                              splashColor: Colors.transparent,
-                              onPressed: doNothing,
-                            ),
+                        top: 40.0,
+                        right: 40.0,
+                        child: Container(
+                          height: 40.0,
+                          width: 40.0,
+                          child: FloatingActionButton(
+                            heroTag: 'elt2',
+                            foregroundColor: invertInvertColorsMild(context),
+                            backgroundColor: MyColors.accentColor,
+                            elevation: 3.0,
+                            child: Icon(EvaIcons.infoOutline),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) {
+                                    return MyAboutPage();
+                                  },
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),
