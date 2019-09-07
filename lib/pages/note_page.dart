@@ -93,7 +93,6 @@ class _MyNotePageState extends State<MyNotePage> {
                           ),
                         ),
                         splashColor: MyColors.accentColor,
-                        onTap: doNothing,
                       ),
                     );
                   },

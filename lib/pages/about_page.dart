@@ -179,7 +179,6 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         ],
                       ),
                       splashColor: MyColors.accentColor,
-                      onTap: doNothing,
                     ),
                   ),
                   SexyTile(
@@ -215,7 +214,6 @@ class _MyAboutPageState extends State<MyAboutPage> {
                       ),
                     ),
                     splashColor: MyColors.accentColor,
-                    onTap: doNothing,
                   ),
                   SexyTile(
                     child: Padding(
@@ -250,7 +248,6 @@ class _MyAboutPageState extends State<MyAboutPage> {
                       ),
                     ),
                     splashColor: MyColors.accentColor,
-                    onTap: doNothing,
                   ),
                   SizedBox(),
                 ],

@@ -29,7 +29,7 @@ class SexyTile extends StatelessWidget {
           child: child,
           splashColor: splashColor,
           borderRadius: BorderRadius.circular(15.0),
-          onTap: onTap(),
+          onTap: onTap == null ? doNothing : () => onTap(),
         ),
       ),
     );
