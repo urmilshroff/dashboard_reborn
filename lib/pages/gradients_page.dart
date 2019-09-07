@@ -140,7 +140,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
               ),
               Stack(
                 children: <Widget>[
-                  SwipingCardsWidget(currentPage),
+                  SwipingCards(currentPage),
                   Positioned.fill(
                     child: PageView.builder(
                       itemCount: swipingCardImages.length,
@@ -167,7 +167,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                           final pageVisibility =
                               visibilityResolver.resolvePageVisibility(index);
 
-                          return ParallaxCardsWidget(
+                          return ParallaxCards(
                             item: item,
                             pageVisibility: pageVisibility,
                           );

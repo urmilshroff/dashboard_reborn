@@ -10,12 +10,12 @@ import 'package:gradient_widgets/gradient_widgets.dart';
 //these cards are modified from https://github.com/devefy/Flutter-Story-App-UI
 
 // ignore: must_be_immutable
-class SwipingCardsWidget extends StatelessWidget {
+class SwipingCards extends StatelessWidget {
   var currentPage;
   var padding = 26.0;
   var verticalInset = 42.0;
 
-  SwipingCardsWidget(this.currentPage);
+  SwipingCards(this.currentPage);
 
   @override
   Widget build(BuildContext context) {

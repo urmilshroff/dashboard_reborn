@@ -10,8 +10,8 @@ import 'package:meta/meta.dart';
 
 //these cards are modified from https://github.com/roughike/page-transformer
 
-class ParallaxCardsWidget extends StatelessWidget {
-  ParallaxCardsWidget({
+class ParallaxCards extends StatelessWidget {
+  ParallaxCards({
     @required this.item,
     @required this.pageVisibility,
   });
