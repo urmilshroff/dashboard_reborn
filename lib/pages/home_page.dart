@@ -25,18 +25,6 @@ class _MyHomePageState extends State<MyHomePage> {
       'About',
     ]; //name of each individual tile
 
-    List<Color> tileColors = [
-      null,
-      null,
-      null,
-    ]; //color of the individual tile, mapped to index values
-
-    List<Color> splashColors = [
-      invertColorsMaterial(context),
-      MaterialColors.blue,
-      MyColors.accentColor,
-    ]; //splash color of the individual tile, mapped to index values
-
     return Scaffold(
       backgroundColor: invertInvertColorsStrong(context),
       body: Container(
@@ -74,11 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     return Hero(
                       tag: 'tile$index', //using a different hero widget tag for
                       // each page mapped to the page's index value
-                      child: sexyTile(
-                        context,
-                        tileColors[index],
-                        splashColors[index],
-                        Row(
+                      child: SexyTile(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -95,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ],
                         ),
+                        splashColor: MyColors.accentColor,
                         onTap: () {
                           Navigator.push(
                             context,
@@ -112,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                             ),
                           );
-                        }, //opens appropriate page
+                        }, //opens appropriate page,
                       ),
                     );
                   },

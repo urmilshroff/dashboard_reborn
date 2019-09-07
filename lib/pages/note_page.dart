@@ -60,46 +60,40 @@ class _MyNotePageState extends State<MyNotePage> {
                     return Hero(
                       //hero widget renders a smooth animation
                       tag: 'tile2',
-                      child: sexyTile(
-                        context,
-                        null,
-                        MyColors.accentColor,
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  itemContent[0],
-                                  style: MyTextStyles.highlightStyle,
-                                  textAlign: TextAlign.center,
-                                  softWrap: true,
-                                  overflow: TextOverflow.fade,
+                      child: SexyTile(
+                        child: Padding(
+                          padding: EdgeInsets.all(20.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                itemContent[0],
+                                style: MyTextStyles.highlightStyle,
+                                textAlign: TextAlign.center,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Text(
+                                itemContent[1],
+                                style: TextStyle(
+                                  fontFamily: 'RobotoMono',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16.0,
+                                  color: invertColorsStrong(context),
                                 ),
-                                SizedBox(
-                                  height: 20.0,
-                                ),
-                                Text(
-                                  itemContent[1],
-                                  style: TextStyle(
-                                    fontFamily: 'RobotoMono',
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16.0,
-                                    color: invertColorsStrong(context),
-                                  ),
-                                  textAlign: TextAlign.left,
-                                  softWrap: true,
-                                  overflow: TextOverflow.fade,
-                                ),
-                              ],
-                            ),
+                                textAlign: TextAlign.left,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              ),
+                            ],
                           ),
                         ),
-                        onTap: () {
-                          doNothing();
-                        },
+                        splashColor: MyColors.accentColor,
+                        onTap: doNothing,
                       ),
                     );
                   },

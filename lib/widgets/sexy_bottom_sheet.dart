@@ -208,11 +208,10 @@ class ExpandedSheetItem extends StatelessWidget {
       child: AnimatedOpacity(
         opacity: isVisible ? 1 : 0,
         duration: Duration(milliseconds: 200),
-        child: sexyTile(
-          context,
-          invertColorsMaterial(context),
-          MyColors.accentColor,
-          Row(
+        child: SexyTile(
+          color: invertColorsMaterial(context),
+          splashColor: MyColors.accentColor,
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -231,7 +230,7 @@ class ExpandedSheetItem extends StatelessWidget {
               ),
             ],
           ),
-          onTap: () => null,
+          onTap: doNothing,
         ),
       ),
     );
