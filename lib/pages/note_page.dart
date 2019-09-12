@@ -51,52 +51,46 @@ class _MyNotePageState extends State<MyNotePage> {
               ),
             ),
             Expanded(
-              child: GridView.count(
-                crossAxisCount: 1,
-                childAspectRatio: 0.8,
-                children: List.generate(
-                  1,
-                  (index) {
-                    return Hero(
-                      //hero widget renders a smooth animation
-                      tag: 'tile2',
-                      child: SexyTile(
-                        child: Padding(
-                          padding: EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                itemContent[0],
-                                style: MyTextStyles.highlightStyle,
-                                textAlign: TextAlign.center,
-                                softWrap: true,
-                                overflow: TextOverflow.fade,
+              child: ListView(
+                children: <Widget>[
+                  Hero(
+                    tag: 'tile2',
+                    child: SexyTile(
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              itemContent[0],
+                              style: MyTextStyles.highlightStyle,
+                              textAlign: TextAlign.center,
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                            ),
+                            SizedBox(
+                              height: 20.0,
+                            ),
+                            Text(
+                              itemContent[1],
+                              style: TextStyle(
+                                fontFamily: 'RobotoMono',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.0,
+                                color: invertColorsStrong(context),
                               ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              Text(
-                                itemContent[1],
-                                style: TextStyle(
-                                  fontFamily: 'RobotoMono',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16.0,
-                                  color: invertColorsStrong(context),
-                                ),
-                                textAlign: TextAlign.left,
-                                softWrap: true,
-                                overflow: TextOverflow.fade,
-                              ),
-                            ],
-                          ),
+                              textAlign: TextAlign.left,
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                            ),
+                          ],
                         ),
-                        splashColor: MyColors.accentColor,
                       ),
-                    );
-                  },
-                ),
+                      splashColor: MyColors.accentColor,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

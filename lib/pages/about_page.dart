@@ -5,7 +5,6 @@ import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MyAboutPage extends StatefulWidget {
   @override
@@ -71,112 +70,114 @@ class _MyAboutPageState extends State<MyAboutPage> {
               ),
             ),
             Expanded(
-              child: StaggeredGridView.count(
-                crossAxisCount: 2,
+              child: ListView(
                 children: <Widget>[
                   Hero(
                     tag: 'tile2',
                     child: SexyTile(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            width: 70.0,
-                            height: 70.0,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/profile/urmil.png'),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 15.0,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(
-                                EvaIcons.code,
-                                color: invertColorsMild(context),
-                                size: 18.0,
-                              ),
-                              SizedBox(
-                                width: 5.0,
-                              ),
-                              Text(
-                                'with',
-                                style: TextStyle(
-                                  fontFamily: 'RobotoMono',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16.0,
-                                  color: invertColorsStrong(context),
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              width: 70.0,
+                              height: 70.0,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/profile/urmil.png'),
                                 ),
                               ),
-                              SizedBox(
-                                width: 5.0,
-                              ),
-                              Icon(
-                                EvaIcons.heart,
-                                color: MyColors.heart,
-                                size: 18.0,
-                              ),
-                              SizedBox(
-                                width: 5.0,
-                              ),
-                              Text(
-                                'by',
-                                style: TextStyle(
-                                  fontFamily: 'RobotoMono',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16.0,
-                                  color: invertColorsStrong(context),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            'Urmil Shroff',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 22.0,
-                              color: invertColorsStrong(context),
                             ),
-                            softWrap: true,
-                            overflow: TextOverflow.fade,
-                            maxLines: 1,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Icon(
-                                  EvaIcons.person,
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  EvaIcons.code,
                                   color: invertColorsMild(context),
-                                  size: 24.0,
+                                  size: 18.0,
                                 ),
-                                onPressed: () =>
-                                    launchURL('https://urmilshroff.tech/'),
-                              ),
-                              IconButton(
-                                icon: Icon(
-                                  EvaIcons.twitter,
-                                  color: MyColors.twitter,
-                                  size: 26.0,
+                                SizedBox(
+                                  width: 6.0,
                                 ),
-                                onPressed: () => launchURL(
-                                    'https://twitter.com/urmilshroff'),
+                                Text(
+                                  'with',
+                                  style: TextStyle(
+                                    fontFamily: 'RobotoMono',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16.0,
+                                    color: invertColorsStrong(context),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 6.0,
+                                ),
+                                Icon(
+                                  EvaIcons.heart,
+                                  color: MyColors.heart,
+                                  size: 18.0,
+                                ),
+                                SizedBox(
+                                  width: 6.0,
+                                ),
+                                Text(
+                                  'by',
+                                  style: TextStyle(
+                                    fontFamily: 'RobotoMono',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16.0,
+                                    color: invertColorsStrong(context),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 10.0,
+                            ),
+                            Text(
+                              'Urmil Shroff',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 22.0,
+                                color: invertColorsStrong(context),
                               ),
-                            ],
-                          ),
-                        ],
+                              softWrap: true,
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Icon(
+                                    EvaIcons.person,
+                                    color: invertColorsMild(context),
+                                    size: 24.0,
+                                  ),
+                                  onPressed: () =>
+                                      launchURL('https://urmilshroff.tech/'),
+                                ),
+                                IconButton(
+                                  icon: Icon(
+                                    EvaIcons.twitter,
+                                    color: MyColors.twitter,
+                                    size: 26.0,
+                                  ),
+                                  onPressed: () => launchURL(
+                                      'https://twitter.com/urmilshroff'),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       splashColor: MyColors.accentColor,
                     ),
@@ -185,7 +186,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                     child: Padding(
                       padding: EdgeInsets.all(20.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
@@ -219,7 +220,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                     child: Padding(
                       padding: EdgeInsets.all(20.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
@@ -249,13 +250,9 @@ class _MyAboutPageState extends State<MyAboutPage> {
                     ),
                     splashColor: MyColors.accentColor,
                   ),
-                  SizedBox(),
-                ],
-                staggeredTiles: [
-                  StaggeredTile.extent(2, 270.0),
-                  StaggeredTile.extent(2, 480.0),
-                  StaggeredTile.extent(2, 380.0),
-                  StaggeredTile.extent(2, 75.0),
+                  SizedBox(
+                    height: 36.0,
+                  ),
                 ],
               ),
             ),
