@@ -51,23 +51,23 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-//   signingConfigs {
-//       release {
-//           keyAlias keystoreProperties['keyAlias']
-//           keyPassword keystoreProperties['keyPassword']
-//           storeFile file(keystoreProperties['storeFile'])
-//           storePassword keystoreProperties['storePassword']
-//       }
-//   }
-//
-//   buildTypes {
-//       release {
-//           signingConfig signingConfigs.release
-//           minifyEnabled false
-//           useProguard false
-//           proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//       }
-//   }
+   signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyAlias']
+           keyPassword keystoreProperties['keyPassword']
+           storeFile file(keystoreProperties['storeFile'])
+           storePassword keystoreProperties['storePassword']
+       }
+   }
+
+   buildTypes {
+       release {
+           signingConfig signingConfigs.release
+           minifyEnabled false
+           useProguard false
+           proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+       }
+   }
 }
 
 flutter {
