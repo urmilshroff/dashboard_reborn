@@ -1,6 +1,6 @@
 name: dashboard_reborn
 description: A very sexy Flutter template app!
-version: 1.0.1+2
+version: 1.0.2+3
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
