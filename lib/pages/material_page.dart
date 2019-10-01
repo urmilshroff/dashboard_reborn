@@ -146,15 +146,18 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                                   },
                                                 ),
                                               ),
-                                              Text(
-                                                'Close',
-                                                style: TextStyle(
-                                                  fontFamily: 'Rubik',
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 22.0,
-                                                  fontStyle: FontStyle.italic,
-                                                  color:
-                                                      invertColorsMild(context),
+                                              Material(
+                                                color: Colors.transparent,
+                                                child: Text(
+                                                  'Close',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Rubik',
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 22.0,
+                                                    fontStyle: FontStyle.italic,
+                                                    color: invertColorsMild(
+                                                        context),
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -164,11 +167,15 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                           child: Hero(
                                             tag: 'elt1',
                                             child: Container(
-                                              width: 200.0,
-                                              height: 200.0,
-                                              child: Image.asset(
-                                                'assets/images/icon/icon-nobg.png',
-                                                fit: BoxFit.cover,
+                                              width: 300,
+                                              height: 300,
+                                              child: Container(
+                                                width: 200.0,
+                                                height: 200.0,
+                                                child: Image.asset(
+                                                  'assets/images/icon/icon-nobg.png',
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -215,12 +222,15 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                         left: 40.0,
                         child: Hero(
                           tag: 'elt1',
-                          child: Text(
-                            'Click me.',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 30.0,
-                              color: invertColorsMild(context),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: Text(
+                              'Click me.',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 30.0,
+                                color: invertColorsMild(context),
+                              ),
                             ),
                           ),
                         ),
