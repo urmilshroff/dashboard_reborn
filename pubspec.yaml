@@ -22,12 +22,10 @@ dev_dependencies:
 
 flutter_icons:
   android: 'launcher_icon'
-  image_path_android: 'assets/images/icon/icon-nobg.png'
-  adaptive_icon_foreground: 'assets/images/icon/icon-nobg.png'
-  adaptive_icon_background: '#fafafa'
+  image_path_android: 'assets/images/icon/icon-android.png'
 
   ios: true
-  image_path_ios: 'assets/images/icon/icon-bg.png'
+  image_path_ios: 'assets/images/icon/icon-ios.png'
 
 flutter:
   uses-material-design: true
