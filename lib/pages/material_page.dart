@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:dashboard_reborn/pages/about_page.dart';
+import 'package:dashboard_reborn/pages/liquid_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/functions.dart';
 import 'package:dashboard_reborn/widgets/sexy_bottom_sheet.dart';
@@ -252,7 +252,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                 context,
                                 CupertinoPageRoute(
                                   builder: (context) {
-                                    return MyAboutPage();
+                                    return MyLiquidPage();
                                   },
                                 ),
                               );
