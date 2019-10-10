@@ -248,10 +248,10 @@ class ExpandedSheetItem extends StatelessWidget {
 }
 
 final List<SheetItem> items = [
-  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 1'),
-  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 2'),
-  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 3'),
-  SheetItem('assets/images/icon/icon-nobg.png', 'Icon 4'),
+  SheetItem('assets/images/icon/icon-android.png', 'Icon 1'),
+  SheetItem('assets/images/icon/icon-android.png', 'Icon 2'),
+  SheetItem('assets/images/icon/icon-android.png', 'Icon 3'),
+  SheetItem('assets/images/icon/icon-android.png', 'Icon 4'),
 ];
 
 class SheetItem {
