@@ -48,14 +48,20 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                             Navigator.pop(context);
                           },
                         ),
-                        Text(
-                          'Material++',
-                          style: TextStyle(
-                            fontFamily: 'Rubik',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 22.0,
-                            fontStyle: FontStyle.italic,
-                            color: invertColorsMild(context),
+                        Hero(
+                          tag: 'title0',
+                          child: Material(
+                            color: Colors.transparent,
+                            child: Text(
+                              'Material++',
+                              style: TextStyle(
+                                fontFamily: 'Rubik',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 22.0,
+                                fontStyle: FontStyle.italic,
+                                color: invertColorsMild(context),
+                              ),
+                            ),
                           ),
                         ),
                       ],

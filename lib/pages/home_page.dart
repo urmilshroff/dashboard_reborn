@@ -59,47 +59,67 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: List.generate(
                   itemNames.length,
                   (index) {
-                    return Hero(
-                      tag: 'tile$index', //using a different hero widget tag for
-                      // each page mapped to the page's index value
-                      child: SexyTile(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              '${itemNames[index]}',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 22.0,
-                                color: invertColorsStrong(context),
-                              ),
-                              softWrap: true,
-                              overflow: TextOverflow.fade,
-                              maxLines: 1,
-                            ),
-                          ],
+                    return Stack(
+                      fit: StackFit.expand,
+                      children: <Widget>[
+                        Hero(
+                          tag: 'tile$index', //using a different hero widget tag for
+                          // each page mapped to the page's index value
+                          child: SexyTile(
+                          ),
                         ),
-                        splashColor: MyColors.accentColor,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              builder: (context) {
-                                if (index == 0) {
-                                  return MyMaterialPage();
-                                } else if (index == 1) {
-                                  return MyGradientsPage();
-                                } else if (index == 2) {
-                                  return MyAboutPage();
-                                } else {
-                                  return null;
-                                }
+                        Container(
+                          margin: EdgeInsets.all(15.0),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Hero(
+                                    tag: 'title${index}',
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: Text(
+                                        '${itemNames[index]}',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 22.0,
+                                          color: invertColorsStrong(context),
+                                        ),
+                                        softWrap: true,
+                                        overflow: TextOverflow.fade,
+                                        maxLines: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              splashColor: MyColors.accentColor,
+                              borderRadius: BorderRadius.circular(15.0),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                    builder: (context) {
+                                      if (index == 0) {
+                                        return MyMaterialPage();
+                                      } else if (index == 1) {
+                                        return MyGradientsPage();
+                                      } else if (index == 2) {
+                                        return MyAboutPage();
+                                      } else {
+                                        return null;
+                                      }
+                                    },
+                                  ),
+                                );
                               },
                             ),
-                          );
-                        }, //opens appropriate page,
-                      ),
+                          ),
+                        ),
+                      ],
                     );
                   },
                 ),

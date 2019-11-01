@@ -56,14 +56,20 @@ class _MyAboutPageState extends State<MyAboutPage> {
                       Navigator.pop(context);
                     },
                   ),
-                  Text(
-                    'About',
-                    style: TextStyle(
-                      fontFamily: 'Rubik',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22.0,
-                      fontStyle: FontStyle.italic,
-                      color: invertColorsStrong(context),
+                  Hero(
+                    tag: 'title2',
+                    child: Material(
+                      color: Colors.transparent,
+                      child: Text(
+                        'About',
+                        style: TextStyle(
+                          fontFamily: 'Rubik',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 22.0,
+                          fontStyle: FontStyle.italic,
+                          color: invertColorsStrong(context),
+                        ),
+                      ),
                     ),
                   ),
                 ],
