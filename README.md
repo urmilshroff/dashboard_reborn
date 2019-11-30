@@ -2,6 +2,7 @@
 
 # Dashboard Reborn✨
 
+[![Codemagic build](https://api.codemagic.io/apps/5de2865354bf42348a792b37/5de2865354bf42348a792b36/status_badge.svg)]
 [![Issues](https://img.shields.io/github/issues/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/issues)
 [![Stars](https://img.shields.io/github/stars/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/stargazers)
 [![Forks](https://img.shields.io/github/forks/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/network/members)
