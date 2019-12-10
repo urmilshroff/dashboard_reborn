@@ -7,6 +7,14 @@ void doNothing() {
   print('Nothing is happening here (yet)');
 } //better than doing null-ing, right? ;)
 
+bool isIOS(BuildContext context) {
+  if (Theme.of(context).platform == TargetPlatform.iOS) {
+    return true;
+  } else {
+    return false;
+  }
+} // check if android or ios
+
 bool isThemeCurrentlyDark(BuildContext context) {
   if (Theme.of(context).brightness == Brightness.dark) {
     return true;
@@ -14,6 +22,22 @@ bool isThemeCurrentlyDark(BuildContext context) {
     return false;
   }
 } //returns current theme status
+
+Color invertColorsTheme(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.primary;
+  } else {
+    return MyColors.accent;
+  }
+} //returns appropriate theme colors for ui elements
+
+Color invertInvertColorsTheme(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.accent;
+  } else {
+    return MyColors.primary;
+  }
+} //keeps the same colors lol
 
 Color invertColorsMild(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
@@ -23,6 +47,14 @@ Color invertColorsMild(BuildContext context) {
   }
 } //returns appropriate mild colors for text visibility
 
+Color invertInvertColorsMild(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MyColors.dark;
+  } else {
+    return MyColors.light;
+  }
+} //keeps the same colors lol
+
 Color invertColorsStrong(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
     return MyColors.white;
@@ -31,13 +63,13 @@ Color invertColorsStrong(BuildContext context) {
   }
 } //returns appropriate strong colors for text visibility
 
-Color invertColorsTheme(BuildContext context) {
+Color invertInvertColorsStrong(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return MyColors.accentColor;
+    return MyColors.black;
   } else {
-    return MyColors.primaryColor;
+    return MyColors.white;
   }
-} //returns appropriate theme colors
+} //keeps the same colors lol
 
 Color invertColorsMaterial(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
@@ -47,29 +79,13 @@ Color invertColorsMaterial(BuildContext context) {
   }
 } //returns appropriate material colors
 
-Color invertInvertColorsMild(BuildContext context) {
-  if (isThemeCurrentlyDark(context)) {
-    return MyColors.dark;
-  } else {
-    return MyColors.light;
-  }
-} //keeps the same mild colors lol
-
-Color invertInvertColorsStrong(BuildContext context) {
-  if (isThemeCurrentlyDark(context)) {
-    return MyColors.black;
-  } else {
-    return MyColors.white;
-  }
-} //keeps the same strong colors lol
-
 Color shadowColor(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
-    return ShadowColors.shadowDark;
+    return ShadowColors.dark;
   } else {
-    return ShadowColors.shadowLight;
+    return ShadowColors.light;
   }
-} //returns appropriate shadow colors
+} //returns appropriate colors for raised element shadows
 
 launchURL(String url) async {
   if (await canLaunch(url)) {

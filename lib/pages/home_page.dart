@@ -2,7 +2,7 @@ import 'package:dashboard_reborn/pages/about_page.dart';
 import 'package:dashboard_reborn/pages/gradients_page.dart';
 import 'package:dashboard_reborn/pages/material_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ],
                               ),
-                              splashColor: MyColors.accentColor,
+                              splashColor: MyColors.accent,
                               borderRadius: BorderRadius.circular(15.0),
                               onTap: () {
                                 Navigator.push(

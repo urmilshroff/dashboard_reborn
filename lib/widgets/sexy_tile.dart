@@ -1,9 +1,6 @@
-import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-//this is the main tile builder class taken and modified from https://github
-// .com/Ivaskuu/dashboard
 
 class SexyTile extends StatelessWidget {
   const SexyTile({

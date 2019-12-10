@@ -1,5 +1,5 @@
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/Constants/Helpers.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';

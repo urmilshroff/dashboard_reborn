@@ -2,7 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -210,7 +210,7 @@ class ExpandedSheetItem extends StatelessWidget {
         duration: Duration(milliseconds: 200),
         child: SexyTile(
           color: invertColorsMaterial(context),
-          splashColor: MyColors.accentColor,
+          splashColor: MyColors.accent,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

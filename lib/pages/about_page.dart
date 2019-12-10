@@ -1,6 +1,6 @@
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/textstyles.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
+import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -185,7 +185,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                           ],
                         ),
                       ),
-                      splashColor: MyColors.accentColor,
+                      splashColor: MyColors.accent,
                     ),
                   ),
                   SexyTile(
@@ -220,7 +220,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         ],
                       ),
                     ),
-                    splashColor: MyColors.accentColor,
+                    splashColor: MyColors.accent,
                   ),
                   SexyTile(
                     child: Padding(
@@ -254,7 +254,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         ],
                       ),
                     ),
-                    splashColor: MyColors.accentColor,
+                    splashColor: MyColors.accent,
                   ),
                   SizedBox(
                     height: 36.0,

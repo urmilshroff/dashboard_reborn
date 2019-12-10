@@ -1,5 +1,5 @@
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
 import 'package:dashboard_reborn/widgets/parallax_cards.dart';
 import 'package:dashboard_reborn/widgets/swiping_cards.dart';

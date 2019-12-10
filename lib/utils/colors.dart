@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyColors {
-  static const primaryColor = Color(0xff212121);
-  static const accentColor = Color(0xff00e5ff);
+  static const primary = Color(0xff212121);
+  static const accent = Color(0xff00e5ff);
   static const light = Color(0xffeceff1);
   static const dark = Color(0xff37474f);
   static const white = Color(0xfffafafa);
@@ -22,7 +22,7 @@ class MaterialColors {
   static const pink = Color(0xffc51162);
   static const orange = Color(0xffff6d00);
   static const teal = Color(0xff00bfa5);
-} //colors used in the material page
+} //material design colors
 
 class GradientColors {
   static const lightStart = Color(0xffdd2c00);
@@ -32,6 +32,6 @@ class GradientColors {
 } //colors used in the gradients page
 
 class ShadowColors {
-  static const shadowLight = Color(0x80718792);
-  static const shadowDark = Color(0x801c313a);
-} //colors used for tile shadows
+  static const light = Color(0x80718792);
+  static const dark = Color(0x801c313a);
+} //shadow colors for raised elements

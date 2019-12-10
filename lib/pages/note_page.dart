@@ -1,7 +1,7 @@
 import 'package:dashboard_reborn/pages/home_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/functions.dart';
-import 'package:dashboard_reborn/utils/textstyles.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
+import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -87,7 +87,7 @@ class _MyNotePageState extends State<MyNotePage> {
                           ],
                         ),
                       ),
-                      splashColor: MyColors.accentColor,
+                      splashColor: MyColors.accent,
                     ),
                   ),
                 ],

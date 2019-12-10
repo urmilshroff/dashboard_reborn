@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:dashboard_reborn/pages/liquid_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/functions.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_bottom_sheet.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -194,7 +194,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                             foregroundColor:
                                                 invertInvertColorsMild(context),
                                             backgroundColor:
-                                                MyColors.accentColor,
+                                                MyColors.accent,
                                             elevation: 5.0,
                                             child: Icon(EvaIcons.close),
                                             onPressed: () {
@@ -250,7 +250,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                           child: FloatingActionButton(
                             heroTag: 'elt2',
                             foregroundColor: invertInvertColorsMild(context),
-                            backgroundColor: MyColors.accentColor,
+                            backgroundColor: MyColors.accent,
                             elevation: 3.0,
                             child: Icon(EvaIcons.infoOutline),
                             onPressed: () {
