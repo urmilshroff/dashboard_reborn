@@ -1,6 +1,6 @@
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/utils/text_styles.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -62,13 +62,9 @@ class _MyAboutPageState extends State<MyAboutPage> {
                       color: Colors.transparent,
                       child: Text(
                         'About',
-                        style: TextStyle(
-                          fontFamily: 'Rubik',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 22.0,
-                          fontStyle: FontStyle.italic,
-                          color: invertColorsStrong(context),
-                        ),
+                        style: isThemeCurrentlyDark(context)
+                            ? TitleStylesDefault.white
+                            : TitleStylesDefault.black,
                       ),
                     ),
                   ),
@@ -115,12 +111,9 @@ class _MyAboutPageState extends State<MyAboutPage> {
                                 ),
                                 Text(
                                   'with',
-                                  style: TextStyle(
-                                    fontFamily: 'RobotoMono',
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16.0,
-                                    color: invertColorsStrong(context),
-                                  ),
+                                  style: isThemeCurrentlyDark(context)
+                                      ? BodyStylesDefault.white
+                                      : BodyStylesDefault.black,
                                 ),
                                 SizedBox(
                                   width: 6.0,
@@ -135,12 +128,9 @@ class _MyAboutPageState extends State<MyAboutPage> {
                                 ),
                                 Text(
                                   'by',
-                                  style: TextStyle(
-                                    fontFamily: 'RobotoMono',
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16.0,
-                                    color: invertColorsStrong(context),
-                                  ),
+                                  style: isThemeCurrentlyDark(context)
+                                      ? BodyStylesDefault.white
+                                      : BodyStylesDefault.black,
                                 ),
                               ],
                             ),
@@ -149,11 +139,9 @@ class _MyAboutPageState extends State<MyAboutPage> {
                             ),
                             Text(
                               'Urmil Shroff',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 22.0,
-                                color: invertColorsStrong(context),
-                              ),
+                              style: isThemeCurrentlyDark(context)
+                                  ? LabelStyles.white
+                                  : LabelStyles.black,
                               softWrap: true,
                               overflow: TextOverflow.fade,
                               maxLines: 1,
@@ -197,7 +185,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         children: <Widget>[
                           Text(
                             itemContent[0],
-                            style: MyTextStyles.highlightStyle,
+                            style: HeadingStylesDefault.accent,
                             textAlign: TextAlign.center,
                             softWrap: true,
                             overflow: TextOverflow.fade,
@@ -207,12 +195,9 @@ class _MyAboutPageState extends State<MyAboutPage> {
                           ),
                           Text(
                             itemContent[1],
-                            style: TextStyle(
-                              fontFamily: 'RobotoMono',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16.0,
-                              color: invertColorsStrong(context),
-                            ),
+                            style: isThemeCurrentlyDark(context)
+                                ? BodyStylesDefault.white
+                                : BodyStylesDefault.black,
                             textAlign: TextAlign.left,
                             softWrap: true,
                             overflow: TextOverflow.fade,
@@ -231,7 +216,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                         children: <Widget>[
                           Text(
                             itemContent[2],
-                            style: MyTextStyles.highlightStyle,
+                            style: HeadingStylesDefault.accent,
                             textAlign: TextAlign.center,
                             softWrap: true,
                             overflow: TextOverflow.fade,
@@ -241,12 +226,9 @@ class _MyAboutPageState extends State<MyAboutPage> {
                           ),
                           Text(
                             itemContent[3],
-                            style: TextStyle(
-                              fontFamily: 'RobotoMono',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16.0,
-                              color: invertColorsStrong(context),
-                            ),
+                            style: isThemeCurrentlyDark(context)
+                                ? BodyStylesDefault.white
+                                : BodyStylesDefault.black,
                             textAlign: TextAlign.left,
                             softWrap: true,
                             overflow: TextOverflow.fade,

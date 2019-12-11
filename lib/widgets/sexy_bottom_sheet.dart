@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:dashboard_reborn/utils/colors.dart';
+import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:flutter/cupertino.dart';
@@ -221,11 +222,9 @@ class ExpandedSheetItem extends StatelessWidget {
                 ),
                 child: Text(
                   'Press & hold me',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 20.0,
-                    color: invertColorsMild(context),
-                  ),
+                  style: isThemeCurrentlyDark(context)
+                      ? SubHeadingStylesMaterial.light
+                      : SubHeadingStylesMaterial.dark,
                 ),
               ),
             ],

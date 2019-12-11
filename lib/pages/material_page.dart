@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:dashboard_reborn/pages/liquid_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
+import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_bottom_sheet.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -54,13 +55,9 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                             color: Colors.transparent,
                             child: Text(
                               'Material++',
-                              style: TextStyle(
-                                fontFamily: 'Rubik',
-                                fontWeight: FontWeight.w600,
-                                fontSize: 22.0,
-                                fontStyle: FontStyle.italic,
-                                color: invertColorsMild(context),
-                              ),
+                              style: isThemeCurrentlyDark(context)
+                                  ? TitleStylesDefault.white
+                                  : TitleStylesDefault.black,
                             ),
                           ),
                         ),
@@ -156,14 +153,12 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                                 color: Colors.transparent,
                                                 child: Text(
                                                   'Close',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Rubik',
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 22.0,
-                                                    fontStyle: FontStyle.italic,
-                                                    color: invertColorsMild(
-                                                        context),
-                                                  ),
+                                                  style: isThemeCurrentlyDark(
+                                                          context)
+                                                      ? SubHeadingStylesMaterial
+                                                          .light
+                                                      : SubHeadingStylesMaterial
+                                                          .dark,
                                                 ),
                                               ),
                                             ],
@@ -193,8 +188,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                             heroTag: 'elt2',
                                             foregroundColor:
                                                 invertInvertColorsMild(context),
-                                            backgroundColor:
-                                                MyColors.accent,
+                                            backgroundColor: MyColors.accent,
                                             elevation: 5.0,
                                             child: Icon(EvaIcons.close),
                                             onPressed: () {
@@ -216,11 +210,9 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                         left: 40.0,
                         child: Text(
                           'Hello, world!',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20.0,
-                            color: invertColorsMild(context),
-                          ),
+                          style: isThemeCurrentlyDark(context)
+                              ? SubHeadingStylesMaterial.light
+                              : SubHeadingStylesMaterial.dark,
                         ),
                       ),
                       Positioned(
@@ -232,11 +224,9 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                             color: Colors.transparent,
                             child: Text(
                               'Click me.',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 30.0,
-                                color: invertColorsMild(context),
-                              ),
+                              style: isThemeCurrentlyDark(context)
+                                  ? HeadingStylesMaterial.light
+                                  : HeadingStylesMaterial.dark,
                             ),
                           ),
                         ),

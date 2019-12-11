@@ -2,6 +2,7 @@ import 'package:dashboard_reborn/pages/about_page.dart';
 import 'package:dashboard_reborn/pages/gradients_page.dart';
 import 'package:dashboard_reborn/pages/material_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
+import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
@@ -41,13 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
                   Text(
                     'Dashboard Reborn',
-                    style: TextStyle(
-                      fontFamily: 'Rubik',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22.0,
-                      fontStyle: FontStyle.italic,
-                      color: invertColorsStrong(context),
-                    ),
+                    style: isThemeCurrentlyDark(context)
+                        ? TitleStylesDefault.white
+                        : TitleStylesDefault.black,
                   ),
                 ],
               ),
@@ -63,10 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       fit: StackFit.expand,
                       children: <Widget>[
                         Hero(
-                          tag: 'tile$index', //using a different hero widget tag for
+                          tag:
+                              'tile$index', //using a different hero widget tag for
                           // each page mapped to the page's index value
-                          child: SexyTile(
-                          ),
+                          child: SexyTile(),
                         ),
                         Container(
                           margin: EdgeInsets.all(15.0),
@@ -83,11 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                       color: Colors.transparent,
                                       child: Text(
                                         '${itemNames[index]}',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 22.0,
-                                          color: invertColorsStrong(context),
-                                        ),
+                                        style: isThemeCurrentlyDark(context)
+                                            ? LabelStyles.white
+                                            : LabelStyles.black,
                                         softWrap: true,
                                         overflow: TextOverflow.fade,
                                         maxLines: 1,
@@ -143,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ? 'Switch to light mode'
             : 'Switch to dark mode',
         foregroundColor: invertInvertColorsStrong(context),
-        backgroundColor: invertColorsTheme(context),
+        backgroundColor: invertInvertColorsTheme(context),
         elevation: 5.0,
         onPressed: () {
           DynamicTheme.of(context).setBrightness(

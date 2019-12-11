@@ -1,8 +1,8 @@
 import 'package:dashboard_reborn/pages/gradients_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
 import 'package:dashboard_reborn/utils/text_styles.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
@@ -50,7 +50,7 @@ class ParallaxCards extends StatelessWidget {
           gradient: isThemeCurrentlyDark(context)
               ? Gradients.coldLinear
               : Gradients.backToFuture,
-          style: MyTextStyles.gradientCardBodyStyle,
+          style: SubHeadingStylesGradient.white,
           textAlign: TextAlign.center,
         ),
       ),
@@ -64,7 +64,7 @@ class ParallaxCards extends StatelessWidget {
           item.title,
           shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
           gradient: Gradients.haze,
-          style: MyTextStyles.gradientCardTitleStyle,
+          style: HeadingStylesGradient.white,
           textAlign: TextAlign.center,
         ),
       ),

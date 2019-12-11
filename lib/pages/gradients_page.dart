@@ -1,6 +1,7 @@
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/utils/page_transformer.dart';
+import 'package:dashboard_reborn/utils/text_styles.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/parallax_cards.dart';
 import 'package:dashboard_reborn/widgets/swiping_cards.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -128,12 +129,9 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
                           ? Gradients.coldLinear
                           : Gradients
                               .haze, //gradient colors change according to set theme
-                      style: TextStyle(
-                        fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 22.0,
-                        fontStyle: FontStyle.italic,
-                      ),
+                      style: isThemeCurrentlyDark(context)
+                          ? TitleStylesDefault.white
+                          : TitleStylesDefault.black,
                     ),
                   ],
                 ),

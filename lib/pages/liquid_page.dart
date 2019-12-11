@@ -1,4 +1,5 @@
 import 'package:dashboard_reborn/utils/colors.dart';
+import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/Constants/Helpers.dart';
@@ -40,11 +41,9 @@ class _MyLiquidPageState extends State<MyLiquidPage> {
                 ),
                 Text(
                   '<< Swipe in any direction >>',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
-                    color: invertColorsMild(context),
-                  ),
+                  style: isThemeCurrentlyDark(context)
+                      ? SubHeadingStylesMaterial.light
+                      : SubHeadingStylesMaterial.dark,
                 ),
               ],
             )
@@ -78,11 +77,9 @@ class _MyLiquidPageState extends State<MyLiquidPage> {
                 ),
                 Text(
                   '<< Swipe in any direction >>',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
-                    color: invertColorsMild(context),
-                  ),
+                  style: isThemeCurrentlyDark(context)
+                      ? SubHeadingStylesMaterial.light
+                      : SubHeadingStylesMaterial.dark,
                 ),
               ],
             )
@@ -116,11 +113,9 @@ class _MyLiquidPageState extends State<MyLiquidPage> {
                 ),
                 Text(
                   '<< Swipe in any direction >>',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
-                    color: invertColorsMild(context),
-                  ),
+                  style: isThemeCurrentlyDark(context)
+                      ? SubHeadingStylesMaterial.light
+                      : SubHeadingStylesMaterial.dark,
                 ),
               ],
             )

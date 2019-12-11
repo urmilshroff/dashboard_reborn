@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:dashboard_reborn/pages/gradients_page.dart';
-import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/utils/text_styles.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
@@ -78,7 +78,7 @@ class SwipingCards extends StatelessWidget {
                                     shaderRect:
                                         Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
                                     gradient: Gradients.haze,
-                                    style: MyTextStyles.gradientCardTitleStyle,
+                                    style: HeadingStylesGradient.white,
                                     softWrap: false,
                                     overflow: TextOverflow.fade,
                                     maxLines: 1,

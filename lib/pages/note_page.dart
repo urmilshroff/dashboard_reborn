@@ -40,12 +40,9 @@ class _MyNotePageState extends State<MyNotePage> {
                 children: <Widget>[
                   Text(
                     'Welcome!',
-                    style: TextStyle(
-                      fontFamily: 'Rubik',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24.0,
-                      color: invertColorsStrong(context),
-                    ),
+                    style: isThemeCurrentlyDark(context)
+                        ? TitleStylesDefault.white
+                        : TitleStylesDefault.black,
                   ),
                 ],
               ),
@@ -64,7 +61,7 @@ class _MyNotePageState extends State<MyNotePage> {
                           children: <Widget>[
                             Text(
                               itemContent[0],
-                              style: MyTextStyles.highlightStyle,
+                              style: HeadingStylesDefault.accent,
                               textAlign: TextAlign.center,
                               softWrap: true,
                               overflow: TextOverflow.fade,
@@ -74,12 +71,9 @@ class _MyNotePageState extends State<MyNotePage> {
                             ),
                             Text(
                               itemContent[1],
-                              style: TextStyle(
-                                fontFamily: 'RobotoMono',
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16.0,
-                                color: invertColorsStrong(context),
-                              ),
+                              style: isThemeCurrentlyDark(context)
+                                  ? BodyStylesDefault.white
+                                  : BodyStylesDefault.black,
                               textAlign: TextAlign.left,
                               softWrap: true,
                               overflow: TextOverflow.fade,
@@ -105,7 +99,7 @@ class _MyNotePageState extends State<MyNotePage> {
         ),
         tooltip: 'Accept',
         foregroundColor: invertInvertColorsStrong(context),
-        backgroundColor: invertColorsTheme(context),
+        backgroundColor: invertInvertColorsTheme(context),
         elevation: 5.0,
         onPressed: () {
           Navigator.push(
