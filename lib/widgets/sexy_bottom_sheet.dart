@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'dart:ui';
 
-import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
@@ -103,7 +102,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
                 shadowColor: shadowColor(context),
                 child: InkWell(
                   onTap: doNothing,
-                  splashColor: invertColorsStrong(context),
+                  splashColor: invertColorsMaterial(context),
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Stack(
@@ -211,7 +210,7 @@ class ExpandedSheetItem extends StatelessWidget {
         duration: Duration(milliseconds: 200),
         child: SexyTile(
           color: invertColorsMaterial(context),
-          splashColor: MyColors.accent,
+          splashColor: invertInvertColorsMaterial(context),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

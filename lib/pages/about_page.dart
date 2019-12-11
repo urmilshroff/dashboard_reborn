@@ -44,16 +44,13 @@ class _MyAboutPageState extends State<MyAboutPage> {
                       Navigator.pop(context);
                     },
                   ),
-                  Hero(
-                    tag: 'title2',
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        'About',
-                        style: isThemeCurrentlyDark(context)
-                            ? TitleStylesDefault.white
-                            : TitleStylesDefault.black,
-                      ),
+                  Material(
+                    color: Colors.transparent,
+                    child: Text(
+                      'About',
+                      style: isThemeCurrentlyDark(context)
+                          ? TitleStylesDefault.white
+                          : TitleStylesDefault.black,
                     ),
                   ),
                 ],

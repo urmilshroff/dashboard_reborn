@@ -79,6 +79,14 @@ Color invertColorsMaterial(BuildContext context) {
   }
 } //returns appropriate material colors
 
+Color invertInvertColorsMaterial(BuildContext context) {
+  if (isThemeCurrentlyDark(context)) {
+    return MaterialColors.yellow;
+  } else {
+    return MaterialColors.orange;
+  }
+} //keeps the same colors lol
+
 Color shadowColor(BuildContext context) {
   if (isThemeCurrentlyDark(context)) {
     return ShadowColors.dark;

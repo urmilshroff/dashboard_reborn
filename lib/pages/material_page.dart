@@ -79,7 +79,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                             shadowColor: shadowColor(context),
                             child: InkWell(
                               borderRadius: BorderRadius.circular(10.0),
-                              splashColor: invertColorsStrong(context),
+                              splashColor: invertInvertColorsMaterial(context),
                               child: null,
                               onTap: () {
                                 Navigator.of(context).push(
@@ -122,46 +122,12 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                               shadowColor: shadowColor(context),
                                               child: InkWell(
                                                 splashColor:
-                                                    invertColorsStrong(context),
+                                                    invertColorsMaterial(
+                                                        context),
                                                 child: null,
                                                 onTap: doNothing,
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: 50.0,
-                                          left: 10.0,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: <Widget>[
-                                              Material(
-                                                color: Colors.transparent,
-                                                child: IconButton(
-                                                  icon: Icon(EvaIcons.close),
-                                                  tooltip: 'Go back',
-                                                  color:
-                                                      invertColorsMild(context),
-                                                  iconSize: 26.0,
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                ),
-                                              ),
-                                              Material(
-                                                color: Colors.transparent,
-                                                child: Text(
-                                                  'Close',
-                                                  style: isThemeCurrentlyDark(
-                                                          context)
-                                                      ? SubHeadingStylesMaterial
-                                                          .light
-                                                      : SubHeadingStylesMaterial
-                                                          .dark,
-                                                ),
-                                              ),
-                                            ],
                                           ),
                                         ),
                                         Center(
