@@ -1,7 +1,7 @@
 import 'package:dashboard_reborn/pages/home_page.dart';
 import 'package:dashboard_reborn/utils/colors.dart';
-import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/utils/text_styles.dart';
+import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,12 +15,7 @@ class MyNotePage extends StatefulWidget {
 class _MyNotePageState extends State<MyNotePage> {
   List<String> itemContent = [
     'Note: this app does nothing.',
-    'Yep, you read that right! It\'s only meant to serve as a UI template for'
-        ' Flutter developers to use in their own apps.\n\nThe '
-        'entire source code is freely available on GitHub, and you can tweak '
-        'it and use it as per your liking.\n\nEnjoy, and don\'t forget'
-        ' to star the project on GitHub. It really helps me out!\n\n- Urmil '
-        'Shroff',
+    'Yep, you read that right! It\'s only meant to serve as a UI template for Flutter developers to use in their own apps.\n\nThe entire source code is freely available on GitHub, so you can tweak it and use it as per your liking.\n\nEnjoy, and don\'t forget to star the project on GitHub. It really helps me out!\n\n- Urmil Shroff',
   ]; //the text in the tile
 
   @override
@@ -29,6 +24,7 @@ class _MyNotePageState extends State<MyNotePage> {
       backgroundColor: invertInvertColorsStrong(context),
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(

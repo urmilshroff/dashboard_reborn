@@ -30,10 +30,11 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: invertInvertColorsStrong(context),
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                left: 20.0,
+                left: 40.0,
                 top: 60.0,
                 bottom: 10.0,
               ),
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Hero(
-                                    tag: 'title${index}',
+                                    tag: 'title$index',
                                     child: Material(
                                       color: Colors.transparent,
                                       child: Text(

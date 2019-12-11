@@ -102,6 +102,7 @@ class _MyGradientsPageState extends State<MyGradientsPage> {
         ),
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(

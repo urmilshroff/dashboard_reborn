@@ -14,22 +14,9 @@ class MyAboutPage extends StatefulWidget {
 class _MyAboutPageState extends State<MyAboutPage> {
   List<String> itemContent = [
     'What is this app about?',
-    'Dashboard Reborn is a showcase of beautiful UI elements '
-        'written purely in Dart code.\n\nThe entire '
-        'project is open source, and you can use the '
-        'code however you want in your own apps.\n\nThat '
-        'said, if you liked this app or found it '
-        'helpful, please fork/star it on GitHub and give '
-        'me a shoutout. Pull requests are more than '
-        'welcome too.\n\nThanks!',
+    'Dashboard Reborn is a showcase of beautiful UI elements written purely in Dart code.\n\nThe entire project is open source, and you can use the code however you want in your own apps.\n\nThat said, if you liked this app or found it helpful, please fork/star it on GitHub and give me a shoutout. Pull requests are more than welcome too.\n\nThanks!',
     'Credits',
-    'This app would not have been possible without '
-        'the Flutter framework, the open source '
-        'projects that I\'ve used and the tireless efforts of developers and '
-        'contributors in '
-        'the Flutter community. \n\nPlease see the '
-        'README.md file in the repository below for '
-        'more details.',
+    'This app would not have been possible without the Flutter framework, the open source projects that I\'ve used and the tireless efforts of developers and contributors in the Flutter community. \n\nPlease see the README.md file in the repository below for more details.',
   ]; //the text in the tile
 
   @override
@@ -38,6 +25,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
       backgroundColor: invertInvertColorsStrong(context),
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
