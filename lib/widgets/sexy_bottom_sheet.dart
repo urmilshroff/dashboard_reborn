@@ -137,7 +137,7 @@ class _SexyBottomSheetState extends State<SexyBottomSheet>
             Radius.circular(10.0),
           ),
           child: Image.asset(
-            'assets/images/icon/icon-nobg.png',
+            'assets/icon/icon-legacy.png',
             fit: BoxFit.cover,
             alignment: Alignment(lerp(0, 0), 0),
           ),
@@ -247,10 +247,10 @@ class ExpandedSheetItem extends StatelessWidget {
 }
 
 final List<SheetItem> items = [
-  SheetItem('assets/images/icon/icon-android.png', 'Icon 1'),
-  SheetItem('assets/images/icon/icon-android.png', 'Icon 2'),
-  SheetItem('assets/images/icon/icon-android.png', 'Icon 3'),
-  SheetItem('assets/images/icon/icon-android.png', 'Icon 4'),
+  SheetItem('assets/icon/icon-legacy.png', 'Icon 1'),
+  SheetItem('assets/icon/icon-legacy.png', 'Icon 2'),
+  SheetItem('assets/icon/icon-legacy.png', 'Icon 3'),
+  SheetItem('assets/icon/icon-legacy.png', 'Icon 4'),
 ];
 
 class SheetItem {

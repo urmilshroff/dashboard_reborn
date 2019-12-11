@@ -77,8 +77,7 @@ class _MyAboutPageState extends State<MyAboutPage> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/profile/urmil.png'),
+                                  image: AssetImage('assets/credits/urmil.png'),
                                 ),
                               ),
                             ),

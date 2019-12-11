@@ -31,7 +31,7 @@ class _MyLiquidPageState extends State<MyLiquidPage> {
                     width: 200.0,
                     height: 200.0,
                     child: Image.asset(
-                      'assets/images/icon/icon-android.png',
+                      'assets/icon/icon-legacy.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -67,7 +67,7 @@ class _MyLiquidPageState extends State<MyLiquidPage> {
                     width: 200.0,
                     height: 200.0,
                     child: Image.asset(
-                      'assets/images/icon/icon-android.png',
+                      'assets/icon/icon-legacy.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -103,7 +103,7 @@ class _MyLiquidPageState extends State<MyLiquidPage> {
                     width: 200.0,
                     height: 200.0,
                     child: Image.asset(
-                      'assets/images/icon/icon-android.png',
+                      'assets/icon/icon-legacy.png',
                       fit: BoxFit.cover,
                     ),
                   ),
