@@ -10,17 +10,17 @@
 
 A very sexy Flutter template app with great focus on UI, design and animations. It is written entirely in Dart code and built using Flutter widgets, so it can be compiled to run (very smoothly) on both Android and iOS!
 
-Note: I am *not* a graphic/UI designer by any means. All the animations, colors, layouts, etc. have been made according to what I thought looked nice and cool, so forgive me for not really following the "rules of design".
+Note: I am _not_ a graphic/UI designer by any means. All the animations, colors, layouts, etc. have been made according to what I thought looked nice and cool, so forgive me for not really following the "rules of design".
 
 [<img height="75" width="200" src="./branding/other/google-play-badge.png" alt="Play Store"/>](https://play.google.com/store/apps/details?id=tech.urmilshroff.dashboard_reborn)
 
 ## Screenshots
 
-<p><img height="300px" width="170px" src="./branding/screener/screener_1561033293088.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033399521.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033572346.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033595285.png" alt="Dashboard Reborn"/> <img height="300px" width="170px" src="./branding/screener/screener_1561033642367.png" alt="Dashboard Reborn"/></p>
+<p><img height="306px" width="170px" src="./branding/screener/pixel-xl/1.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/2.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/3.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/4.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/5.png" alt="Dashboard Reborn"/></p>
 
 ## UI Demos
 
-<p><img height="520px" width="285px" src="./branding/gifs/about_page.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/material_page.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/gradients_page.gif" alt="Dashboard Reborn"/></p>
+<p><img height="520px" width="285px" src="./branding/gifs/1.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/2.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/3.gif" alt="Dashboard Reborn"/></p>
 
 ## Building
 
