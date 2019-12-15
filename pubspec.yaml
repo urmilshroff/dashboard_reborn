@@ -12,6 +12,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   dynamic_theme: ^1.0.1
   eva_icons_flutter: ^2.0.0
+  flare_flutter: ^1.8.1
   gradient_widgets: ^0.5.0
   liquid_swipe: '1.2.0'
   url_launcher: ^5.2.4
@@ -35,6 +36,7 @@ flutter:
 
   assets:
      - assets/credits/
+     - assets/flare/
      - assets/icon/
      - assets/music/
 

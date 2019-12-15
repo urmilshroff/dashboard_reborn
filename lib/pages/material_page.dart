@@ -6,6 +6,7 @@ import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_bottom_sheet.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -134,15 +135,11 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                           child: Hero(
                                             tag: 'elt1',
                                             child: Container(
-                                              width: 300,
-                                              height: 300,
-                                              child: Container(
-                                                width: 200.0,
-                                                height: 200.0,
-                                                child: Image.asset(
-                                                  'assets/icon/icon-legacy.png',
-                                                  fit: BoxFit.cover,
-                                                ),
+                                              width: 350,
+                                              height: 350,
+                                              child: FlareActor(
+                                                'assets/flare/card.flr',
+                                                animation: 'animation',
                                               ),
                                             ),
                                           ),
@@ -152,8 +149,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                                           right: 15.0,
                                           child: FloatingActionButton(
                                             heroTag: 'elt2',
-                                            foregroundColor:
-                                                invertInvertColorsMild(context),
+                                            foregroundColor: MyColors.light,
                                             backgroundColor: MyColors.accent,
                                             elevation: 5.0,
                                             child: Icon(EvaIcons.close),
@@ -205,7 +201,7 @@ class _MyMaterialPageState extends State<MyMaterialPage> {
                           width: 40.0,
                           child: FloatingActionButton(
                             heroTag: 'elt2',
-                            foregroundColor: invertInvertColorsMild(context),
+                            foregroundColor: MyColors.light,
                             backgroundColor: MyColors.accent,
                             elevation: 3.0,
                             child: Icon(EvaIcons.infoOutline),
