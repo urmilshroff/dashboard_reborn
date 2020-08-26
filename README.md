@@ -1,26 +1,26 @@
-<p align="center"><img height="180px" width="180px" src="./branding/art/icon.png" alt="Dashboard Reborn"/></p>
+<p align="center"><img height="160px" width="160px" src="./branding/art/icon.png" alt="Dashboard Reborn"/></p>
 
 # Dashboard Reborn✨
 
 [![Stars](https://img.shields.io/github/stars/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/stargazers)
 [![Forks](https://img.shields.io/github/forks/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/network/members)
-[![Codemagic build status](https://api.codemagic.io/apps/5de2865354bf42348a792b37/5de2865354bf42348a792b36/status_badge.svg)](https://codemagic.io/apps/5de2865354bf42348a792b37/5de2865354bf42348a792b36/latest_build)
+[![Build](https://github.com/urmilshroff/dashboard_reborn/workflows/Build/badge.svg)](https://github.com/urmilshroff/dashboard_reborn/actions?query=workflow%3ABuild)
 [![Issues](https://img.shields.io/github/issues/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/issues)
 [![License](https://img.shields.io/github/license/urmilshroff/dashboard_reborn.svg)](https://opensource.org/licenses/MIT)
 
-A very sexy Flutter template app with great focus on UI, design and animations. It is written entirely in Dart code and built using Flutter widgets, so it can be compiled to run (very smoothly) on both Android and iOS!
+A very sexy Flutter template-ish app with great focus on UI, design and animations. It is written entirely in Dart and built with Flutter, so it can be compiled to run (very smoothly) on both Android and iOS!
 
-Note: I am _not_ a graphic/UI designer by any means. All the animations, colors, layouts, etc. have been made according to what I thought looked nice and cool, so forgive me for not really following the "rules of design".
+Note: I am _not_ a UI designer by any means. All the animations, colors, layouts, etc. have been made according to what I thought looked "nice and cool", so forgive me for not really following the rules of design.
 
 [<img height="75" width="200" src="./branding/other/google-play-badge.png" alt="Play Store"/>](https://play.google.com/store/apps/details?id=tech.urmilshroff.dashboard_reborn)
 
 ## Screenshots
 
-<p><img height="306px" width="170px" src="./branding/screener/pixel-xl/1.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/2.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/3.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/4.png" alt="Dashboard Reborn"/> <img height="306px" width="170px" src="./branding/screener/pixel-xl/5.png" alt="Dashboard Reborn"/></p>
+<p><img height="270px" width="150px" src="./branding/screener/pixel-xl/1.png" alt="Dashboard Reborn"/> <img height="270px" width="150px" src="./branding/screener/pixel-xl/2.png" alt="Dashboard Reborn"/> <img height="270px" width="150px" src="./branding/screener/pixel-xl/3.png" alt="Dashboard Reborn"/> <img height="270px" width="150px" src="./branding/screener/pixel-xl/4.png" alt="Dashboard Reborn"/> <img height="270px" width="150px" src="./branding/screener/pixel-xl/5.png" alt="Dashboard Reborn"/></p>
 
 ## UI Demos
 
-<p><img height="520px" width="285px" src="./branding/gifs/1.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/2.gif" alt="Dashboard Reborn"/> <img height="520px" width="285px" src="./branding/gifs/3.gif" alt="Dashboard Reborn"/></p>
+<p><img height="450px" width="250px" src="./branding/gifs/1.gif" alt="Dashboard Reborn"/> <img height="450px" width="250px" src="./branding/gifs/2.gif" alt="Dashboard Reborn"/> <img height="450px" width="250px" src="./branding/gifs/3.gif" alt="Dashboard Reborn"/></p>
 
 ## Building
 
