@@ -1,0 +1,23 @@
+name: Build
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build for Android
+    runs-on: macos-latest
+    
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v2
+      
+    - name: Setup Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+        
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      
+    - name: Build debug APK
+      run: flutter build apk --debug
+      
