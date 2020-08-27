@@ -1,40 +1,28 @@
 PODS:
   - Flutter (1.0.0)
-  - liquid_swipe (0.0.1):
-    - Flutter
   - shared_preferences (0.0.1):
     - Flutter
   - url_launcher (0.0.1):
     - Flutter
-  - url_launcher_web (0.0.1):
-    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - liquid_swipe (from `.symlinks/plugins/liquid_swipe/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
-  - url_launcher_web (from `.symlinks/plugins/url_launcher_web/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  liquid_swipe:
-    :path: ".symlinks/plugins/liquid_swipe/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
   url_launcher:
     :path: ".symlinks/plugins/url_launcher/ios"
-  url_launcher_web:
-    :path: ".symlinks/plugins/url_launcher_web/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  liquid_swipe: d3dbe523989a927528e7e7d2d0fc674da90cbbf7
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
-  url_launcher: a1c0cc845906122c4784c542523d8cacbded5626
-  url_launcher_web: e5527357f037c87560776e36436bf2b0288b965c
+  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
 
-PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.9.3

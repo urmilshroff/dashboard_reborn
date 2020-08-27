@@ -3,24 +3,22 @@ description: A very sexy Flutter template app!
 version: 1.1.1+5
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^0.1.3
   dynamic_theme: ^1.0.1
-  eva_icons_flutter: ^2.0.0
-  flare_flutter: ^1.8.1
-  gradient_widgets: ^0.5.0
-  liquid_swipe: '1.2.0'
-  url_launcher: ^5.2.4
+  eva_icons_flutter: ^2.0.1
+  flare_flutter: ^2.0.6
+  gradient_widgets: ^0.5.2
+  liquid_swipe: ^1.5.0
+  url_launcher: ^5.5.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_launcher_icons: ^0.7.4
+  flutter_launcher_icons: ^0.7.5
 
 flutter_icons:
   android: 'launcher_icon'
