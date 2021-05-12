@@ -8,9 +8,9 @@
 [![Issues](https://img.shields.io/github/issues/urmilshroff/dashboard_reborn.svg)](https://github.com/urmilshroff/dashboard_reborn/issues)
 [![License](https://img.shields.io/github/license/urmilshroff/dashboard_reborn.svg)](https://opensource.org/licenses/MIT)
 
-A very sexy Flutter template-ish app with great focus on UI, design and animations. It is written entirely in Dart and built with Flutter, so it can be compiled to run (very smoothly) on both Android and iOS!
+A very sexy app template with great focus on UI, design and animations. It is written entirely in Dart and built with Flutter, so it can be compiled to run (very smoothly) on Android, iOS and all other platforms supported by Flutter!
 
-Note: I am _not_ a UI designer by any means. All the animations, colors, layouts, etc. have been made according to what I thought looked "nice and cool", so forgive me for not really following the rules of design.
+Note: I am _not_ a UI designer by any means. All the animations, colors, layouts, etc. have been made according to what I thought looked "nice and cool"🙃
 
 [<img height="75" width="200" src="./branding/other/google-play-badge.png" alt="Play Store"/>](https://play.google.com/store/apps/details?id=tech.urmilshroff.dashboard_reborn)
 
@@ -27,10 +27,10 @@ Note: I am _not_ a UI designer by any means. All the animations, colors, layouts
 To build and run the app on your device, do the following:
 
 -   [Install Flutter](https://flutter.dev/docs/get-started/install/) by following the instructions on their website.
--   Fork/clone this repo to your local machine using `git clone https://github.com/urmilshroff/dashboard_reborn.git`.
--   Connect your devices/emulators and run the app using `flutter run --release` in the root of the project directory.
+-   Clone this repo to your local machine using `git clone https://github.com/urmilshroff/dashboard_reborn.git`.
+-   Connect your device/emulator and run the app using `flutter run` in the root of the project directory.
 
-Note: you can also run it faster in debug mode using `flutter run`, but the animations will be choppy and performance won't be as expected.
+Note: you can also run it in release mode using `flutter run --release` to experience the beautiful animations at their best.
 
 ## Usage
 
@@ -50,7 +50,7 @@ Found any bugs? Have any suggestions or code improvements? [Submit an issue](htt
 
 ## Credits
 
-Huge shoutout to all the amazing libraries and projects that I've used, without which this app wouldn't have been possible:
+Huge shout out to all the amazing libraries and projects that I've used, without which this app wouldn't have been possible:
 
 -   [Awesome Flutter](https://github.com/Solido/awesome-flutter) by Solido
 -   [Dynamic Theme](https://github.com/Norbert515/dynamic_theme) by Norbert515
@@ -62,7 +62,7 @@ Huge shoutout to all the amazing libraries and projects that I've used, without 
 -   [Story App UI](https://github.com/devefy/Flutter-Story-App-UI) by devefy
 -   [Page Transformer](https://github.com/roughike/page-transformer) by roughike
 
-Special shoutout to [Arabi Ishaque](https://dribbble.com/Arabi) for making that dope icon!
+Special shout out to [Arabi Ishaque](https://dribbble.com/Arabi) for making that dope icon!
 
 And of course, the [Flutter framework](https://github.com/flutter/flutter) by Google.
 
