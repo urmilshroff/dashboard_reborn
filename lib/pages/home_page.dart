@@ -5,7 +5,7 @@ import 'package:dashboard_reborn/utils/colors.dart';
 import 'package:dashboard_reborn/utils/text_styles.dart';
 import 'package:dashboard_reborn/utils/ui_helpers.dart';
 import 'package:dashboard_reborn/widgets/sexy_tile.dart';
-import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -141,12 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
         foregroundColor: invertInvertColorsStrong(context),
         backgroundColor: invertInvertColorsTheme(context),
         elevation: 5.0,
-        onPressed: () {
-          DynamicTheme.of(context).setBrightness(
-              Theme.of(context).brightness == Brightness.dark
-                  ? Brightness.light
-                  : Brightness.dark);
-        },
+        onPressed: () => EasyDynamicTheme.of(context).changeTheme(),
       ),
     );
   }
